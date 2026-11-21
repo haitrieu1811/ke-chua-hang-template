@@ -1,0 +1,116 @@
+"use client";
+
+import * as React from "react";
+import { Share2, Copy, Check, Bookmark, MessageCircle } from "lucide-react";
+
+function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    </svg>
+  );
+}
+
+interface ArticleShareProps {
+  title: string;
+  slug: string;
+}
+
+export default function ArticleShare({ title, slug }: ArticleShareProps) {
+  const [copied, setCopied] = React.useState(false);
+  const [saved, setSaved] = React.useState(false);
+
+  const handleCopy = () => {
+    if (typeof window !== "undefined") {
+      navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  const handleFacebookShare = () => {
+    if (typeof window !== "undefined") {
+      const url = encodeURIComponent(window.location.href);
+      window.open(
+        `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }
+  };
+
+  const handleZaloShare = () => {
+    if (typeof window !== "undefined") {
+      const url = encodeURIComponent(window.location.href);
+      window.open(
+        `https://sp.zalo.me/share?url=${url}`,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }
+  };
+
+  return (
+    <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-border/80 bg-muted/30 p-4 sm:p-5">
+      <div className="flex items-center gap-2">
+        <Share2 className="size-5 text-orange-500" />
+        <span className="text-sm font-bold text-foreground">Chia sẻ cẩm nang này:</span>
+      </div>
+
+      <div className="flex items-center gap-2">
+        {/* Nút Sao chép liên kết */}
+        <button
+          type="button"
+          onClick={handleCopy}
+          className="inline-flex items-center gap-1.5 rounded-xl border border-border/80 bg-card px-3.5 py-2 text-sm font-semibold text-foreground hover:bg-muted hover:border-primary/50 transition-all cursor-pointer"
+        >
+          {copied ? (
+            <>
+              <Check className="size-4 text-orange-500" />
+              <span className="text-orange-500 font-bold">Đã sao chép link!</span>
+            </>
+          ) : (
+            <>
+              <Copy className="size-4 text-muted-foreground" />
+              <span>Copy link</span>
+            </>
+          )}
+        </button>
+
+        {/* Nút Chia sẻ Facebook */}
+        <button
+          type="button"
+          onClick={handleFacebookShare}
+          className="inline-flex items-center gap-1.5 rounded-xl border border-primary/20 bg-primary/10 px-3.5 py-2 text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer"
+        >
+          <FacebookIcon className="size-4" />
+          <span>Facebook</span>
+        </button>
+
+        {/* Nút Chia sẻ Zalo */}
+        <button
+          type="button"
+          onClick={handleZaloShare}
+          className="inline-flex items-center gap-1.5 rounded-xl border border-primary/20 bg-primary/10 px-3.5 py-2 text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer"
+        >
+          <MessageCircle className="size-4" />
+          <span>Zalo</span>
+        </button>
+
+        {/* Nút Lưu bài viết */}
+        <button
+          type="button"
+          onClick={() => setSaved(!saved)}
+          className={`inline-flex items-center gap-1.5 rounded-xl border px-3.5 py-2 text-sm font-semibold transition-all cursor-pointer ${
+            saved
+              ? "border-orange-500 bg-orange-500/10 text-orange-600 dark:text-orange-400"
+              : "border-border/80 bg-card text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          <Bookmark className={`size-4 ${saved ? "fill-current" : ""}`} />
+          <span>{saved ? "Đã lưu" : "Lưu đọc sau"}</span>
+        </button>
+      </div>
+    </div>
+  );
+}
