@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useTranslations } from "next-intl";
 import {
   Carousel,
   CarouselContent,
@@ -18,69 +19,76 @@ import {
 } from "lucide-react";
 import SHOP_INFO from "@/constants/info";
 
-const slides = [
-  {
-    id: 1,
-    image: "/images/hero-slide-1.jpg",
-    badge: "GIẢI PHÁP TẢI TRỌNG NẶNG",
-    title: "Hệ Thống Kệ Pallet Selective & Drive-In",
-    highlight: "Tối Ưu 85% Kho Bãi",
-    desc: "Khả năng chịu tải vượt trội từ 1,000kg - 4,000kg/tầng, thép cán nguội tiêu chuẩn JIS G3101 sơn tĩnh điện bền bỉ trên 15 năm.",
-    tags: [
-      "Tiếp cận 100% vị trí pallet",
-      "Phù hợp mọi dòng xe nâng",
-      "Khảo sát bản vẽ 3D miễn phí",
-    ],
-    primaryCta: "Nhận dự toán & Báo giá nhanh",
-    secondaryCta: `Hotline: ${SHOP_INFO.HOTLINE.TEXT}`,
-  },
-  {
-    id: 2,
-    image: "/images/hero-slide-2.jpg",
-    badge: "KHO THÔNG MINH TỰ ĐỘNG HÓA",
-    title: "Hệ Thống Kệ Kho Tự Động AS/RS",
-    highlight: "Mật Độ Lưu Trữ Cực Đại",
-    desc: "Hệ thống truy xuất pallet tự động hóa 100% với tốc độ cao, tích hợp phần mềm quản lý kho WMS/WCS chuyên sâu cho trung tâm logistics.",
-    tags: [
-      "Vận hành tự động hóa 24/7",
-      "Tiết kiệm 70% nhân công",
-      "Tối ưu thể tích kho trên cao",
-    ],
-    primaryCta: "Tư vấn hệ thống tự động",
-    secondaryCta: "Xem video mô phỏng",
-  },
-  {
-    id: 3,
-    image: "/images/hero-slide-3.jpg",
-    badge: "TỐI ƯU MẶT BẰNG SẢN XUẤT",
-    title: "Kệ Sàn Lửng Mezzanine & Kệ Trung Tải",
-    highlight: "Nhân Đôi Diện Tích Chứa",
-    desc: "Giải pháp mở rộng gấp 2 - 3 lần diện tích sàn mà không cần cơi nới xây dựng mới, linh hoạt tháo lắp và di dời khi cần.",
-    tags: [
-      "Tải trọng sàn 300 - 1,000 kg/m²",
-      "Bảo hành kết cấu 5 năm",
-      "Giá gốc trực tiếp nhà máy",
-    ],
-    primaryCta: "Đăng ký khảo sát sàn kho",
-    secondaryCta: "Báo giá kệ trung tải",
-  },
-];
-
 export default function HomeCarousel() {
+  const t = useTranslations("HomePage.hero");
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
-  const [count, setCount] = React.useState(0);
+
+  const slides = [
+    {
+      id: 1,
+      image: "/images/hero-slide-1.jpg",
+      badge: t("slides.slide1.badge"),
+      title: t("slides.slide1.title"),
+      highlight: t("slides.slide1.highlight"),
+      desc: t("slides.slide1.desc"),
+      tags: [
+        t("slides.slide1.tag1"),
+        t("slides.slide1.tag2"),
+        t("slides.slide1.tag3"),
+      ],
+      primaryCta: t("slides.slide1.primaryCta"),
+      secondaryCta: t("slides.slide1.secondaryCta", {
+        hotline: SHOP_INFO.HOTLINE.TEXT,
+      }),
+    },
+    {
+      id: 2,
+      image: "/images/hero-slide-2.jpg",
+      badge: t("slides.slide2.badge"),
+      title: t("slides.slide2.title"),
+      highlight: t("slides.slide2.highlight"),
+      desc: t("slides.slide2.desc"),
+      tags: [
+        t("slides.slide2.tag1"),
+        t("slides.slide2.tag2"),
+        t("slides.slide2.tag3"),
+      ],
+      primaryCta: t("slides.slide2.primaryCta"),
+      secondaryCta: t("slides.slide2.secondaryCta"),
+    },
+    {
+      id: 3,
+      image: "/images/hero-slide-3.jpg",
+      badge: t("slides.slide3.badge"),
+      title: t("slides.slide3.title"),
+      highlight: t("slides.slide3.highlight"),
+      desc: t("slides.slide3.desc"),
+      tags: [
+        t("slides.slide3.tag1"),
+        t("slides.slide3.tag2"),
+        t("slides.slide3.tag3"),
+      ],
+      primaryCta: t("slides.slide3.primaryCta"),
+      secondaryCta: t("slides.slide3.secondaryCta"),
+    },
+  ];
 
   // Cập nhật chỉ số slide hiện tại
   React.useEffect(() => {
     if (!api) return;
 
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap());
-
-    api.on("select", () => {
+    const handleSelect = () => {
       setCurrent(api.selectedScrollSnap());
-    });
+    };
+
+    api.on("select", handleSelect);
+    api.on("reInit", handleSelect);
+
+    return () => {
+      api.off("select", handleSelect);
+      api.off("reInit", handleSelect);
+    };
   }, [api]);
 
   // Tự động chuyển slide sau mỗi 6 giây
@@ -187,16 +195,16 @@ export default function HomeCarousel() {
 
         {/* Chỉ số Dots chuyển slide */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
-          {Array.from({ length: count }).map((_, index) => (
+          {slides.map((slide, index) => (
             <button
-              key={index}
+              key={slide.id}
               onClick={() => api?.scrollTo(index)}
               className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                 current === index
                   ? "w-8 bg-orange-400"
                   : "w-2.5 bg-white/40 hover:bg-white/70"
               }`}
-              aria-label={`Đi tới slide ${index + 1}`}
+              aria-label={t("goToSlide", { index: index + 1 })}
             />
           ))}
         </div>

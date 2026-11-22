@@ -1,0 +1,320 @@
+{
+  "HomePage": {
+    "title": "Xin chào thế giới!",
+    "hero": {
+      "goToSlide": "Đi tới slide {index}",
+      "slides": {
+        "slide1": {
+          "badge": "GIẢI PHÁP TẢI TRỌNG NẶNG",
+          "title": "Hệ Thống Kệ Pallet Selective & Drive-In",
+          "highlight": "Tối Ưu 85% Kho Bãi",
+          "desc": "Khả năng chịu tải vượt trội từ 1,000kg - 4,000kg/tầng, thép cán nguội tiêu chuẩn JIS G3101 sơn tĩnh điện bền bỉ trên 15 năm.",
+          "tag1": "Tiếp cận 100% vị trí pallet",
+          "tag2": "Phù hợp mọi dòng xe nâng",
+          "tag3": "Khảo sát bản vẽ 3D miễn phí",
+          "primaryCta": "Nhận dự toán & Báo giá nhanh",
+          "secondaryCta": "Hotline: {hotline}"
+        },
+        "slide2": {
+          "badge": "KHO THÔNG MINH TỰ ĐỘNG HÓA",
+          "title": "Hệ Thống Kệ Kho Tự Động AS/RS",
+          "highlight": "Mật Độ Lưu Trữ Cực Đại",
+          "desc": "Hệ thống truy xuất pallet tự động hóa 100% với tốc độ cao, tích hợp phần mềm quản lý kho WMS/WCS chuyên sâu cho trung tâm logistics.",
+          "tag1": "Vận hành tự động hóa 24/7",
+          "tag2": "Tiết kiệm 70% nhân công",
+          "tag3": "Tối ưu thể tích kho trên cao",
+          "primaryCta": "Tư vấn hệ thống tự động",
+          "secondaryCta": "Xem video mô phỏng"
+        },
+        "slide3": {
+          "badge": "TỐI ƯU MẶT BẰNG SẢN XUẤT",
+          "title": "Kệ Sàn Lửng Mezzanine & Kệ Trung Tải",
+          "highlight": "Nhân Đôi Diện Tích Chứa",
+          "desc": "Giải pháp mở rộng gấp 2 - 3 lần diện tích sàn mà không cần cơi nới xây dựng mới, linh hoạt tháo lắp và di dời khi cần.",
+          "tag1": "Tải trọng sàn 300 - 1,000 kg/m²",
+          "tag2": "Bảo hành kết cấu 5 năm",
+          "tag3": "Giá gốc trực tiếp nhà máy",
+          "primaryCta": "Đăng ký khảo sát sàn kho",
+          "secondaryCta": "Báo giá kệ trung tải"
+        }
+      }
+    },
+    "advantages": {
+      "badge": "Cam kết giá trị vượt trội",
+      "title": "4 Ưu Điểm Đột Phá Khi Lựa Chọn Chúng Tôi",
+      "desc": "Tối ưu chi phí, an tâm chất lượng và đảm bảo tiến độ bàn giao cho mọi dự án kho bãi của quý khách hàng.",
+      "footerLabel": "Cam kết chất lượng",
+      "items": {
+        "item1": {
+          "tag": "Tiết kiệm 20% - 30%",
+          "title": "Giá Gốc Trực Tiếp Tại Nhà Máy",
+          "desc": "Sản xuất và phân phối trực tiếp không qua trung gian thương mại, giúp tối ưu chi phí đầu tư ban đầu cho doanh nghiệp."
+        },
+        "item2": {
+          "tag": "Bản vẽ 2D/3D trong 24h",
+          "title": "Khảo Sát & Thiết Kế Miễn Phí",
+          "desc": "Kỹ sư kết cấu trực tiếp đến tận nhà kho đo đạc hiện trạng, lên bản vẽ 2D/3D mô phỏng luồng xe nâng hoàn toàn miễn phí."
+        },
+        "item3": {
+          "tag": "ISO 9001 & JIS G3101",
+          "title": "Thép Chuẩn & Sơn Tĩnh Điện",
+          "desc": "100% phôi thép cán nguội chất lượng cao có CO/CQ rõ ràng, xử lý bề mặt sơn tĩnh điện chống rỉ sét và hóa chất ăn mòn."
+        },
+        "item4": {
+          "tag": "Bảo hành 5 năm",
+          "title": "Lắp Đặt Thần Tốc & Bảo Trì",
+          "desc": "Đội ngũ kỹ thuật lành nghề thi công nhanh gọn, cam kết bàn giao đúng tiến độ, bảo hành 5 năm và bảo trì trọn đời."
+        }
+      }
+    },
+    "testimonials": {
+      "badge": "Đánh Giá Thực Tế Từ Khách Hàng",
+      "title": "Khách Hàng Nói Gì Về Chúng Tôi?",
+      "desc": "Hơn 1.500+ doanh nghiệp logistics, kho lạnh, tập đoàn sản xuất trên toàn quốc đã đồng hành và khẳng định chất lượng giải pháp kệ chứa hàng của chúng tôi.",
+      "stats": {
+        "stat1": {
+          "suffix": "%",
+          "title": "Hài Lòng Về Chất Lượng",
+          "desc": "Cam kết chuẩn tải trọng 100%"
+        },
+        "stat2": {
+          "suffix": "+",
+          "title": "Dự Án Đã Bàn Giao",
+          "desc": "Trải rộng khắp cả nước"
+        },
+        "stat3": {
+          "suffix": "+ Năm",
+          "title": "Kinh Nghiệm Chuyên Sâu",
+          "desc": "Đội ngũ kỹ sư kết cấu hàng đầu"
+        },
+        "stat4": {
+          "suffix": "%",
+          "title": "Đúng Tiến Độ Cam Kết",
+          "desc": "Bảo hành 5 năm toàn diện"
+        }
+      },
+      "categories": {
+        "all": "Tất Cả Dự Án",
+        "logistics": "Logistics & Kho Vận",
+        "cold": "Kho Lạnh Âm Sâu",
+        "factory": "Nhà Máy & Cơ Khí",
+        "retail": "TMĐT & Bán Lẻ"
+      },
+      "items": {
+        "item1": {
+          "name": "Anh Trần Quốc Tuấn",
+          "categoryLabel": "Logistics 3PL",
+          "scale": "Dự án kho 6.500m² - 8.200 Pallet",
+          "quote": "Đội ngũ kỹ sư khảo sát rất cẩn trọng, mô phỏng luồng di chuyển của xe nâng Reach Truck cực kỳ chi tiết. Hệ thống kệ Selective kết hợp Drive-in giúp sức chứa kho của chúng tôi tăng gấp 2,5 lần mà chi phí tiết kiệm hơn 25% so với việc thuê kho ngoài.",
+          "metrics": "Tăng 250% dung lượng kho"
+        },
+        "item2": {
+          "name": "Chị Nguyễn Mai Lan",
+          "categoryLabel": "Kho Đông Lạnh (-25°C)",
+          "scale": "Hệ thống Kệ Drive-in mạ kẽm nhúng nóng",
+          "quote": "Kho lạnh âm sâu -25°C đòi hỏi chất lượng thép và công nghệ mạ kẽm cực kỳ khắt khe để chống đọng sương, gỉ sét. Sau hơn 3 năm vận hành liên tục, kết cấu chân trụ vẫn vững chãi, các tầng beam phẳng tuyệt đối, lấy hàng an toàn 100%.",
+          "metrics": "Chống gỉ sét chuẩn âm sâu"
+        },
+        "item3": {
+          "name": "Anh Lê Hoàng Nam",
+          "categoryLabel": "TMĐT & Bán Lẻ",
+          "scale": "Sàn Lửng Mezzanine 3 Tầng + Kệ Trung Tải",
+          "quote": "Giải pháp sàn lửng Mezzanine kết hợp kệ trung tải nhiều tầng giúp chúng tôi nhân đôi mặt sàn phân loại đơn hàng mà không phải cơi nới trần nhà xưởng. Thi công thần tốc chỉ 12 ngày là bàn giao hoàn chỉnh, không làm gián đoạn việc giao hàng.",
+          "metrics": "Hoàn thiện chỉ trong 12 ngày"
+        },
+        "item4": {
+          "name": "Ông Trịnh Viết Hưng",
+          "categoryLabel": "Nhà Máy Sản Xuất",
+          "scale": "Kệ Tự Động Radio Shuttle 10.000m²",
+          "quote": "Hệ thống kệ thông minh Radio Shuttle con thoi tự động là bước ngoặt tối ưu hóa kho của chúng tôi. Mật độ lưu kho đạt mức tối đa, loại bỏ hoàn toàn rủi ro va chạm xe nâng vào khung kệ, tốc độ xuất nhập hàng nhanh gấp 3 lần.",
+          "metrics": "Xuất nhập hàng nhanh gấp 3"
+        },
+        "item5": {
+          "name": "Bà Đỗ Thu Hằng",
+          "categoryLabel": "Dược Phẩm Chuẩn GSP",
+          "scale": "Kệ Trượt Carton Flow & Kệ V Lỗ",
+          "quote": "Tiêu chuẩn kho GSP ngành dược đòi hỏi giá kệ phải cực kỳ sạch sẽ, kiểm soát hạn sử dụng theo nguyên tắc FIFO (vào trước ra trước). Hệ thống ray con lăn carton flow hoạt động trơn tru, chính xác tuyệt đối, nhân viên nhặt hàng rất nhàn.",
+          "metrics": "Quản lý FIFO chính xác 100%"
+        },
+        "item6": {
+          "name": "Anh Phạm Minh Đức",
+          "categoryLabel": "Cơ Khí Hạng Nặng",
+          "scale": "Kệ Tay Đỡ Cantilever Tải Trọng 3 Tấn/Tầng",
+          "quote": "Lưu trữ các bó ống thép dài 6m và khuôn dập nặng vài tấn luôn là bài toán đau đầu. Kệ tay đỡ Cantilever có kết cấu chân trụ I-beam đúc cực kỳ vững chắc, cẩu trục và xe nâng lấy vật tư dễ dàng, giảm 70% thời gian tìm kiếm phôi thép.",
+          "metrics": "Chịu tải 3.000kg/khoang"
+        }
+      },
+      "cta": {
+        "title": "Bạn Cần Tư Vấn Thiết Kế Kệ Kho Phù Hợp Với Doanh Nghiệp?",
+        "desc": "Liên hệ ngay để nhận bản vẽ layout 2D/3D và báo giá gốc trực tiếp tại nhà máy trong vòng 24 giờ.",
+        "hotline": "Hotline: {hotline}",
+        "surveyBtn": "Đăng Ký Khảo Sát"
+      }
+    },
+    "faq": {
+      "badge": "Giải Đáp Thắc Mắc & Hướng Dẫn",
+      "title": "Câu Hỏi Thường Gặp (FAQ)",
+      "desc": "Tổng hợp câu trả lời chi tiết cho những băn khoăn phổ biến nhất của khách hàng về lựa chọn giải pháp, tải trọng và quy trình lắp đặt kệ kho.",
+      "tabs": {
+        "all": "Tất Cả Câu Hỏi",
+        "survey": "Khảo Sát & Thiết Kế",
+        "tech": "Kỹ Thuật & Tải Trọng",
+        "warranty": "Bảo Hành & Bảo Trì",
+        "custom": "Gia Công & Nền Kho"
+      },
+      "emptyTitle": "Không tìm thấy câu hỏi phù hợp",
+      "emptyDesc": "Vui lòng chọn danh mục khác hoặc liên hệ hotline để được tư vấn trực tiếp.",
+      "items": {
+        "q1": {
+          "categoryLabel": "Khảo Sát & Thiết Kế",
+          "question": "Công ty có hỗ trợ khảo sát và lên bản vẽ thiết kế 2D/3D tận nơi không?",
+          "answer": "Có, hoàn toàn miễn phí 100%. Ngay sau khi tiếp nhận thông tin, đội ngũ kỹ sư kết cấu của chúng tôi sẽ đến tận nhà xưởng của quý khách trong vòng 24 giờ (tại Hà Nội, TP.HCM và các tỉnh lân cận) để đo đạc hiện trạng nền kho, kiểm tra chiều cao tĩnh không và lên bản vẽ bố trí 2D, phối cảnh 3D mô phỏng luồng di chuyển của xe nâng tối ưu nhất."
+        },
+        "q2": {
+          "categoryLabel": "Thời Gian & Tiến Độ",
+          "question": "Thời gian sản xuất và lắp đặt hoàn thiện một hệ thống kệ kho mất bao lâu?",
+          "answer": "Với các dòng kệ tiêu chuẩn (kệ trung tải, kệ Selective có sẵn phôi), thời gian bàn giao và lắp đặt hoàn thiện từ 3 - 5 ngày làm việc. Với các dự án kho tổng quy mô lớn (Heavy Duty, Drive-in, Sàn Mezzanine từ 1.000m² - 10.000m²), tiến độ sản xuất và lắp đặt trọn gói thường từ 10 - 20 ngày, cam kết đúng 100% tiến độ theo hợp đồng ký kết."
+        },
+        "q3": {
+          "categoryLabel": "Tải Trọng & Kỹ Thuật",
+          "question": "Hệ thống kệ chứa hàng chịu được tải trọng bao nhiêu trên mỗi tầng?",
+          "intro": "Chúng tôi cung ứng giải pháp chịu tải linh hoạt từ nhẹ đến siêu trường, siêu trọng:",
+          "bullet1Label": "Kệ V lỗ đa năng:",
+          "bullet1Text": "Chịu tải từ 50kg - 120kg/tầng mâm tole.",
+          "bullet2Label": "Kệ Trung tải (Medium Duty):",
+          "bullet2Text": "Chịu tải từ 200kg - 600kg/tầng (dùng mâm tôn cuộn gân hoặc ván ép công nghiệp).",
+          "bullet3Label": "Kệ Hạng nặng (Heavy Duty - Selective, Double Deep, Drive-in):",
+          "bullet3Text": "Chịu tải từ 1.000kg - 3.500kg/pallet (tương đương 3.000kg - 8.000kg/khoang dầm beam).",
+          "outro": "Toàn bộ kết cấu đều được tính toán hệ số an toàn nghiêm ngặt theo tiêu chuẩn JIS G3101 và FEM 10.2.02."
+        },
+        "q4": {
+          "categoryLabel": "Bảo Hành & Bảo Trì",
+          "question": "Chính sách bảo hành và bảo trì định kỳ sau lắp đặt như thế nào?",
+          "answer": "Toàn bộ sản phẩm giá kệ công nghiệp được bảo hành chính hãng từ 3 đến 5 năm đối với kết cấu thép chịu lực và lớp sơn tĩnh điện. Định kỳ 6 tháng một lần, kỹ sư của chúng tôi sẽ đến kiểm tra độ cân bằng bu-lông chân trụ, độ võng của thanh dầm beam và độ an toàn vận hành hoàn toàn miễn phí. Đội phản ứng nhanh hỗ trợ kỹ thuật trong 24h khi khách hàng cần điều chỉnh kho."
+        },
+        "q5": {
+          "categoryLabel": "Yêu Cầu Nền Kho",
+          "question": "Nền nhà kho có yêu cầu gì đặc biệt để lắp đặt kệ pallet tải trọng nặng không?",
+          "answer": "Nền kho lý tưởng cần bê tông cốt thép có mác từ 250 trở lên, độ dày tối thiểu 150mm - 200mm và bề mặt phẳng nhẵn để xe nâng di chuyển an toàn. Trong quá trình khảo sát thực địa, kỹ sư của chúng tôi sẽ đo đạc độ phẳng và tư vấn kích thước bản mã chân trụ (Baseplate) cùng tắc-kê nở đạn chuyên dụng phù hợp nhất để phân bổ đều tải trọng."
+        },
+        "q6": {
+          "categoryLabel": "Gia Công Theo Yêu Cầu",
+          "question": "Tôi có thể đặt hàng kích thước phi tiêu chuẩn theo kích thước hàng hóa của tôi không?",
+          "answer": "Hoàn toàn được. Là nhà máy trực tiếp sở hữu dây chuyền cán thép định hình và dây chuyền sơn tĩnh điện tự động, chúng tôi chuyên nhận thiết kế và gia công giá kệ theo kích thước quy cách riêng biệt của từng loại pallet, thùng hàng, chiều cao tĩnh không trần kho và thông số loại xe nâng khách hàng đang sử dụng."
+        },
+        "q7": {
+          "categoryLabel": "Di Dời & Cơi Nới",
+          "question": "Công ty có nhận tháo dỡ, di dời hoặc nâng cấp hệ thống kệ cũ không?",
+          "answer": "Có. Chúng tôi cung cấp dịch vụ tháo dỡ, đóng gói vận chuyển và tái lắp đặt hệ thống kệ công nghiệp khi doanh nghiệp thay đổi địa điểm kho bãi. Đồng thời cung cấp đầy đủ linh phụ kiện lắp thêm (thanh beam, cross beam, thanh support pallet, ốp chân trụ chống va đập, rào chắn bảo vệ) để nâng tầng hoặc mở rộng diện tích kho bất cứ lúc nào."
+        },
+        "q8": {
+          "categoryLabel": "Hợp Đồng & Thanh Toán",
+          "question": "Quy trình ký kết hợp đồng và phương thức thanh toán ra sao?",
+          "answer": "Sau khi hai bên thống nhất phương án bản vẽ 2D/3D và bảng báo giá chi tiết, hai bên ký kết hợp đồng kinh tế rõ ràng kèm chứng nhận kiểm định chất lượng CO/CQ. Doanh nghiệp tạm ứng 30% - 50% khi ký kết, phần còn lại được thanh toán sau khi nghiệm thu bàn giao và tiến hành chạy thử tải thực tế tại công trình."
+        }
+      },
+      "support": {
+        "title": "Vẫn còn câu hỏi chưa được giải đáp?",
+        "desc": "Kỹ sư trưởng của chúng tôi sẵn sàng giải đáp mọi thắc mắc kỹ thuật và đưa ra giải pháp lưu trữ tối ưu nhất.",
+        "callBtn": "Gọi {hotline}"
+      }
+    }
+  },
+  "LocaleSwitcher": {
+    "vi": "Tiếng Việt",
+    "en": "Tiếng Anh",
+    "zh": "Tiếng Trung",
+    "selectLanguage": "Chọn ngôn ngữ"
+  },
+  "ModeToggle": {
+    "toggleTheme": "Chuyển đổi giao diện sáng/tối",
+    "srLabel": "Chuyển đổi giao diện",
+    "label": "Giao diện",
+    "light": "Sáng",
+    "dark": "Tối",
+    "system": "Hệ thống"
+  },
+  "Header": {
+    "promoBadge": "🎄 Ưu Đãi Giáng Sinh",
+    "promoText": "Bùng nổ đại tiệc Noel: Giảm ngay <discount>25%</discount> chi phí kệ kho & <gift>Tặng gói khảo sát 3D</gift> trị giá 15.000.000đ!",
+    "promoCta": "Nhận ưu đãi",
+    "dismissPromo": "Đóng thông báo khuyến mãi",
+    "dismissPromoTitle": "Đóng thông báo",
+    "addressLabel": "Địa chỉ:",
+    "hotlineLabel": "Hotline:",
+    "connectLabel": "Kết nối:",
+    "facebookAria": "Fanpage Facebook Kệ Kim Phú",
+    "facebookTitle": "Theo dõi chúng tôi trên Facebook",
+    "tiktokAria": "Kênh TikTok Kệ Kim Phú",
+    "tiktokTitle": "Khám phá video thực tế trên TikTok",
+    "youtubeAria": "Kênh YouTube Kệ Kim Phú",
+    "youtubeTitle": "Xem video giới thiệu dự án trên YouTube",
+    "mainNavAria": "Menu điều hướng chính",
+    "nav": {
+      "home": "Trang chủ",
+      "introduce": "Giới thiệu",
+      "solution": "Giải pháp",
+      "product": "Sản phẩm",
+      "articles": "Tin tức",
+      "contact": "Liên hệ"
+    },
+    "productCategoriesTitle": "Danh mục sản phẩm",
+    "viewAllProducts": "Xem tất cả sản phẩm",
+    "categories": {
+      "heavy": {
+        "title": "Kệ Tải Nặng (1 - 4 Tấn)",
+        "desc": "Kệ Selective, Drive-In, Cantilever & Radio Shuttle"
+      },
+      "medium": {
+        "title": "Kệ Trung Tải (300 - 800kg)",
+        "desc": "Kệ lắp ngàm bốc tay cho kho phụ tùng, linh kiện"
+      },
+      "floor": {
+        "title": "Kệ Sàn & Đa Năng",
+        "desc": "Sàn lửng Mezzanine, Kệ sắt V lỗ & Pallet thép"
+      }
+    },
+    "openMobileMenu": "Mở menu di động",
+    "themeTitle": "Giao diện hiển thị",
+    "themeDesc": "Sáng, Tối hoặc Hệ thống",
+    "officialSocialTitle": "Kênh mạng xã hội chính thức",
+    "consultationHotline": "Hotline tư vấn:"
+  },
+  "Footer": {
+    "description": "Đơn vị hàng đầu trong lĩnh vực tư vấn, sản xuất và thi công hệ thống giá kệ kho công nghiệp, kệ trung tải, kệ sàn và hệ thống kho thông minh tự động hóa trên toàn quốc.",
+    "taxCodeLabel": "Mã số thuế:",
+    "certificationLabel": "Chứng nhận:",
+    "policiesTitle": "Thông tin chính sách",
+    "policies": {
+      "sales": "Chính sách bán hàng",
+      "returns": "Chính sách đổi trả",
+      "privacy": "Chính sách bảo mật",
+      "payment": "Hướng dẫn thanh toán",
+      "terms": "Điều khoản sử dụng"
+    },
+    "aboutTitle": "Về chúng tôi",
+    "about": {
+      "company": "Giới thiệu công ty",
+      "factory": "Năng lực nhà máy",
+      "projects": "Dự án đã thi công",
+      "warranty": "Chính sách bảo hành",
+      "news": "Tin tức & Kiến thức kho",
+      "contact": "Liên hệ & Báo giá"
+    },
+    "contactTitle": "Thông tin liên hệ",
+    "hotline": "Hotline: {hotline}",
+    "hours": "Thứ 2 - Thứ 7: 08:00 - 17:30",
+    "newsletter": {
+      "title": "Đăng ký nhận Catalogue & Báo giá",
+      "desc": "Nhận ngay file bản vẽ mẫu và bảng giá mới nhất",
+      "placeholder": "Nhập email của bạn...",
+      "successAlert": "Cảm ơn bạn đã đăng ký! Chúng tôi sẽ gửi catalogue sớm nhất."
+    },
+    "copyright": "© 2026 Kệ Kim Phú. Tất cả các quyền được bảo lưu.",
+    "bottom": {
+      "privacy": "Chính sách bảo mật",
+      "terms": "Điều khoản dịch vụ",
+      "standards": "Quy chuẩn kỹ thuật"
+    }
+  }
+}

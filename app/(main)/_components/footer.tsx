@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -23,6 +24,7 @@ interface FooterLinkItem {
 }
 
 interface FooterLinkColumn {
+  key: string;
   title: string;
   colSpan: string;
   links: FooterLinkItem[];
@@ -63,78 +65,86 @@ const socialLinks = [
   },
 ];
 
-const companyMeta = [
-  { label: "Mã số thuế:", value: "0109887766" },
-  { label: "Chứng nhận:", value: "ISO 9001:2015 & JIS G3101" },
-];
-
-const footerLinkColumns: FooterLinkColumn[] = [
-  {
-    title: "Thông tin chính sách",
-    colSpan: "lg:col-span-3",
-    links: [
-      { label: "Chính sách bán hàng", href: "/chinh-sach-ban-hang" },
-      { label: "Chính sách đổi trả", href: "/chinh-sach-doi-tra" },
-      { label: "Chính sách bảo mật", href: "/chinh-sach-bao-mat" },
-      { label: "Hướng dẫn thanh toán", href: "/huong-dan-thanh-toan" },
-      { label: "Điều khoản sử dụng", href: "/dieu-khoan-su-dung" },
-    ],
-  },
-  {
-    title: "Về chúng tôi",
-    colSpan: "lg:col-span-3",
-    links: [
-      { label: "Giới thiệu công ty", href: "/gioi-thieu" },
-      { label: "Năng lực nhà máy", href: "/nang-luc-san-xuat" },
-      { label: "Dự án đã thi công", href: "/du-an-tieu-bieu" },
-      { label: "Chính sách bảo hành", href: "/chinh-sach-bao-hanh" },
-      { label: "Tin tức & Kiến thức kho", href: "/bai-viet" },
-      { label: "Liên hệ & Báo giá", href: "/lien-he" },
-    ],
-  },
-];
-
-const contactItems: ContactItem[] = [
-  {
-    key: "address",
-    icon: MapPin,
-    iconClassName: "text-primary mt-0.5",
-    alignTop: true,
-    label: SHOP_INFO.ADDRESS,
-  },
-  {
-    key: "hotline",
-    icon: Phone,
-    iconClassName: "text-amber-500",
-    label: `Hotline: ${SHOP_INFO.HOTLINE.TEXT}`,
-    href: `tel:${SHOP_INFO.HOTLINE.NUMBER}`,
-    linkClassName:
-      "font-bold text-amber-600 hover:text-amber-500 dark:text-amber-400 dark:hover:text-amber-300 transition-colors",
-  },
-  {
-    key: "email",
-    icon: Mail,
-    iconClassName: "text-primary",
-    label: SHOP_INFO.EMAIL,
-    href: `mailto:${SHOP_INFO.EMAIL}`,
-    linkClassName:
-      "text-zinc-700 hover:text-primary dark:text-zinc-300 dark:hover:text-primary transition-colors",
-  },
-  {
-    key: "hours",
-    icon: Clock,
-    iconClassName: "text-primary",
-    label: "Thứ 2 - Thứ 7: 08:00 - 17:30",
-  },
-];
-
-const bottomLinks: FooterLinkItem[] = [
-  { label: "Chính sách bảo mật", href: "/chinh-sach-bao-mat" },
-  { label: "Điều khoản dịch vụ", href: "/dieu-khoan-su-dung" },
-  { label: "Quy chuẩn kỹ thuật", href: "/quy-chuan-ky-thuat" },
-];
-
 export default function MainFooter() {
+  const t = useTranslations("Footer");
+
+  const companyMeta = [
+    { key: "taxCode", label: t("taxCodeLabel"), value: "0109887766" },
+    {
+      key: "certification",
+      label: t("certificationLabel"),
+      value: "ISO 9001:2015 & JIS G3101",
+    },
+  ];
+
+  const footerLinkColumns: FooterLinkColumn[] = [
+    {
+      key: "policies",
+      title: t("policiesTitle"),
+      colSpan: "lg:col-span-3",
+      links: [
+        { label: t("policies.sales"), href: "/chinh-sach-ban-hang" },
+        { label: t("policies.returns"), href: "/chinh-sach-doi-tra" },
+        { label: t("policies.privacy"), href: "/chinh-sach-bao-mat" },
+        { label: t("policies.payment"), href: "/huong-dan-thanh-toan" },
+        { label: t("policies.terms"), href: "/dieu-khoan-su-dung" },
+      ],
+    },
+    {
+      key: "about",
+      title: t("aboutTitle"),
+      colSpan: "lg:col-span-3",
+      links: [
+        { label: t("about.company"), href: "/gioi-thieu" },
+        { label: t("about.factory"), href: "/nang-luc-san-xuat" },
+        { label: t("about.projects"), href: "/du-an-tieu-bieu" },
+        { label: t("about.warranty"), href: "/chinh-sach-bao-hanh" },
+        { label: t("about.news"), href: "/bai-viet" },
+        { label: t("about.contact"), href: "/lien-he" },
+      ],
+    },
+  ];
+
+  const contactItems: ContactItem[] = [
+    {
+      key: "address",
+      icon: MapPin,
+      iconClassName: "text-primary mt-0.5",
+      alignTop: true,
+      label: SHOP_INFO.ADDRESS,
+    },
+    {
+      key: "hotline",
+      icon: Phone,
+      iconClassName: "text-amber-500",
+      label: t("hotline", { hotline: SHOP_INFO.HOTLINE.TEXT }),
+      href: `tel:${SHOP_INFO.HOTLINE.NUMBER}`,
+      linkClassName:
+        "font-bold text-amber-600 hover:text-amber-500 dark:text-amber-400 dark:hover:text-amber-300 transition-colors",
+    },
+    {
+      key: "email",
+      icon: Mail,
+      iconClassName: "text-primary",
+      label: SHOP_INFO.EMAIL,
+      href: `mailto:${SHOP_INFO.EMAIL}`,
+      linkClassName:
+        "text-zinc-700 hover:text-primary dark:text-zinc-300 dark:hover:text-primary transition-colors",
+    },
+    {
+      key: "hours",
+      icon: Clock,
+      iconClassName: "text-primary",
+      label: t("hours"),
+    },
+  ];
+
+  const bottomLinks: FooterLinkItem[] = [
+    { label: t("bottom.privacy"), href: "/chinh-sach-bao-mat" },
+    { label: t("bottom.terms"), href: "/dieu-khoan-su-dung" },
+    { label: t("bottom.standards"), href: "/quy-chuan-ky-thuat" },
+  ];
+
   return (
     <footer className="border-t border-zinc-200 bg-zinc-100 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 transition-colors">
       {/* MAIN FOOTER CONTENT (4 COLUMNS - HỖ TRỢ LIGHT & DARK MODE) */}
@@ -146,9 +156,7 @@ export default function MainFooter() {
               <Logo theme="light" />
 
               <p className="mt-4 text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                Đơn vị hàng đầu trong lĩnh vực tư vấn, sản xuất và thi công hệ
-                thống giá kệ kho công nghiệp, kệ trung tải, kệ sàn và hệ thống
-                kho thông minh tự động hóa trên toàn quốc.
+                {t("description")}
               </p>
 
               {/* Mạng xã hội */}
@@ -177,7 +185,7 @@ export default function MainFooter() {
 
               <div className="mt-5 flex flex-col gap-2 text-sm text-zinc-600 dark:text-zinc-400">
                 {companyMeta.map((meta) => (
-                  <div key={meta.label}>
+                  <div key={meta.key}>
                     <span className="font-semibold text-zinc-900 dark:text-zinc-200">
                       {meta.label}
                     </span>{" "}
@@ -189,7 +197,7 @@ export default function MainFooter() {
 
             {/* CỘT 2 & 3: THÔNG TIN CHÍNH SÁCH & VỀ CHÚNG TÔI */}
             {footerLinkColumns.map((column) => (
-              <div key={column.title} className={column.colSpan}>
+              <div key={column.key} className={column.colSpan}>
                 <h3 className="text-base font-bold tracking-wider text-zinc-900 dark:text-white uppercase">
                   {column.title}
                 </h3>
@@ -212,7 +220,7 @@ export default function MainFooter() {
             {/* CỘT 4: THÔNG TIN LIÊN HỆ & FORM ĐĂNG KÝ BÁO GIÁ */}
             <div className="lg:col-span-3">
               <h3 className="text-base font-bold tracking-wider text-zinc-900 dark:text-white uppercase">
-                Thông tin liên hệ
+                {t("contactTitle")}
               </h3>
               <div className="mt-4 flex flex-col gap-3.5 text-sm sm:text-base text-zinc-600 dark:text-zinc-400">
                 {contactItems.map((item) => {
@@ -238,24 +246,22 @@ export default function MainFooter() {
               {/* Form nhận catalogue báo giá nhanh */}
               <div className="mt-6 rounded-xl border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900/90 p-4 shadow-sm">
                 <h4 className="text-sm font-bold text-zinc-900 dark:text-white">
-                  Đăng ký nhận Catalogue & Báo giá
+                  {t("newsletter.title")}
                 </h4>
                 <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                  Nhận ngay file bản vẽ mẫu và bảng giá mới nhất
+                  {t("newsletter.desc")}
                 </p>
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
-                    alert(
-                      "Cảm ơn bạn đã đăng ký! Chúng tôi sẽ gửi catalogue sớm nhất.",
-                    );
+                    alert(t("newsletter.successAlert"));
                   }}
                   className="mt-3.5 flex gap-2"
                 >
                   <input
                     type="email"
                     required
-                    placeholder="Nhập email của bạn..."
+                    placeholder={t("newsletter.placeholder")}
                     className="h-10 w-full rounded-md border border-zinc-300 bg-zinc-50 px-3 text-sm text-zinc-900 placeholder:text-zinc-400 dark:border-zinc-700 dark:bg-zinc-950 dark:text-white dark:placeholder:text-zinc-500 outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                   />
                   <Button
@@ -275,7 +281,7 @@ export default function MainFooter() {
       {/* BOTTOM COPYRIGHT BAR */}
       <div className="border-t border-zinc-200 bg-zinc-200/70 dark:border-zinc-800/80 dark:bg-black/40 py-6">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-sm text-zinc-600 dark:text-zinc-400 sm:flex-row sm:px-6 lg:px-8">
-          <div>© 2026 Kệ Chứa Hàng. Tất cả các quyền được bảo lưu.</div>
+          <div>{t("copyright")}</div>
           <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm">
             {bottomLinks.map((link, index) => (
               <React.Fragment key={link.href}>

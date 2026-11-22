@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Moon, Sun, Monitor, Check } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
@@ -15,6 +16,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function ModeToggle() {
+  const t = useTranslations("ModeToggle");
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
@@ -31,8 +33,8 @@ export function ModeToggle() {
             variant="ghost"
             size="sm"
             className="size-9 p-0 text-muted-foreground hover:text-foreground hover:bg-accent cursor-pointer rounded-lg"
-            aria-label="Chuyển đổi giao diện sáng/tối"
-            title="Chuyển đổi giao diện sáng/tối"
+            aria-label={t("toggleTheme")}
+            title={t("toggleTheme")}
           />
         }
       >
@@ -40,14 +42,14 @@ export function ModeToggle() {
           <Sun className="size-4.5 rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0 text-amber-500" />
           <Moon className="absolute size-4.5 rotate-90 scale-0 transition-all duration-300 dark:rotate-0 dark:scale-100 text-blue-400" />
         </span>
-        <span className="sr-only">Chuyển đổi giao diện</span>
+        <span className="sr-only">{t("srLabel")}</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
         className="w-40 ring-1 ring-border text-sm"
       >
         <DropdownMenuLabel className="text-sm text-muted-foreground">
-          Giao diện
+          {t("label")}
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem
@@ -56,7 +58,7 @@ export function ModeToggle() {
         >
           <span className="flex items-center gap-2">
             <Sun className="size-4 text-amber-500" />
-            <span>Sáng</span>
+            <span>{t("light")}</span>
           </span>
           {mounted && theme === "light" && (
             <Check className="size-4 text-primary" />
@@ -68,7 +70,7 @@ export function ModeToggle() {
         >
           <span className="flex items-center gap-2">
             <Moon className="size-4 text-blue-400" />
-            <span>Tối</span>
+            <span>{t("dark")}</span>
           </span>
           {mounted && theme === "dark" && (
             <Check className="size-4 text-primary" />
@@ -80,7 +82,7 @@ export function ModeToggle() {
         >
           <span className="flex items-center gap-2">
             <Monitor className="size-4 text-muted-foreground" />
-            <span>Hệ thống</span>
+            <span>{t("system")}</span>
           </span>
           {mounted && theme === "system" && (
             <Check className="size-4 text-primary" />

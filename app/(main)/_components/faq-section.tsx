@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useTranslations } from "next-intl";
 import SHOP_INFO from "@/constants/info";
 import {
   HelpCircle,
@@ -24,97 +25,100 @@ interface FaqItem {
   categoryLabel: string;
 }
 
-const faqList: FaqItem[] = [
-  {
-    id: 1,
-    category: "survey",
-    categoryLabel: "Khảo Sát & Thiết Kế",
-    question: "Công ty có hỗ trợ khảo sát và lên bản vẽ thiết kế 2D/3D tận nơi không?",
-    answer:
-      "Có, hoàn toàn miễn phí 100%. Ngay sau khi tiếp nhận thông tin, đội ngũ kỹ sư kết cấu của chúng tôi sẽ đến tận nhà xưởng của quý khách trong vòng 24 giờ (tại Hà Nội, TP.HCM và các tỉnh lân cận) để đo đạc hiện trạng nền kho, kiểm tra chiều cao tĩnh không và lên bản vẽ bố trí 2D, phối cảnh 3D mô phỏng luồng di chuyển của xe nâng tối ưu nhất.",
-  },
-  {
-    id: 2,
-    category: "tech",
-    categoryLabel: "Thời Gian & Tiến Độ",
-    question: "Thời gian sản xuất và lắp đặt hoàn thiện một hệ thống kệ kho mất bao lâu?",
-    answer:
-      "Với các dòng kệ tiêu chuẩn (kệ trung tải, kệ Selective có sẵn phôi), thời gian bàn giao và lắp đặt hoàn thiện từ 3 - 5 ngày làm việc. Với các dự án kho tổng quy mô lớn (Heavy Duty, Drive-in, Sàn Mezzanine từ 1.000m² - 10.000m²), tiến độ sản xuất và lắp đặt trọn gói thường từ 10 - 20 ngày, cam kết đúng 100% tiến độ theo hợp đồng ký kết.",
-  },
-  {
-    id: 3,
-    category: "tech",
-    categoryLabel: "Tải Trọng & Kỹ Thuật",
-    question: "Hệ thống kệ chứa hàng chịu được tải trọng bao nhiêu trên mỗi tầng?",
-    answer: (
-      <div className="space-y-2">
-        <p>Chúng tôi cung ứng giải pháp chịu tải linh hoạt từ nhẹ đến siêu trường, siêu trọng:</p>
-        <ul className="list-disc pl-5 space-y-1">
-          <li><strong>Kệ V lỗ đa năng:</strong> Chịu tải từ 50kg - 120kg/tầng mâm tole.</li>
-          <li><strong>Kệ Trung tải (Medium Duty):</strong> Chịu tải từ 200kg - 600kg/tầng (dùng mâm tôn cuộn gân hoặc ván ép công nghiệp).</li>
-          <li><strong>Kệ Hạng nặng (Heavy Duty - Selective, Double Deep, Drive-in):</strong> Chịu tải từ 1.000kg - 3.500kg/pallet (tương đương 3.000kg - 8.000kg/khoang dầm beam).</li>
-        </ul>
-        <p>Toàn bộ kết cấu đều được tính toán hệ số an toàn nghiêm ngặt theo tiêu chuẩn JIS G3101 và FEM 10.2.02.</p>
-      </div>
-    ),
-  },
-  {
-    id: 4,
-    category: "warranty",
-    categoryLabel: "Bảo Hành & Bảo Trì",
-    question: "Chính sách bảo hành và bảo trì định kỳ sau lắp đặt như thế nào?",
-    answer:
-      "Toàn bộ sản phẩm giá kệ công nghiệp được bảo hành chính hãng từ 3 đến 5 năm đối với kết cấu thép chịu lực và lớp sơn tĩnh điện. Định kỳ 6 tháng một lần, kỹ sư của chúng tôi sẽ đến kiểm tra độ cân bằng bu-lông chân trụ, độ võng của thanh dầm beam và độ an toàn vận hành hoàn toàn miễn phí. Đội phản ứng nhanh hỗ trợ kỹ thuật trong 24h khi khách hàng cần điều chỉnh kho.",
-  },
-  {
-    id: 5,
-    category: "custom",
-    categoryLabel: "Yêu Cầu Nền Kho",
-    question: "Nền nhà kho có yêu cầu gì đặc biệt để lắp đặt kệ pallet tải trọng nặng không?",
-    answer:
-      "Nền kho lý tưởng cần bê tông cốt thép có mác từ 250 trở lên, độ dày tối thiểu 150mm - 200mm và bề mặt phẳng nhẵn để xe nâng di chuyển an toàn. Trong quá trình khảo sát thực địa, kỹ sư của chúng tôi sẽ đo đạc độ phẳng và tư vấn kích thước bản mã chân trụ (Baseplate) cùng tắc-kê nở đạn chuyên dụng phù hợp nhất để phân bổ đều tải trọng.",
-  },
-  {
-    id: 6,
-    category: "custom",
-    categoryLabel: "Gia Công Theo Yêu Cầu",
-    question: "Tôi có thể đặt hàng kích thước phi tiêu chuẩn theo kích thước hàng hóa của tôi không?",
-    answer:
-      "Hoàn toàn được. Là nhà máy trực tiếp sở hữu dây chuyền cán thép định hình và dây chuyền sơn tĩnh điện tự động, chúng tôi chuyên nhận thiết kế và gia công giá kệ theo kích thước quy cách riêng biệt của từng loại pallet, thùng hàng, chiều cao tĩnh không trần kho và thông số loại xe nâng khách hàng đang sử dụng.",
-  },
-  {
-    id: 7,
-    category: "warranty",
-    categoryLabel: "Di Dời & Cơi Nới",
-    question: "Công ty có nhận tháo dỡ, di dời hoặc nâng cấp hệ thống kệ cũ không?",
-    answer:
-      "Có. Chúng tôi cung cấp dịch vụ tháo dỡ, đóng gói vận chuyển và tái lắp đặt hệ thống kệ công nghiệp khi doanh nghiệp thay đổi địa điểm kho bãi. Đồng thời cung cấp đầy đủ linh phụ kiện lắp thêm (thanh beam, cross beam, thanh support pallet, ốp chân trụ chống va đập, rào chắn bảo vệ) để nâng tầng hoặc mở rộng diện tích kho bất cứ lúc nào.",
-  },
-  {
-    id: 8,
-    category: "survey",
-    categoryLabel: "Hợp Đồng & Thanh Toán",
-    question: "Quy trình ký kết hợp đồng và phương thức thanh toán ra sao?",
-    answer:
-      "Sau khi hai bên thống nhất phương án bản vẽ 2D/3D và bảng báo giá chi tiết, hai bên ký kết hợp đồng kinh tế rõ ràng kèm chứng nhận kiểm định chất lượng CO/CQ. Doanh nghiệp tạm ứng 30% - 50% khi ký kết, phần còn lại được thanh toán sau khi nghiệm thu bàn giao và tiến hành chạy thử tải thực tế tại công trình.",
-  },
-];
-
-const categoryTabs = [
-  { key: "all", label: "Tất Cả Câu Hỏi" },
-  { key: "survey", label: "Khảo Sát & Thiết Kế" },
-  { key: "tech", label: "Kỹ Thuật & Tải Trọng" },
-  { key: "warranty", label: "Bảo Hành & Bảo Trì" },
-  { key: "custom", label: "Gia Công & Nền Kho" },
-] as const;
-
 export default function FaqSection() {
+  const t = useTranslations("HomePage.faq");
   const [activeTab, setActiveTab] = React.useState<string>("all");
 
-  const filteredFaqs = React.useMemo(() => {
-    if (activeTab === "all") return faqList;
-    return faqList.filter((item) => item.category === activeTab);
-  }, [activeTab]);
+  const faqList: FaqItem[] = [
+    {
+      id: 1,
+      category: "survey",
+      categoryLabel: t("items.q1.categoryLabel"),
+      question: t("items.q1.question"),
+      answer: t("items.q1.answer"),
+    },
+    {
+      id: 2,
+      category: "tech",
+      categoryLabel: t("items.q2.categoryLabel"),
+      question: t("items.q2.question"),
+      answer: t("items.q2.answer"),
+    },
+    {
+      id: 3,
+      category: "tech",
+      categoryLabel: t("items.q3.categoryLabel"),
+      question: t("items.q3.question"),
+      answer: (
+        <div className="space-y-2">
+          <p>{t("items.q3.intro")}</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>
+              <strong>{t("items.q3.bullet1Label")}</strong>{" "}
+              {t("items.q3.bullet1Text")}
+            </li>
+            <li>
+              <strong>{t("items.q3.bullet2Label")}</strong>{" "}
+              {t("items.q3.bullet2Text")}
+            </li>
+            <li>
+              <strong>{t("items.q3.bullet3Label")}</strong>{" "}
+              {t("items.q3.bullet3Text")}
+            </li>
+          </ul>
+          <p>{t("items.q3.outro")}</p>
+        </div>
+      ),
+    },
+    {
+      id: 4,
+      category: "warranty",
+      categoryLabel: t("items.q4.categoryLabel"),
+      question: t("items.q4.question"),
+      answer: t("items.q4.answer"),
+    },
+    {
+      id: 5,
+      category: "custom",
+      categoryLabel: t("items.q5.categoryLabel"),
+      question: t("items.q5.question"),
+      answer: t("items.q5.answer"),
+    },
+    {
+      id: 6,
+      category: "custom",
+      categoryLabel: t("items.q6.categoryLabel"),
+      question: t("items.q6.question"),
+      answer: t("items.q6.answer"),
+    },
+    {
+      id: 7,
+      category: "warranty",
+      categoryLabel: t("items.q7.categoryLabel"),
+      question: t("items.q7.question"),
+      answer: t("items.q7.answer"),
+    },
+    {
+      id: 8,
+      category: "survey",
+      categoryLabel: t("items.q8.categoryLabel"),
+      question: t("items.q8.question"),
+      answer: t("items.q8.answer"),
+    },
+  ];
+
+  const categoryTabs = [
+    { key: "all", label: t("tabs.all") },
+    { key: "survey", label: t("tabs.survey") },
+    { key: "tech", label: t("tabs.tech") },
+    { key: "warranty", label: t("tabs.warranty") },
+    { key: "custom", label: t("tabs.custom") },
+  ] as const;
+
+  const filteredFaqs =
+    activeTab === "all"
+      ? faqList
+      : faqList.filter((item) => item.category === activeTab);
 
   return (
     <section className="relative border-b border-border/80 bg-muted/30 py-16 sm:py-24 overflow-hidden">
@@ -124,15 +128,13 @@ export default function FaqSection() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-bold text-primary tracking-wider uppercase">
               <HelpCircle className="size-4 text-orange-500" />
-              Giải Đáp Thắc Mắc & Hướng Dẫn
+              {t("badge")}
             </div>
             <h2 className="mt-3 text-2xl font-black tracking-tight text-foreground sm:text-4xl">
-              Câu Hỏi Thường Gặp (FAQ)
+              {t("title")}
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Tổng hợp câu trả lời chi tiết cho những băn khoăn phổ biến nhất của
-              khách hàng về lựa chọn giải pháp, tải trọng và quy trình lắp đặt kệ
-              kho.
+              {t("desc")}
             </p>
           </div>
         </ScrollReveal>
@@ -168,11 +170,10 @@ export default function FaqSection() {
             <div className="rounded-2xl border border-dashed border-border bg-card p-10 text-center">
               <MessageCircleQuestion className="mx-auto size-10 text-muted-foreground/60" />
               <h3 className="mt-3 text-base font-bold text-foreground">
-                Không tìm thấy câu hỏi phù hợp
+                {t("emptyTitle")}
               </h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Vui lòng chọn danh mục khác hoặc liên hệ hotline để được tư vấn
-                trực tiếp.
+                {t("emptyDesc")}
               </p>
             </div>
           ) : (
@@ -198,7 +199,7 @@ export default function FaqSection() {
                           Q{faq.id}
                         </div>
                         <div>
-                          <div className="mb-1 inline-block rounded-md bg-muted px-2 py-0.5 text-sm font-semibold text-muted-foreground uppercase tracking-wider ring-1 ring-border hidden sm:inline-block">
+                          <div className="mb-1 rounded-md bg-muted px-2 py-0.5 text-sm font-semibold text-muted-foreground uppercase tracking-wider ring-1 ring-border hidden sm:inline-block">
                             {faq.categoryLabel}
                           </div>
                           <h3 className="text-base sm:text-lg font-bold text-foreground group-hover:text-primary transition-colors">
@@ -228,11 +229,10 @@ export default function FaqSection() {
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-foreground">
-                    Vẫn còn câu hỏi chưa được giải đáp?
+                    {t("support.title")}
                   </h3>
                   <p className="mt-1 text-sm sm:text-base text-muted-foreground">
-                    Kỹ sư trưởng của chúng tôi sẵn sàng giải đáp mọi thắc mắc kỹ
-                    thuật và đưa ra giải pháp lưu trữ tối ưu nhất.
+                    {t("support.desc")}
                   </p>
                 </div>
               </div>
@@ -242,7 +242,7 @@ export default function FaqSection() {
                   className="inline-flex items-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-600 px-6 py-2.5 text-sm sm:text-base font-bold text-white shadow-md shadow-orange-500/20 transition-all cursor-pointer"
                 >
                   <PhoneCall className="size-4" />
-                  Gọi {SHOP_INFO.HOTLINE.TEXT}
+                  {t("support.callBtn", { hotline: SHOP_INFO.HOTLINE.TEXT })}
                 </a>
               </div>
             </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useTranslations } from "next-intl";
 import SHOP_INFO from "@/constants/info";
 import {
   Star,
@@ -27,96 +28,126 @@ interface Testimonial {
   metrics: string;
 }
 
-const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    name: "Anh Trần Quốc Tuấn",
-    category: "logistics",
-    categoryLabel: "Logistics 3PL",
-    avatarText: "TQ",
-    scale: "Dự án kho 6.500m² - 8.200 Pallet",
-    rating: 5,
-    quote:
-      "Đội ngũ kỹ sư khảo sát rất cẩn trọng, mô phỏng luồng di chuyển của xe nâng Reach Truck cực kỳ chi tiết. Hệ thống kệ Selective kết hợp Drive-in giúp sức chứa kho của chúng tôi tăng gấp 2,5 lần mà chi phí tiết kiệm hơn 25% so với việc thuê kho ngoài.",
-    metrics: "Tăng 250% dung lượng kho",
-  },
-  {
-    id: 2,
-    name: "Chị Nguyễn Mai Lan",
-    category: "cold",
-    categoryLabel: "Kho Đông Lạnh (-25°C)",
-    avatarText: "ML",
-    scale: "Hệ thống Kệ Drive-in mạ kẽm nhúng nóng",
-    rating: 5,
-    quote:
-      "Kho lạnh âm sâu -25°C đòi hỏi chất lượng thép và công nghệ mạ kẽm cực kỳ khắt khe để chống đọng sương, gỉ sét. Sau hơn 3 năm vận hành liên tục, kết cấu chân trụ vẫn vững chãi, các tầng beam phẳng tuyệt đối, lấy hàng an toàn 100%.",
-    metrics: "Chống gỉ sét chuẩn âm sâu",
-  },
-  {
-    id: 3,
-    name: "Anh Lê Hoàng Nam",
-    category: "retail",
-    categoryLabel: "TMĐT & Bán Lẻ",
-    avatarText: "HN",
-    scale: "Sàn Lửng Mezzanine 3 Tầng + Kệ Trung Tải",
-    rating: 5,
-    quote:
-      "Giải pháp sàn lửng Mezzanine kết hợp kệ trung tải nhiều tầng giúp chúng tôi nhân đôi mặt sàn phân loại đơn hàng mà không phải cơi nới trần nhà xưởng. Thi công thần tốc chỉ 12 ngày là bàn giao hoàn chỉnh, không làm gián đoạn việc giao hàng.",
-    metrics: "Hoàn thiện chỉ trong 12 ngày",
-  },
-  {
-    id: 4,
-    name: "Ông Trịnh Viết Hưng",
-    category: "factory",
-    categoryLabel: "Nhà Máy Sản Xuất",
-    avatarText: "VH",
-    scale: "Kệ Tự Động Radio Shuttle 10.000m²",
-    rating: 5,
-    quote:
-      "Hệ thống kệ thông minh Radio Shuttle con thoi tự động là bước ngoặt tối ưu hóa kho của chúng tôi. Mật độ lưu kho đạt mức tối đa, loại bỏ hoàn toàn rủi ro va chạm xe nâng vào khung kệ, tốc độ xuất nhập hàng nhanh gấp 3 lần.",
-    metrics: "Xuất nhập hàng nhanh gấp 3",
-  },
-  {
-    id: 5,
-    name: "Bà Đỗ Thu Hằng",
-    category: "retail",
-    categoryLabel: "Dược Phẩm Chuẩn GSP",
-    avatarText: "TH",
-    scale: "Kệ Trượt Carton Flow & Kệ V Lỗ",
-    rating: 5,
-    quote:
-      "Tiêu chuẩn kho GSP ngành dược đòi hỏi giá kệ phải cực kỳ sạch sẽ, kiểm soát hạn sử dụng theo nguyên tắc FIFO (vào trước ra trước). Hệ thống ray con lăn carton flow hoạt động trơn tru, chính xác tuyệt đối, nhân viên nhặt hàng rất nhàn.",
-    metrics: "Quản lý FIFO chính xác 100%",
-  },
-  {
-    id: 6,
-    name: "Anh Phạm Minh Đức",
-    category: "factory",
-    categoryLabel: "Cơ Khí Hạng Nặng",
-    avatarText: "MĐ",
-    scale: "Kệ Tay Đỡ Cantilever Tải Trọng 3 Tấn/Tầng",
-    rating: 5,
-    quote:
-      "Lưu trữ các bó ống thép dài 6m và khuôn dập nặng vài tấn luôn là bài toán đau đầu. Kệ tay đỡ Cantilever có kết cấu chân trụ I-beam đúc cực kỳ vững chắc, cẩu trục và xe nâng lấy vật tư dễ dàng, giảm 70% thời gian tìm kiếm phôi thép.",
-    metrics: "Chịu tải 3.000kg/khoang",
-  },
-];
-
-const categories = [
-  { key: "all", label: "Tất Cả Dự Án" },
-  { key: "logistics", label: "Logistics & Kho Vận" },
-  { key: "cold", label: "Kho Lạnh Âm Sâu" },
-  { key: "factory", label: "Nhà Máy & Cơ Khí" },
-  { key: "retail", label: "TMĐT & Bán Lẻ" },
-] as const;
-
 export default function TestimonialsSection() {
+  const t = useTranslations("HomePage.testimonials");
   const [activeCategory, setActiveCategory] = React.useState<string>("all");
 
-  const filteredTestimonials = React.useMemo(() => {
-    if (activeCategory === "all") return testimonials;
-    return testimonials.filter((item) => item.category === activeCategory);
-  }, [activeCategory]);
+  const testimonials: Testimonial[] = [
+    {
+      id: 1,
+      name: t("items.item1.name"),
+      category: "logistics",
+      categoryLabel: t("items.item1.categoryLabel"),
+      avatarText: "TQ",
+      scale: t("items.item1.scale"),
+      rating: 5,
+      quote: t("items.item1.quote"),
+      metrics: t("items.item1.metrics"),
+    },
+    {
+      id: 2,
+      name: t("items.item2.name"),
+      category: "cold",
+      categoryLabel: t("items.item2.categoryLabel"),
+      avatarText: "ML",
+      scale: t("items.item2.scale"),
+      rating: 5,
+      quote: t("items.item2.quote"),
+      metrics: t("items.item2.metrics"),
+    },
+    {
+      id: 3,
+      name: t("items.item3.name"),
+      category: "retail",
+      categoryLabel: t("items.item3.categoryLabel"),
+      avatarText: "HN",
+      scale: t("items.item3.scale"),
+      rating: 5,
+      quote: t("items.item3.quote"),
+      metrics: t("items.item3.metrics"),
+    },
+    {
+      id: 4,
+      name: t("items.item4.name"),
+      category: "factory",
+      categoryLabel: t("items.item4.categoryLabel"),
+      avatarText: "VH",
+      scale: t("items.item4.scale"),
+      rating: 5,
+      quote: t("items.item4.quote"),
+      metrics: t("items.item4.metrics"),
+    },
+    {
+      id: 5,
+      name: t("items.item5.name"),
+      category: "retail",
+      categoryLabel: t("items.item5.categoryLabel"),
+      avatarText: "TH",
+      scale: t("items.item5.scale"),
+      rating: 5,
+      quote: t("items.item5.quote"),
+      metrics: t("items.item5.metrics"),
+    },
+    {
+      id: 6,
+      name: t("items.item6.name"),
+      category: "factory",
+      categoryLabel: t("items.item6.categoryLabel"),
+      avatarText: "MĐ",
+      scale: t("items.item6.scale"),
+      rating: 5,
+      quote: t("items.item6.quote"),
+      metrics: t("items.item6.metrics"),
+    },
+  ];
+
+  const categories = [
+    { key: "all", label: t("categories.all") },
+    { key: "logistics", label: t("categories.logistics") },
+    { key: "cold", label: t("categories.cold") },
+    { key: "factory", label: t("categories.factory") },
+    { key: "retail", label: t("categories.retail") },
+  ] as const;
+
+  const stats = [
+    {
+      value: 99.2,
+      decimals: 1,
+      suffix: t("stats.stat1.suffix"),
+      title: t("stats.stat1.title"),
+      desc: t("stats.stat1.desc"),
+      icon: ShieldCheck,
+    },
+    {
+      value: 1500,
+      decimals: 0,
+      suffix: t("stats.stat2.suffix"),
+      title: t("stats.stat2.title"),
+      desc: t("stats.stat2.desc"),
+      icon: Warehouse,
+    },
+    {
+      value: 10,
+      decimals: 0,
+      suffix: t("stats.stat3.suffix"),
+      title: t("stats.stat3.title"),
+      desc: t("stats.stat3.desc"),
+      icon: Building2,
+    },
+    {
+      value: 100,
+      decimals: 0,
+      suffix: t("stats.stat4.suffix"),
+      title: t("stats.stat4.title"),
+      desc: t("stats.stat4.desc"),
+      icon: TrendingUp,
+    },
+  ];
+
+  const filteredTestimonials =
+    activeCategory === "all"
+      ? testimonials
+      : testimonials.filter((item) => item.category === activeCategory);
 
   return (
     <section className="relative border-b border-border/80 bg-background py-16 sm:py-24 overflow-hidden">
@@ -129,55 +160,20 @@ export default function TestimonialsSection() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-bold text-primary tracking-wider uppercase">
               <ThumbsUp className="size-4 text-orange-500" />
-              Đánh Giá Thực Tế Từ Khách Hàng
+              {t("badge")}
             </div>
             <h2 className="mt-3 text-2xl font-black tracking-tight text-foreground sm:text-4xl">
-              Khách Hàng Nói Gì Về Chúng Tôi?
+              {t("title")}
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Hơn 1.500+ doanh nghiệp logistics, kho lạnh, tập đoàn sản xuất trên
-              toàn quốc đã đồng hành và khẳng định chất lượng giải pháp kệ chứa
-              hàng của chúng tôi.
+              {t("desc")}
             </p>
           </div>
         </ScrollReveal>
 
         {/* 4 Thước đo uy tín đồng bộ (Animation tuần tự từng chỉ số) */}
         <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:gap-6">
-          {[
-            {
-              value: 99.2,
-              decimals: 1,
-              suffix: "%",
-              title: "Hài Lòng Về Chất Lượng",
-              desc: "Cam kết chuẩn tải trọng 100%",
-              icon: ShieldCheck,
-            },
-            {
-              value: 1500,
-              decimals: 0,
-              suffix: "+",
-              title: "Dự Án Đã Bàn Giao",
-              desc: "Trải rộng khắp cả nước",
-              icon: Warehouse,
-            },
-            {
-              value: 10,
-              decimals: 0,
-              suffix: "+ Năm",
-              title: "Kinh Nghiệm Chuyên Sâu",
-              desc: "Đội ngũ kỹ sư kết cấu hàng đầu",
-              icon: Building2,
-            },
-            {
-              value: 100,
-              decimals: 0,
-              suffix: "%",
-              title: "Đúng Tiến Độ Cam Kết",
-              desc: "Bảo hành 5 năm toàn diện",
-              icon: TrendingUp,
-            },
-          ].map((stat, idx) => {
+          {stats.map((stat, idx) => {
             const Icon = stat.icon;
             return (
               <ScrollReveal
@@ -300,11 +296,10 @@ export default function TestimonialsSection() {
           <div className="mt-12 rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
             <div className="max-w-2xl text-center sm:text-left">
               <h3 className="text-lg sm:text-xl font-bold text-foreground">
-                Bạn Cần Tư Vấn Thiết Kế Kệ Kho Phù Hợp Với Doanh Nghiệp?
+                {t("cta.title")}
               </h3>
               <p className="mt-1 text-sm sm:text-base text-muted-foreground">
-                Liên hệ ngay để nhận bản vẽ layout 2D/3D và báo giá gốc trực tiếp
-                tại nhà máy trong vòng 24 giờ.
+                {t("cta.desc")}
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -312,13 +307,13 @@ export default function TestimonialsSection() {
                 href={`tel:${SHOP_INFO.HOTLINE.NUMBER}`}
                 className="inline-flex items-center justify-center rounded-xl bg-orange-500 hover:bg-orange-600 px-6 py-2.5 text-sm sm:text-base font-bold text-white shadow-md shadow-orange-500/20 transition-all cursor-pointer"
               >
-                Hotline: {SHOP_INFO.HOTLINE.TEXT}
+                {t("cta.hotline", { hotline: SHOP_INFO.HOTLINE.TEXT })}
               </a>
               <a
                 href="#bao-gia"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-5 py-2.5 text-sm sm:text-base font-semibold text-foreground transition-all hover:bg-muted hover:border-primary/50 cursor-pointer"
               >
-                Đăng Ký Khảo Sát
+                {t("cta.surveyBtn")}
               </a>
             </div>
           </div>

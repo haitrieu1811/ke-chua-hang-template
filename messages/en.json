@@ -1,0 +1,320 @@
+{
+  "HomePage": {
+    "title": "Hello world!",
+    "hero": {
+      "goToSlide": "Go to slide {index}",
+      "slides": {
+        "slide1": {
+          "badge": "HEAVY DUTY STORAGE SOLUTIONS",
+          "title": "Selective & Drive-In Pallet Racking Systems",
+          "highlight": "Optimize 85% Warehouse Space",
+          "desc": "Outstanding load capacity from 1,000kg to 4,000kg per level, JIS G3101 cold-rolled steel with powder coating built to last over 15 years.",
+          "tag1": "100% direct pallet access",
+          "tag2": "Compatible with all forklifts",
+          "tag3": "Free 3D warehouse layout survey",
+          "primaryCta": "Get a Fast Estimate & Quote",
+          "secondaryCta": "Hotline: {hotline}"
+        },
+        "slide2": {
+          "badge": "SMART AUTOMATED WAREHOUSE",
+          "title": "Automated AS/RS Racking Systems",
+          "highlight": "Maximum Storage Density",
+          "desc": "100% automated high-speed pallet retrieval integrated with WMS/WCS warehouse management software for modern logistics hubs.",
+          "tag1": "24/7 automated operation",
+          "tag2": "Save 70% labor costs",
+          "tag3": "Maximize vertical warehouse volume",
+          "primaryCta": "Consult Automation Experts",
+          "secondaryCta": "Watch Simulation Video"
+        },
+        "slide3": {
+          "badge": "PRODUCTION FLOOR OPTIMIZATION",
+          "title": "Mezzanine Floors & Medium Duty Racking",
+          "highlight": "Double Your Storage Area",
+          "desc": "Expand usable floor area by 2x - 3x without new construction permits, easily disassembled and relocated whenever needed.",
+          "tag1": "Floor load 300 - 1,000 kg/m²",
+          "tag2": "5-year structural warranty",
+          "tag3": "Direct factory pricing",
+          "primaryCta": "Book a Floor Survey",
+          "secondaryCta": "Medium Duty Rack Quote"
+        }
+      }
+    },
+    "advantages": {
+      "badge": "Superior Value Commitment",
+      "title": "4 Breakthrough Advantages When Choosing Us",
+      "desc": "Optimize investment costs, guarantee structural safety, and ensure on-time handover for every warehouse project.",
+      "footerLabel": "Quality guaranteed",
+      "items": {
+        "item1": {
+          "tag": "Save 20% - 30%",
+          "title": "Direct Factory Pricing",
+          "desc": "Manufactured and supplied directly without commercial intermediaries, minimizing initial capital expenditure for your business."
+        },
+        "item2": {
+          "tag": "2D/3D Layout in 24h",
+          "title": "Free Site Survey & Design",
+          "desc": "Structural engineers visit your warehouse for on-site measurements and deliver free 2D/3D layouts simulating forklift aisles."
+        },
+        "item3": {
+          "tag": "ISO 9001 & JIS G3101",
+          "title": "Certified Steel & Powder Coating",
+          "desc": "100% certified cold-rolled steel with full CO/CQ documentation, finished with anti-rust and corrosion-resistant powder coating."
+        },
+        "item4": {
+          "tag": "5-Year Warranty",
+          "title": "Rapid Installation & Maintenance",
+          "desc": "Skilled installation teams deliver cleanly and on schedule, backed by a 5-year structural warranty and lifetime maintenance."
+        }
+      }
+    },
+    "testimonials": {
+      "badge": "Real Client Reviews",
+      "title": "What Do Clients Say About Us?",
+      "desc": "Over 1,500+ logistics enterprises, cold storage facilities, and manufacturing groups nationwide trust our industrial racking solutions.",
+      "stats": {
+        "stat1": {
+          "suffix": "%",
+          "title": "Quality Satisfaction",
+          "desc": "100% certified load capacity"
+        },
+        "stat2": {
+          "suffix": "+",
+          "title": "Delivered Projects",
+          "desc": "Spanning nationwide"
+        },
+        "stat3": {
+          "suffix": "+ Years",
+          "title": "Deep Industry Experience",
+          "desc": "Leading structural engineering team"
+        },
+        "stat4": {
+          "suffix": "%",
+          "title": "On-Schedule Handover",
+          "desc": "Comprehensive 5-year warranty"
+        }
+      },
+      "categories": {
+        "all": "All Projects",
+        "logistics": "Logistics & Warehousing",
+        "cold": "Deep Cold Storage",
+        "factory": "Manufacturing & Mechanical",
+        "retail": "E-Commerce & Retail"
+      },
+      "items": {
+        "item1": {
+          "name": "Mr. Tran Quoc Tuan",
+          "categoryLabel": "3PL Logistics",
+          "scale": "6,500m² Warehouse - 8,200 Pallets",
+          "quote": "The engineering team conducted a thorough site survey and simulated Reach Truck aisles in great detail. Combining Selective and Drive-In racking increased our warehouse capacity by 2.5x while saving over 25% compared to leasing extra space.",
+          "metrics": "+250% warehouse capacity"
+        },
+        "item2": {
+          "name": "Ms. Nguyen Mai Lan",
+          "categoryLabel": "Cold Storage (-25°C)",
+          "scale": "Hot-Dip Galvanized Drive-In Racking",
+          "quote": "Deep cold storage at -25°C demands strict steel grade and galvanizing standards to prevent condensation and rust. After 3+ years of continuous operation, the uprights remain rock-solid, beams stay perfectly level, and picking is 100% safe.",
+          "metrics": "Sub-zero rust resistance"
+        },
+        "item3": {
+          "name": "Mr. Le Hoang Nam",
+          "categoryLabel": "E-Commerce & Retail",
+          "scale": "3-Tier Mezzanine Floor + Medium Duty Racks",
+          "quote": "The multi-tier Mezzanine floor combined with medium duty shelving doubled our order sorting area without modifying the warehouse roof. Turnkey installation finished in just 12 days with zero disruption to daily deliveries.",
+          "metrics": "Completed in just 12 days"
+        },
+        "item4": {
+          "name": "Mr. Trinh Viet Hung",
+          "categoryLabel": "Manufacturing Plant",
+          "scale": "10,000m² Automated Radio Shuttle Racks",
+          "quote": "The automated Radio Shuttle system was a game-changer for our warehouse optimization. Storage density reached maximum levels, forklift-to-rack collisions were eliminated, and inbound/outbound throughput tripled.",
+          "metrics": "3x faster inbound/outbound"
+        },
+        "item5": {
+          "name": "Ms. Do Thu Hang",
+          "categoryLabel": "GSP Pharmaceuticals",
+          "scale": "Carton Flow & Slotted Angle Racking",
+          "quote": "GSP pharmaceutical warehouse standards require spotless racking and strict FIFO expiration control. The carton flow roller tracks run smoothly with absolute accuracy, making order picking effortless for our staff.",
+          "metrics": "100% accurate FIFO control"
+        },
+        "item6": {
+          "name": "Mr. Pham Minh Duc",
+          "categoryLabel": "Heavy Mechanical",
+          "scale": "Cantilever Racks 3 Tons / Level",
+          "quote": "Storing 6m steel pipe bundles and multi-ton stamping dies used to be a huge headache. The cast I-beam Cantilever uprights are extraordinarily sturdy, allowing cranes and forklifts to retrieve stock easily and cutting search time by 70%.",
+          "metrics": "3,000kg load per bay"
+        }
+      },
+      "cta": {
+        "title": "Need Custom Warehouse Racking Design For Your Business?",
+        "desc": "Contact us today for a free 2D/3D layout drawing and direct factory quotation within 24 hours.",
+        "hotline": "Hotline: {hotline}",
+        "surveyBtn": "Book a Site Survey"
+      }
+    },
+    "faq": {
+      "badge": "Answers & Technical Guide",
+      "title": "Frequently Asked Questions (FAQ)",
+      "desc": "Detailed answers to the most common questions about choosing storage systems, load capacity, and warehouse rack installation.",
+      "tabs": {
+        "all": "All Questions",
+        "survey": "Survey & Design",
+        "tech": "Technical & Load",
+        "warranty": "Warranty & Service",
+        "custom": "Custom & Floor Specs"
+      },
+      "emptyTitle": "No matching questions found",
+      "emptyDesc": "Please choose another category or call our hotline for direct engineering consultation.",
+      "items": {
+        "q1": {
+          "categoryLabel": "Survey & Design",
+          "question": "Do you provide free on-site warehouse surveys and 2D/3D layout drawings?",
+          "answer": "Yes, 100% free of charge. Right after receiving your request, our structural engineers will visit your facility within 24 hours (in Hanoi, Ho Chi Minh City, and surrounding provinces) to inspect floor conditions, clear height, and prepare optimized 2D/3D layouts simulating forklift traffic."
+        },
+        "q2": {
+          "categoryLabel": "Lead Time & Schedule",
+          "question": "How long does it take to manufacture and install a complete racking system?",
+          "answer": "For standard racking lines (medium duty, Selective with ready steel coils), delivery and installation take 3 - 5 business days. For large-scale turnkey warehouse projects (Heavy Duty, Drive-In, Mezzanine from 1,000m² - 10,000m²), production and full installation typically take 10 - 20 days with 100% on-time guarantee."
+        },
+        "q3": {
+          "categoryLabel": "Load & Engineering",
+          "question": "How much load capacity can each racking level support?",
+          "intro": "We supply flexible load-bearing solutions from light storage to ultra-heavy industrial loads:",
+          "bullet1Label": "Slotted Angle Racks (V-hole):",
+          "bullet1Text": "50kg - 120kg per steel shelf level.",
+          "bullet2Label": "Medium Duty Racks:",
+          "bullet2Text": "200kg - 600kg per level (with ribbed steel decking or industrial plywood).",
+          "bullet3Label": "Heavy Duty Racks (Selective, Double Deep, Drive-In):",
+          "bullet3Text": "1,000kg - 3,500kg per pallet (3,000kg - 8,000kg per beam bay).",
+          "outro": "All structures are engineered with strict safety factors complying with JIS G3101 and FEM 10.2.02 standards."
+        },
+        "q4": {
+          "categoryLabel": "Warranty & Maintenance",
+          "question": "What is your warranty and periodic maintenance policy after installation?",
+          "answer": "All industrial racking systems carry a 3 to 5-year warranty covering load-bearing steel structures and powder coating. Every 6 months, our engineers inspect anchor bolts, beam deflection, and operational safety free of charge, backed by a 24-hour rapid technical support team."
+        },
+        "q5": {
+          "categoryLabel": "Floor Requirements",
+          "question": "Does the warehouse floor need special specifications for heavy-duty pallet racks?",
+          "answer": "An ideal warehouse floor should be reinforced concrete grade M250 or higher, at least 150mm - 200mm thick, and level for safe forklift operation. During our on-site survey, engineers check floor flatness and specify appropriate baseplates and heavy-duty anchor bolts to distribute loads evenly."
+        },
+        "q6": {
+          "categoryLabel": "Custom Fabrication",
+          "question": "Can I order custom non-standard rack dimensions tailored to my goods?",
+          "answer": "Absolutely. As a direct manufacturer equipped with automated roll-forming and powder coating lines, we specialize in designing and fabricating custom racking matched to your exact pallet sizes, cartons, clear ceiling height, and forklift specifications."
+        },
+        "q7": {
+          "categoryLabel": "Relocation & Expansion",
+          "question": "Do you offer dismantling, relocation, or expansion of existing rack systems?",
+          "answer": "Yes. We provide complete dismantling, packaging, transport, and re-installation services when your business relocates warehouses, along with all add-on components (beams, crossbars, pallet supports, upright guards, safety barriers) for height or area expansion."
+        },
+        "q8": {
+          "categoryLabel": "Contract & Payment",
+          "question": "What is the contract signing process and payment schedule?",
+          "answer": "Once both parties approve the 2D/3D layout and detailed quotation, we sign a formal contract accompanied by CO/CQ quality certificates. A 30% - 50% deposit is paid upon signing, and the balance is settled after on-site load testing and final handover acceptance."
+        }
+      },
+      "support": {
+        "title": "Still have unanswered questions?",
+        "desc": "Our lead structural engineers are ready to answer any technical inquiries and recommend the optimal storage solution.",
+        "callBtn": "Call {hotline}"
+      }
+    }
+  },
+  "LocaleSwitcher": {
+    "vi": "Vietnamese",
+    "en": "English",
+    "zh": "Chinese",
+    "selectLanguage": "Select language"
+  },
+  "ModeToggle": {
+    "toggleTheme": "Toggle light/dark theme",
+    "srLabel": "Toggle theme",
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "Header": {
+    "promoBadge": "🎄 Christmas Offer",
+    "promoText": "Christmas Mega Sale: Save <discount>25%</discount> on warehouse racking & <gift>Free 3D Site Survey</gift> worth 15,000,000 VND!",
+    "promoCta": "Claim offer",
+    "dismissPromo": "Close promotion notice",
+    "dismissPromoTitle": "Close notice",
+    "addressLabel": "Address:",
+    "hotlineLabel": "Hotline:",
+    "connectLabel": "Connect:",
+    "facebookAria": "Ke Kim Phu Facebook Fanpage",
+    "facebookTitle": "Follow us on Facebook",
+    "tiktokAria": "Ke Kim Phu TikTok Channel",
+    "tiktokTitle": "Watch real warehouse videos on TikTok",
+    "youtubeAria": "Ke Kim Phu YouTube Channel",
+    "youtubeTitle": "Watch project showcase videos on YouTube",
+    "mainNavAria": "Main navigation",
+    "nav": {
+      "home": "Home",
+      "introduce": "About Us",
+      "solution": "Solutions",
+      "product": "Products",
+      "articles": "News",
+      "contact": "Contact"
+    },
+    "productCategoriesTitle": "Product Categories",
+    "viewAllProducts": "View all products",
+    "categories": {
+      "heavy": {
+        "title": "Heavy Duty Racks (1 - 4 Tons)",
+        "desc": "Selective, Drive-In, Cantilever & Radio Shuttle Racks"
+      },
+      "medium": {
+        "title": "Medium Duty Racks (300 - 800kg)",
+        "desc": "Boltless hand-loaded racks for spare parts & components"
+      },
+      "floor": {
+        "title": "Mezzanine & Multi-Purpose",
+        "desc": "Mezzanine Floors, Slotted Angle Racks & Steel Pallets"
+      }
+    },
+    "openMobileMenu": "Open mobile menu",
+    "themeTitle": "Display Theme",
+    "themeDesc": "Light, Dark or System",
+    "officialSocialTitle": "Official Social Channels",
+    "consultationHotline": "Consultation Hotline:"
+  },
+  "Footer": {
+    "description": "Leading specialist in consulting, manufacturing, and turnkey installation of industrial warehouse racking, medium-duty shelving, mezzanine floors, and automated smart warehouses nationwide.",
+    "taxCodeLabel": "Tax Code:",
+    "certificationLabel": "Certifications:",
+    "policiesTitle": "Policies & Information",
+    "policies": {
+      "sales": "Sales Policy",
+      "returns": "Return & Exchange Policy",
+      "privacy": "Privacy Policy",
+      "payment": "Payment Guide",
+      "terms": "Terms of Use"
+    },
+    "aboutTitle": "About Us",
+    "about": {
+      "company": "Company Overview",
+      "factory": "Factory Capabilities",
+      "projects": "Completed Projects",
+      "warranty": "Warranty Policy",
+      "news": "News & Warehouse Insights",
+      "contact": "Contact & Quotation"
+    },
+    "contactTitle": "Contact Information",
+    "hotline": "Hotline: {hotline}",
+    "hours": "Mon - Sat: 08:00 - 17:30",
+    "newsletter": {
+      "title": "Subscribe for Catalogue & Quote",
+      "desc": "Receive sample CAD drawings and our latest price list",
+      "placeholder": "Enter your email...",
+      "successAlert": "Thank you for subscribing! We will send the catalogue shortly."
+    },
+    "copyright": "© 2026 Ke Kim Phu. All rights reserved.",
+    "bottom": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "standards": "Technical Standards"
+    }
+  }
+}
