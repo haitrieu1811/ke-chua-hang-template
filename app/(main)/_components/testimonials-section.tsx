@@ -7,7 +7,6 @@ import {
   Star,
   Quote,
   Building2,
-  CheckCircle2,
   ThumbsUp,
   Warehouse,
   ShieldCheck,
@@ -15,17 +14,15 @@ import {
 } from "lucide-react";
 import ScrollReveal from "@/components/scroll-reveal";
 import CountUp from "@/components/count-up";
+import Link from "next/link";
+import PATH from "@/constants/path";
 
 interface Testimonial {
   id: number;
   name: string;
   category: "all" | "logistics" | "cold" | "factory" | "retail";
-  categoryLabel: string;
-  avatarText: string;
-  scale: string;
   rating: number;
   quote: string;
-  metrics: string;
 }
 
 export default function TestimonialsSection() {
@@ -37,67 +34,43 @@ export default function TestimonialsSection() {
       id: 1,
       name: t("items.item1.name"),
       category: "logistics",
-      categoryLabel: t("items.item1.categoryLabel"),
-      avatarText: "TQ",
-      scale: t("items.item1.scale"),
       rating: 5,
       quote: t("items.item1.quote"),
-      metrics: t("items.item1.metrics"),
     },
     {
       id: 2,
       name: t("items.item2.name"),
-      category: "cold",
-      categoryLabel: t("items.item2.categoryLabel"),
-      avatarText: "ML",
-      scale: t("items.item2.scale"),
+      category: "logistics",
       rating: 5,
       quote: t("items.item2.quote"),
-      metrics: t("items.item2.metrics"),
     },
     {
       id: 3,
       name: t("items.item3.name"),
-      category: "retail",
-      categoryLabel: t("items.item3.categoryLabel"),
-      avatarText: "HN",
-      scale: t("items.item3.scale"),
+      category: "cold",
       rating: 5,
       quote: t("items.item3.quote"),
-      metrics: t("items.item3.metrics"),
     },
     {
       id: 4,
       name: t("items.item4.name"),
-      category: "factory",
-      categoryLabel: t("items.item4.categoryLabel"),
-      avatarText: "VH",
-      scale: t("items.item4.scale"),
+      category: "cold",
       rating: 5,
       quote: t("items.item4.quote"),
-      metrics: t("items.item4.metrics"),
     },
     {
       id: 5,
       name: t("items.item5.name"),
-      category: "retail",
-      categoryLabel: t("items.item5.categoryLabel"),
-      avatarText: "TH",
-      scale: t("items.item5.scale"),
+      category: "factory",
       rating: 5,
       quote: t("items.item5.quote"),
-      metrics: t("items.item5.metrics"),
     },
     {
       id: 6,
       name: t("items.item6.name"),
       category: "factory",
-      categoryLabel: t("items.item6.categoryLabel"),
-      avatarText: "MĐ",
-      scale: t("items.item6.scale"),
       rating: 5,
       quote: t("items.item6.quote"),
-      metrics: t("items.item6.metrics"),
     },
   ];
 
@@ -106,20 +79,19 @@ export default function TestimonialsSection() {
     { key: "logistics", label: t("categories.logistics") },
     { key: "cold", label: t("categories.cold") },
     { key: "factory", label: t("categories.factory") },
-    { key: "retail", label: t("categories.retail") },
   ] as const;
 
   const stats = [
     {
-      value: 99.2,
-      decimals: 1,
+      value: 95,
+      decimals: 0,
       suffix: t("stats.stat1.suffix"),
       title: t("stats.stat1.title"),
       desc: t("stats.stat1.desc"),
       icon: ShieldCheck,
     },
     {
-      value: 1500,
+      value: 95,
       decimals: 0,
       suffix: t("stats.stat2.suffix"),
       title: t("stats.stat2.title"),
@@ -127,7 +99,7 @@ export default function TestimonialsSection() {
       icon: Warehouse,
     },
     {
-      value: 10,
+      value: 98,
       decimals: 0,
       suffix: t("stats.stat3.suffix"),
       title: t("stats.stat3.title"),
@@ -135,7 +107,7 @@ export default function TestimonialsSection() {
       icon: Building2,
     },
     {
-      value: 100,
+      value: 95,
       decimals: 0,
       suffix: t("stats.stat4.suffix"),
       title: t("stats.stat4.title"),
@@ -246,45 +218,24 @@ export default function TestimonialsSection() {
                 <Quote className="absolute top-5 right-5 size-10 text-muted/30 transition-colors group-hover:text-primary/20" />
 
                 <div>
-                  {/* Header: Star Rating màu Cam + Badge Xanh */}
-                  <div className="flex items-center justify-between gap-2">
-                    <div className="flex items-center gap-1 text-orange-500">
-                      {Array.from({ length: item.rating }).map((_, i) => (
-                        <Star key={i} className="size-4.5 fill-orange-500" />
-                      ))}
-                    </div>
-                    <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary ring-1 ring-primary/20">
-                      {item.categoryLabel}
-                    </span>
-                  </div>
-
-                  {/* Highlight metric badge */}
-                  <div className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-muted px-2.5 py-1 text-sm font-semibold text-foreground">
-                    <CheckCircle2 className="size-4 text-orange-500" />
-                    {item.metrics}
+                  {/* Số sao đánh giá */}
+                  <div className="flex items-center gap-1 text-orange-500">
+                    {Array.from({ length: item.rating }).map((_, i) => (
+                      <Star key={i} className="size-4.5 fill-orange-500" />
+                    ))}
                   </div>
 
                   {/* Nội dung đánh giá */}
-                  <p className="mt-3.5 text-sm sm:text-base text-foreground/90 leading-relaxed italic">
+                  <p className="mt-4 text-sm sm:text-base text-foreground/90 leading-relaxed italic">
                     &ldquo;{item.quote}&rdquo;
                   </p>
                 </div>
 
-                {/* Thông tin khách hàng & Dự án */}
+                {/* Tên người đánh giá */}
                 <div className="mt-6 border-t border-border/60 pt-4">
-                  <div className="flex items-center gap-3">
-                    <div className="flex size-11 shrink-0 items-center justify-center rounded-xl font-bold text-sm bg-primary text-primary-foreground shadow-xs">
-                      {item.avatarText}
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <h4 className="truncate text-base font-bold text-foreground">
-                        {item.name}
-                      </h4>
-                      <p className="truncate text-sm text-muted-foreground">
-                        {item.scale}
-                      </p>
-                    </div>
-                  </div>
+                  <h4 className="truncate text-base font-bold text-foreground">
+                    {item.name}
+                  </h4>
                 </div>
               </div>
             </ScrollReveal>
@@ -309,12 +260,12 @@ export default function TestimonialsSection() {
               >
                 {t("cta.hotline", { hotline: SHOP_INFO.HOTLINE.TEXT })}
               </a>
-              <a
-                href="#bao-gia"
+              <Link
+                href={PATH.CONTACT}
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-5 py-2.5 text-sm sm:text-base font-semibold text-foreground transition-all hover:bg-muted hover:border-primary/50 cursor-pointer"
               >
                 {t("cta.surveyBtn")}
-              </a>
+              </Link>
             </div>
           </div>
         </ScrollReveal>

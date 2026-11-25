@@ -9,11 +9,9 @@ import {
   Mail,
   MapPin,
   Phone,
-  Send,
   type LucideIcon,
 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import Logo from "@/components/logo";
 import ScrollReveal from "@/components/scroll-reveal";
 import SHOP_INFO from "@/constants/info";
@@ -67,15 +65,6 @@ const socialLinks = [
 
 export default function MainFooter() {
   const t = useTranslations("Footer");
-
-  const companyMeta = [
-    { key: "taxCode", label: t("taxCodeLabel"), value: "0109887766" },
-    {
-      key: "certification",
-      label: t("certificationLabel"),
-      value: "ISO 9001:2015 & JIS G3101",
-    },
-  ];
 
   const footerLinkColumns: FooterLinkColumn[] = [
     {
@@ -182,17 +171,6 @@ export default function MainFooter() {
                   </a>
                 ))}
               </div>
-
-              <div className="mt-5 flex flex-col gap-2 text-sm text-zinc-600 dark:text-zinc-400">
-                {companyMeta.map((meta) => (
-                  <div key={meta.key}>
-                    <span className="font-semibold text-zinc-900 dark:text-zinc-200">
-                      {meta.label}
-                    </span>{" "}
-                    <span>{meta.value}</span>
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* CỘT 2 & 3: THÔNG TIN CHÍNH SÁCH & VỀ CHÚNG TÔI */}
@@ -241,37 +219,6 @@ export default function MainFooter() {
                     </div>
                   );
                 })}
-              </div>
-
-              {/* Form nhận catalogue báo giá nhanh */}
-              <div className="mt-6 rounded-xl border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900/90 p-4 shadow-sm">
-                <h4 className="text-sm font-bold text-zinc-900 dark:text-white">
-                  {t("newsletter.title")}
-                </h4>
-                <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                  {t("newsletter.desc")}
-                </p>
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    alert(t("newsletter.successAlert"));
-                  }}
-                  className="mt-3.5 flex gap-2"
-                >
-                  <input
-                    type="email"
-                    required
-                    placeholder={t("newsletter.placeholder")}
-                    className="h-10 w-full rounded-md border border-zinc-300 bg-zinc-50 px-3 text-sm text-zinc-900 placeholder:text-zinc-400 dark:border-zinc-700 dark:bg-zinc-950 dark:text-white dark:placeholder:text-zinc-500 outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
-                  />
-                  <Button
-                    type="submit"
-                    size="default"
-                    className="h-10 px-4 shrink-0 cursor-pointer bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold shadow-xs shadow-orange-500/20"
-                  >
-                    <Send className="size-4" />
-                  </Button>
-                </form>
               </div>
             </div>
           </div>

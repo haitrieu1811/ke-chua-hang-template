@@ -17,12 +17,19 @@ import {
 } from "@/components/ui/accordion";
 import ScrollReveal from "@/components/scroll-reveal";
 
+interface FaqBullet {
+  label?: string;
+  text: string;
+}
+
 interface FaqItem {
   id: number;
-  question: string;
-  answer: string | React.ReactNode;
-  category: "survey" | "tech" | "warranty" | "custom";
+  category: "products" | "load" | "order" | "delivery";
   categoryLabel: string;
+  question: string;
+  intro: string;
+  bullets: FaqBullet[];
+  outro?: string;
 }
 
 export default function FaqSection() {
@@ -32,87 +39,175 @@ export default function FaqSection() {
   const faqList: FaqItem[] = [
     {
       id: 1,
-      category: "survey",
+      category: "products",
       categoryLabel: t("items.q1.categoryLabel"),
       question: t("items.q1.question"),
-      answer: t("items.q1.answer"),
+      intro: t("items.q1.intro"),
+      bullets: [
+        {
+          label: t("items.q1.bullet1Label"),
+          text: t("items.q1.bullet1Text"),
+        },
+        {
+          label: t("items.q1.bullet2Label"),
+          text: t("items.q1.bullet2Text"),
+        },
+        {
+          label: t("items.q1.bullet3Label"),
+          text: t("items.q1.bullet3Text"),
+        },
+      ],
+      outro: t("items.q1.outro"),
     },
     {
       id: 2,
-      category: "tech",
+      category: "load",
       categoryLabel: t("items.q2.categoryLabel"),
       question: t("items.q2.question"),
-      answer: t("items.q2.answer"),
+      intro: t("items.q2.intro"),
+      bullets: [
+        {
+          label: t("items.q2.bullet1Label"),
+          text: t("items.q2.bullet1Text"),
+        },
+        {
+          label: t("items.q2.bullet2Label"),
+          text: t("items.q2.bullet2Text"),
+        },
+      ],
     },
     {
       id: 3,
-      category: "tech",
+      category: "order",
       categoryLabel: t("items.q3.categoryLabel"),
       question: t("items.q3.question"),
-      answer: (
-        <div className="space-y-2">
-          <p>{t("items.q3.intro")}</p>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>
-              <strong>{t("items.q3.bullet1Label")}</strong>{" "}
-              {t("items.q3.bullet1Text")}
-            </li>
-            <li>
-              <strong>{t("items.q3.bullet2Label")}</strong>{" "}
-              {t("items.q3.bullet2Text")}
-            </li>
-            <li>
-              <strong>{t("items.q3.bullet3Label")}</strong>{" "}
-              {t("items.q3.bullet3Text")}
-            </li>
-          </ul>
-          <p>{t("items.q3.outro")}</p>
-        </div>
-      ),
+      intro: t("items.q3.intro"),
+      bullets: [
+        { text: t("items.q3.bullet1Text") },
+        { text: t("items.q3.bullet2Text") },
+        { text: t("items.q3.bullet3Text") },
+        { text: t("items.q3.bullet4Text") },
+      ],
+      outro: t("items.q3.outro"),
     },
     {
       id: 4,
-      category: "warranty",
+      category: "order",
       categoryLabel: t("items.q4.categoryLabel"),
       question: t("items.q4.question"),
-      answer: t("items.q4.answer"),
+      intro: t("items.q4.intro"),
+      bullets: [
+        { text: t("items.q4.bullet1Text") },
+        { text: t("items.q4.bullet2Text") },
+        { text: t("items.q4.bullet3Text") },
+      ],
     },
     {
       id: 5,
-      category: "custom",
+      category: "products",
       categoryLabel: t("items.q5.categoryLabel"),
       question: t("items.q5.question"),
-      answer: t("items.q5.answer"),
+      intro: t("items.q5.intro"),
+      bullets: [
+        {
+          label: t("items.q5.bullet1Label"),
+          text: t("items.q5.bullet1Text"),
+        },
+        {
+          label: t("items.q5.bullet2Label"),
+          text: t("items.q5.bullet2Text"),
+        },
+        {
+          label: t("items.q5.bullet3Label"),
+          text: t("items.q5.bullet3Text"),
+        },
+      ],
     },
     {
       id: 6,
-      category: "custom",
+      category: "load",
       categoryLabel: t("items.q6.categoryLabel"),
       question: t("items.q6.question"),
-      answer: t("items.q6.answer"),
+      intro: t("items.q6.intro"),
+      bullets: [
+        { text: t("items.q6.bullet1Text") },
+        { text: t("items.q6.bullet2Text") },
+        { text: t("items.q6.bullet3Text") },
+      ],
     },
     {
       id: 7,
-      category: "warranty",
+      category: "delivery",
       categoryLabel: t("items.q7.categoryLabel"),
       question: t("items.q7.question"),
-      answer: t("items.q7.answer"),
+      intro: t("items.q7.intro"),
+      bullets: [
+        { text: t("items.q7.bullet1Text") },
+        { text: t("items.q7.bullet2Text") },
+        { text: t("items.q7.bullet3Text") },
+      ],
     },
     {
       id: 8,
-      category: "survey",
+      category: "delivery",
       categoryLabel: t("items.q8.categoryLabel"),
       question: t("items.q8.question"),
-      answer: t("items.q8.answer"),
+      intro: t("items.q8.intro"),
+      bullets: [
+        { text: t("items.q8.bullet1Text") },
+        { text: t("items.q8.bullet2Text") },
+      ],
+    },
+    {
+      id: 9,
+      category: "order",
+      categoryLabel: t("items.q9.categoryLabel"),
+      question: t("items.q9.question"),
+      intro: t("items.q9.intro"),
+      bullets: [
+        {
+          label: t("items.q9.bullet1Label"),
+          text: t("items.q9.bullet1Text"),
+        },
+        {
+          label: t("items.q9.bullet2Label"),
+          text: t("items.q9.bullet2Text"),
+        },
+      ],
+      outro: t("items.q9.outro"),
+    },
+    {
+      id: 10,
+      category: "delivery",
+      categoryLabel: t("items.q10.categoryLabel"),
+      question: t("items.q10.question"),
+      intro: t("items.q10.intro"),
+      bullets: [
+        {
+          label: t("items.q10.bullet1Label"),
+          text: t("items.q10.bullet1Text", {
+            hotline: SHOP_INFO.HOTLINE.TEXT,
+          }),
+        },
+        {
+          label: t("items.q10.bullet2Label"),
+          text: t("items.q10.bullet2Text"),
+        },
+        {
+          label: t("items.q10.bullet3Label"),
+          text: t("items.q10.bullet3Text"),
+        },
+      ],
+      outro: t("items.q10.outro"),
     },
   ];
 
   const categoryTabs = [
     { key: "all", label: t("tabs.all") },
-    { key: "survey", label: t("tabs.survey") },
-    { key: "tech", label: t("tabs.tech") },
-    { key: "warranty", label: t("tabs.warranty") },
-    { key: "custom", label: t("tabs.custom") },
+    { key: "products", label: t("tabs.products") },
+    { key: "load", label: t("tabs.load") },
+    { key: "order", label: t("tabs.order") },
+    { key: "delivery", label: t("tabs.delivery") },
   ] as const;
 
   const filteredFaqs =
@@ -130,7 +225,7 @@ export default function FaqSection() {
               <HelpCircle className="size-4 text-orange-500" />
               {t("badge")}
             </div>
-            <h2 className="mt-3 text-2xl font-black tracking-tight text-foreground sm:text-4xl">
+            <h2 className="mt-3 text-2xl font-black tracking-tight text-foreground sm:text-4xl uppercase">
               {t("title")}
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -210,7 +305,28 @@ export default function FaqSection() {
                     </AccordionTrigger>
 
                     <AccordionContent className="border-t border-border/60 bg-muted/20 px-5 py-4.5 sm:px-6 sm:py-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
-                      {faq.answer}
+                      <div className="space-y-2.5">
+                        <p>{faq.intro}</p>
+                        {faq.bullets.length > 0 && (
+                          <ul className="list-disc pl-5 space-y-1.5">
+                            {faq.bullets.map((bullet, bulletIdx) => (
+                              <li key={bulletIdx}>
+                                {bullet.label ? (
+                                  <>
+                                    <strong className="text-foreground">
+                                      {bullet.label}
+                                    </strong>{" "}
+                                    {bullet.text}
+                                  </>
+                                ) : (
+                                  bullet.text
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                        {faq.outro && <p>{faq.outro}</p>}
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                 </ScrollReveal>

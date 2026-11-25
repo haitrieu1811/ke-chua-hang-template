@@ -44,9 +44,9 @@ export const productsData: Product[] = [
   {
     id: 1,
     slug: "ke-selective",
-    name: "Kệ Chứa Pallet Selective Heavy Duty",
+    name: "Kệ Selective",
     category: "heavy",
-    categoryLabel: "Kệ Tải Nặng",
+    categoryLabel: "Kệ Selective",
     image: "/images/racking-selective.jpg",
     gallery: [
       "/images/racking-selective.jpg",
@@ -258,7 +258,7 @@ export const productsData: Product[] = [
   {
     id: 3,
     slug: "ke-trung-tai",
-    name: "Kệ Trung Tải Medium Duty (Kho Phụ Tùng)",
+    name: "Kệ Trung Tải",
     category: "medium",
     categoryLabel: "Kệ Trung Tải",
     image: "/images/racking-medium.jpg",
@@ -461,9 +461,9 @@ export const productsData: Product[] = [
   {
     id: 5,
     slug: "ke-v-lo",
-    name: "Kệ Sắt V Lỗ Đa Năng Lắp Ghép Thông Minh",
+    name: "Kệ V Lỗ",
     category: "floor",
-    categoryLabel: "Kệ Sàn & Đa Năng",
+    categoryLabel: "Kệ V Lỗ",
     image: "/images/racking-v-lo.jpg",
     gallery: [
       "/images/racking-v-lo.jpg",

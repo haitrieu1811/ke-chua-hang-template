@@ -11,13 +11,10 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  PhoneCall,
-  CheckCircle2,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, PhoneCall, CheckCircle2, Sparkles } from "lucide-react";
+import Link from "next/link";
 import SHOP_INFO from "@/constants/info";
+import PATH from "@/constants/path";
 
 export default function HomeCarousel() {
   const t = useTranslations("HomePage.hero");
@@ -49,13 +46,11 @@ export default function HomeCarousel() {
       title: t("slides.slide2.title"),
       highlight: t("slides.slide2.highlight"),
       desc: t("slides.slide2.desc"),
-      tags: [
-        t("slides.slide2.tag1"),
-        t("slides.slide2.tag2"),
-        t("slides.slide2.tag3"),
-      ],
+      tags: [t("slides.slide2.tag1"), t("slides.slide2.tag2")],
       primaryCta: t("slides.slide2.primaryCta"),
-      secondaryCta: t("slides.slide2.secondaryCta"),
+      secondaryCta: t("slides.slide1.secondaryCta", {
+        hotline: SHOP_INFO.HOTLINE.TEXT,
+      }),
     },
     {
       id: 3,
@@ -64,13 +59,11 @@ export default function HomeCarousel() {
       title: t("slides.slide3.title"),
       highlight: t("slides.slide3.highlight"),
       desc: t("slides.slide3.desc"),
-      tags: [
-        t("slides.slide3.tag1"),
-        t("slides.slide3.tag2"),
-        t("slides.slide3.tag3"),
-      ],
+      tags: [t("slides.slide3.tag1"), t("slides.slide3.tag2")],
       primaryCta: t("slides.slide3.primaryCta"),
-      secondaryCta: t("slides.slide3.secondaryCta"),
+      secondaryCta: t("slides.slide1.secondaryCta", {
+        hotline: SHOP_INFO.HOTLINE.TEXT,
+      }),
     },
   ];
 
@@ -138,9 +131,7 @@ export default function HomeCarousel() {
                     {/* Tiêu đề Slide với điểm nhấn Cam nổi bật */}
                     <h1 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-5xl xl:text-6xl leading-[1.12]">
                       {slide.title} <br />
-                      <span className="text-orange-400">
-                        {slide.highlight}
-                      </span>
+                      <span className="text-orange-400">{slide.highlight}</span>
                     </h1>
 
                     {/* Đoạn mô tả */}
@@ -165,6 +156,8 @@ export default function HomeCarousel() {
                     <div className="mt-8 flex flex-wrap items-center gap-4 pt-2">
                       <Button
                         size="lg"
+                        nativeButton={false}
+                        render={<Link href={PATH.CONTACT} />}
                         className="h-12 rounded-xl bg-orange-500 hover:bg-orange-600 px-6 text-base font-bold text-white shadow-xl shadow-orange-500/25 transition-all duration-300 hover:scale-105 cursor-pointer"
                       >
                         <span>{slide.primaryCta}</span>
@@ -174,6 +167,8 @@ export default function HomeCarousel() {
                       <Button
                         size="lg"
                         variant="outline"
+                        nativeButton={false}
+                        render={<a href={`tel:${SHOP_INFO.HOTLINE.NUMBER}`} />}
                         className="h-12 rounded-xl border-white/25 bg-white/10 px-6 text-base font-bold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20 hover:text-white cursor-pointer"
                       >
                         <PhoneCall className="size-4 text-orange-400" />

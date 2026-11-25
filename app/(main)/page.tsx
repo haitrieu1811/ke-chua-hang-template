@@ -6,11 +6,11 @@ import TestimonialsSection from "@/app/(main)/_components/testimonials-section";
 import ScrollReveal from "@/components/scroll-reveal";
 import {
   ArrowUpRight,
-  Award,
-  BadgePercent,
+  Calculator,
   CheckCircle2,
-  Clock,
-  Ruler,
+  ClipboardList,
+  Headphones,
+  Layers,
   Sparkles,
 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
@@ -21,7 +21,7 @@ export default async function HomePage() {
   const advantages = [
     {
       step: "01",
-      icon: BadgePercent,
+      icon: Layers,
       tag: t("items.item1.tag"),
       title: t("items.item1.title"),
       desc: t("items.item1.desc"),
@@ -29,7 +29,7 @@ export default async function HomePage() {
     },
     {
       step: "02",
-      icon: Ruler,
+      icon: Headphones,
       tag: t("items.item2.tag"),
       title: t("items.item2.title"),
       desc: t("items.item2.desc"),
@@ -37,7 +37,7 @@ export default async function HomePage() {
     },
     {
       step: "03",
-      icon: Award,
+      icon: ClipboardList,
       tag: t("items.item3.tag"),
       title: t("items.item3.title"),
       desc: t("items.item3.desc"),
@@ -45,7 +45,7 @@ export default async function HomePage() {
     },
     {
       step: "04",
-      icon: Clock,
+      icon: Calculator,
       tag: t("items.item4.tag"),
       title: t("items.item4.title"),
       desc: t("items.item4.desc"),

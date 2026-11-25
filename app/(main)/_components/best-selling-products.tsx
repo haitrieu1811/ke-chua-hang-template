@@ -7,19 +7,22 @@ import { ArrowRight, TrendingUp } from "lucide-react";
 import Link from "next/link";
 import * as React from "react";
 
+const CORE_SLUGS = new Set(["ke-selective", "ke-trung-tai", "ke-v-lo"]);
+const coreProducts = products.filter((p) => CORE_SLUGS.has(p.slug));
+
 const categoryTabs = [
-  { key: "all", label: "Tất Cả Sản Phẩm" },
-  { key: "heavy", label: "Kệ Tải Nặng (Pallet)" },
-  { key: "medium", label: "Kệ Kho Trung Tải" },
-  { key: "floor", label: "Kệ Sàn & Đa Năng" },
+  { key: "all", label: "Tất cả sản phẩm" },
+  { key: "heavy", label: "Kệ Selective" },
+  { key: "medium", label: "Kệ Trung tải" },
+  { key: "floor", label: "Kệ V lỗ" },
 ] as const;
 
 export default function BestSellingProducts() {
   const [activeTab, setActiveTab] = React.useState<string>("all");
 
   const filteredProducts = React.useMemo(() => {
-    if (activeTab === "all") return products;
-    return products.filter((p) => p.category === activeTab);
+    if (activeTab === "all") return coreProducts;
+    return coreProducts.filter((p) => p.category === activeTab);
   }, [activeTab]);
 
   return (
@@ -30,15 +33,15 @@ export default function BestSellingProducts() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-bold text-primary tracking-wider uppercase">
               <TrendingUp className="size-4 text-orange-500" />
-              Sản Phẩm Được Tin Dùng Hàng Đầu
+              Sản Phẩm Chủ Lực
             </div>
-            <h2 className="mt-3 text-2xl font-black tracking-tight text-foreground sm:text-4xl">
-              Sản Phẩm Giá Kệ Bán Chạy Nhất
+            <h2 className="mt-3 text-2xl font-black tracking-tight text-foreground sm:text-4xl uppercase">
+              SẢN PHẨM GIÁ KỆ TẠI KIM PHÚ
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
-              100% sản phẩm gia công trực tiếp từ phôi thép chuẩn JIS G3101, xử
-              lý bề mặt sơn tĩnh điện tự động chống gỉ sét và chịu tải trọng bền
-              bỉ.
+              Cung cấp đa dạng các dòng kệ Selective, kệ trung tải và kệ V lỗ.
+              Tư vấn lựa chọn sản phẩm theo nhu cầu lưu trữ, quy cách hàng hóa
+              và không gian sử dụng.
             </p>
           </div>
         </ScrollReveal>
@@ -68,13 +71,13 @@ export default function BestSellingProducts() {
           </div>
         </ScrollReveal>
 
-        {/* Lưới sản phẩm (Grid 4 cột trên desktop, 2 cột tablet & mobile) */}
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
+        {/* Lưới sản phẩm (3 sản phẩm tiêu biểu: Kệ Selective, Kệ Trung tải, Kệ V lỗ) */}
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
           {filteredProducts.map((prod, index) => (
             <ScrollReveal
               key={prod.id}
               direction="up"
-              delay={(index % 4) * 90}
+              delay={(index % 3) * 90}
               duration={650}
               className="h-full"
             >
@@ -88,9 +91,9 @@ export default function BestSellingProducts() {
           <div className="mt-12 text-center">
             <Link
               href="/san-pham"
-              className="inline-flex items-center gap-2 rounded-xl border border-primary/30 bg-card hover:bg-primary/10 px-8 py-3 text-sm sm:text-base font-bold text-primary shadow-xs transition-all hover:scale-105 cursor-pointer"
+              className="inline-flex items-center gap-2 rounded-xl border border-primary/30 bg-card hover:bg-primary/10 px-8 py-3 text-sm sm:text-base font-bold text-primary shadow-xs transition-all hover:scale-105 cursor-pointer uppercase"
             >
-              <span>Xem Thêm 20+ Mẫu Giá Kệ Kho Công Nghiệp Khác</span>
+              <span>XEM THÊM SẢN PHẨM</span>
               <ArrowRight className="size-4.5" />
             </Link>
           </div>

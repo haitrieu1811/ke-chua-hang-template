@@ -6,7 +6,6 @@ import {
   Calendar,
   Clock,
   ArrowRight,
-  BookOpen,
   User,
   ArrowUpRight,
 } from "lucide-react";
@@ -32,7 +31,7 @@ const articles: Article[] = [
     image: "/images/blog-layout.jpg",
     date: "18/11/2026",
     readTime: "6 phút đọc",
-    author: "Kỹ sư Trần Hải Long",
+    author: "Ban biên tập Kim Phú",
     excerpt:
       "Phân tích khoảng cách lối đi tối ưu cho xe nâng Reach Truck và Forklift counterbalanced, bố trí cửa xuất nhập hàng để tránh tắc nghẽn luồng vận chuyển.",
     slug: "/bai-viet/thiet-ke-layout-kho-bai",
@@ -44,7 +43,7 @@ const articles: Article[] = [
     image: "/images/blog-compare.jpg",
     date: "14/11/2026",
     readTime: "8 phút đọc",
-    author: "Kỹ sư Nguyễn Quốc Tuấn",
+    author: "Ban biên tập Kim Phú",
     excerpt:
       "Bảng phân tích chi phí đầu tư trên từng pallet, mật độ lưu kho và khả năng tiếp cận hàng hóa giữa 2 hệ thống giá kệ công nghiệp phổ biến nhất hiện nay.",
     slug: "/bai-viet/so-sanh-ke-selective-va-drive-in",
@@ -56,7 +55,7 @@ const articles: Article[] = [
     image: "/images/blog-standard.jpg",
     date: "09/11/2026",
     readTime: "5 phút đọc",
-    author: "ThS. Đỗ Quang Huy",
+    author: "Ban biên tập Kim Phú",
     excerpt:
       "Hướng dẫn nhận biết độ võng cho phép (L/200), cách kiểm tra định kỳ bu-lông chân trụ và tải trọng phân bố đều để ngăn ngừa rủi ro sập đổ giá kệ.",
     slug: "/bai-viet/tieu-chuan-kiem-dinh-do-vong-beam",
@@ -68,7 +67,7 @@ const articles: Article[] = [
     image: "/images/blog-cold-storage.jpg",
     date: "03/11/2026",
     readTime: "7 phút đọc",
-    author: "Kỹ sư Lê Hoàng Nam",
+    author: "Ban biên tập Kim Phú",
     excerpt:
       "Đặc tính ăn mòn và đọng sương trong môi trường âm sâu. Vì sao lớp mạ kẽm nhúng nóng đạt độ bền gấp 3 lần sơn tĩnh điện tiêu chuẩn trong kho thủy sản.",
     slug: "/bai-viet/giai-phap-ke-kho-dong-lanh",
@@ -83,17 +82,9 @@ export default function ArticlesSection() {
         <ScrollReveal direction="up" duration={700}>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-bold text-primary tracking-wider uppercase">
-                <BookOpen className="size-4 text-orange-500" />
-                Kiến Thức & Cẩm Nang Kho Vận
-              </div>
-              <h2 className="mt-3 text-2xl font-black tracking-tight text-foreground sm:text-4xl">
-                Bài Viết & Tin Tức Chuyên Ngành
+              <h2 className="text-2xl font-black tracking-tight text-foreground sm:text-4xl uppercase">
+                BLOG - TIN TỨC
               </h2>
-              <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Tổng hợp kinh nghiệm thực chiến từ đội ngũ kỹ sư kết cấu hàng đầu
-                về quy chuẩn an toàn, bảo trì và tối ưu diện tích kho bãi.
-              </p>
             </div>
 
             <div className="shrink-0">

@@ -1,33 +1,52 @@
 "use client";
 
 import * as React from "react";
-import { Send, CheckCircle2, Sparkles, Building, Phone, Mail, MapPin, Layers } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Send, CheckCircle2, Sparkles } from "lucide-react";
+
+const PRODUCT_OPTION_IDS = [
+  "ke-selective",
+  "ke-trung-tai",
+  "ke-v-lo",
+  "chua-xac-dinh",
+] as const;
 
 export default function ContactForm() {
+  const t = useTranslations("ContactPage.form");
   const [formData, setFormData] = React.useState({
     fullName: "",
     company: "",
+    address: "",
     phone: "",
     email: "",
-    address: "",
-    rackType: "selective",
-    area: "",
-    loadCapacity: "",
+    interestedProducts: [] as string[],
+    quantityAndSpec: "",
     note: "",
   });
 
   const [submitted, setSubmitted] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
 
+  const toggleProduct = (id: string) => {
+    setFormData((prev) => {
+      const exists = prev.interestedProducts.includes(id);
+      return {
+        ...prev,
+        interestedProducts: exists
+          ? prev.interestedProducts.filter((item) => item !== id)
+          : [...prev.interestedProducts, id],
+      };
+    });
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    // Giả lập gửi thông tin khảo sát
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-    }, 800);
+    }, 600);
   };
 
   if (submitted) {
@@ -37,10 +56,14 @@ export default function ContactForm() {
           <CheckCircle2 className="size-8 text-orange-400" />
         </div>
         <h3 className="text-xl sm:text-2xl font-black text-foreground">
-          Đăng Ký Khảo Sát Thành Công!
+          {t("successTitle")}
         </h3>
         <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed max-w-md mx-auto">
-          Cảm ơn quý khách <strong className="text-foreground">{formData.fullName}</strong> ({formData.company || "Doanh nghiệp"}). Đội ngũ kỹ sư kết cấu của chúng tôi sẽ liên hệ lại qua số điện thoại <strong className="text-primary">{formData.phone}</strong> trong vòng 15 phút để xác nhận lịch hẹn khảo sát thực tế.
+          {t("successDesc", {
+            name: formData.fullName,
+            company: formData.company,
+            phone: formData.phone,
+          })}
         </p>
         <button
           type="button"
@@ -49,18 +72,17 @@ export default function ContactForm() {
             setFormData({
               fullName: "",
               company: "",
+              address: "",
               phone: "",
               email: "",
-              address: "",
-              rackType: "selective",
-              area: "",
-              loadCapacity: "",
+              interestedProducts: [],
+              quantityAndSpec: "",
               note: "",
             });
           }}
           className="mt-6 inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-2.5 text-sm font-bold text-primary-foreground hover:bg-primary/90 transition-all cursor-pointer shadow-xs"
         >
-          <span>Gửi Thêm Yêu Cầu Khác</span>
+          <span>{t("sendAnother")}</span>
         </button>
       </div>
     );
@@ -71,137 +93,150 @@ export default function ContactForm() {
       onSubmit={handleSubmit}
       className="rounded-3xl border border-border/80 bg-card p-6 sm:p-10 shadow-xl"
     >
-      <div className="flex items-center gap-2 mb-6">
-        <div className="flex size-9 items-center justify-center rounded-lg bg-orange-500/10 text-orange-600 dark:text-orange-400">
-          <Sparkles className="size-4.5" />
+      <div className="flex items-center gap-3 mb-6">
+        <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-orange-500/10 text-orange-600 dark:text-orange-400">
+          <Sparkles className="size-5" />
         </div>
         <div>
-          <h3 className="text-lg sm:text-xl font-black text-foreground">
-            Đăng Ký Khảo Sát & Nhận Bản Vẽ 3D
+          <h3 className="text-lg sm:text-xl font-black text-foreground uppercase">
+            {t("title")}
           </h3>
-          <p className="text-sm text-muted-foreground">
-            Miễn phí 100% chi phí đo đạc hiện trạng kho và mô phỏng luồng xe nâng
-          </p>
+          <p className="text-sm text-muted-foreground">{t("desc")}</p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {/* Họ và tên */}
         <div>
           <label className="block text-sm font-semibold text-foreground mb-1.5">
-            Họ và tên của bạn <span className="text-destructive">*</span>
+            {t("f1Label")} <span className="text-destructive">*</span>
           </label>
           <input
             type="text"
             required
-            placeholder="Ví dụ: Nguyễn Văn An"
+            placeholder={t("f1Placeholder")}
             value={formData.fullName}
-            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, fullName: e.target.value })
+            }
             className="w-full rounded-xl border border-border/80 bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
           />
         </div>
 
-        {/* Tên công ty / Doanh nghiệp */}
         <div>
           <label className="block text-sm font-semibold text-foreground mb-1.5">
-            Tên công ty / Đơn vị
+            {t("f2Label")} <span className="text-destructive">*</span>
           </label>
           <input
             type="text"
-            placeholder="Ví dụ: Công ty Logistics ABC"
+            required
+            placeholder={t("f2Placeholder")}
             value={formData.company}
-            onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, company: e.target.value })
+            }
             className="w-full rounded-xl border border-border/80 bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
           />
         </div>
 
-        {/* Số điện thoại */}
+        <div className="sm:col-span-2">
+          <label className="block text-sm font-semibold text-foreground mb-1.5">
+            {t("f3Label")} <span className="text-destructive">*</span>
+          </label>
+          <input
+            type="text"
+            required
+            placeholder={t("f3Placeholder")}
+            value={formData.address}
+            onChange={(e) =>
+              setFormData({ ...formData, address: e.target.value })
+            }
+            className="w-full rounded-xl border border-border/80 bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
+          />
+        </div>
+
         <div>
           <label className="block text-sm font-semibold text-foreground mb-1.5">
-            Số điện thoại liên hệ <span className="text-destructive">*</span>
+            {t("f4Label")} <span className="text-destructive">*</span>
           </label>
           <input
             type="tel"
             required
-            placeholder="Ví dụ: 0987.654.321"
+            placeholder={t("f4Placeholder")}
             value={formData.phone}
-            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, phone: e.target.value })
+            }
             className="w-full rounded-xl border border-border/80 bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
           />
         </div>
 
-        {/* Email */}
         <div>
           <label className="block text-sm font-semibold text-foreground mb-1.5">
-            Địa chỉ Email
+            {t("f5Label")} <span className="text-destructive">*</span>
           </label>
           <input
             type="email"
-            placeholder="Ví dụ: contact@company.com"
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full rounded-xl border border-border/80 bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
-          />
-        </div>
-
-        {/* Địa chỉ nhà kho */}
-        <div className="sm:col-span-2">
-          <label className="block text-sm font-semibold text-foreground mb-1.5">
-            Địa chỉ nhà kho cần lắp đặt <span className="text-destructive">*</span>
-          </label>
-          <input
-            type="text"
             required
-            placeholder="Ví dụ: KCN Sài Đồng B, Long Biên, Hà Nội"
-            value={formData.address}
-            onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+            placeholder={t("f5Placeholder")}
+            value={formData.email}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
             className="w-full rounded-xl border border-border/80 bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
           />
         </div>
 
-        {/* Dòng kệ quan tâm */}
-        <div>
-          <label className="block text-sm font-semibold text-foreground mb-1.5">
-            Hệ thống kệ quan tâm
-          </label>
-          <select
-            value={formData.rackType}
-            onChange={(e) => setFormData({ ...formData, rackType: e.target.value })}
-            className="w-full rounded-xl border border-border/80 bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 cursor-pointer"
-          >
-            <option value="selective">Kệ Chứa Pallet Selective</option>
-            <option value="drive-in">Kệ Kho Drive-In / Drive-Thru</option>
-            <option value="medium">Kệ Trung Tải (Medium Duty)</option>
-            <option value="mezzanine">Kệ Sàn Lửng Mezzanine Floor</option>
-            <option value="v-lo">Kệ Sắt V Lỗ Đa Năng</option>
-            <option value="cantilever">Kệ Tay Đỡ Cantilever</option>
-            <option value="shuttle">Hệ Thống Kệ Radio Shuttle Robot</option>
-            <option value="pallet-thep">Pallet Thép Sơn Tĩnh Điện</option>
-          </select>
+        <div className="sm:col-span-2">
+          <span className="block text-sm font-semibold text-foreground mb-2">
+            {t("f6Label")}
+          </span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            {PRODUCT_OPTION_IDS.map((id) => {
+              const checked = formData.interestedProducts.includes(id);
+              return (
+                <label
+                  key={id}
+                  className={`flex items-center gap-2.5 rounded-xl border px-3.5 py-2.5 text-sm font-medium transition-colors cursor-pointer select-none ${
+                    checked
+                      ? "border-primary bg-primary/10 text-primary font-semibold"
+                      : "border-border/80 bg-background text-foreground hover:border-primary/40"
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    checked={checked}
+                    onChange={() => toggleProduct(id)}
+                    className="size-4 accent-primary rounded cursor-pointer"
+                  />
+                  <span>{t(`products.${id}`)}</span>
+                </label>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Diện tích kho / Tải trọng */}
-        <div>
+        <div className="sm:col-span-2">
           <label className="block text-sm font-semibold text-foreground mb-1.5">
-            Diện tích kho & Tải trọng dự kiến
+            {t("f7Label")}
           </label>
           <input
             type="text"
-            placeholder="Ví dụ: 500m², tải 1.500kg/pallet"
-            value={formData.area}
-            onChange={(e) => setFormData({ ...formData, area: e.target.value })}
+            placeholder={t("f7Placeholder")}
+            value={formData.quantityAndSpec}
+            onChange={(e) =>
+              setFormData({ ...formData, quantityAndSpec: e.target.value })
+            }
             className="w-full rounded-xl border border-border/80 bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
           />
         </div>
 
-        {/* Ghi chú chi tiết */}
         <div className="sm:col-span-2">
           <label className="block text-sm font-semibold text-foreground mb-1.5">
-            Yêu cầu kỹ thuật hoặc câu hỏi chi tiết
+            {t("f8Label")}
           </label>
           <textarea
             rows={4}
-            placeholder="Mô tả chiều cao trần kho, loại xe nâng đang sử dụng, loại hàng hóa lưu trữ..."
+            placeholder={t("f8Placeholder")}
             value={formData.note}
             onChange={(e) => setFormData({ ...formData, note: e.target.value })}
             className="w-full rounded-xl border border-border/80 bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 resize-none"
@@ -212,7 +247,7 @@ export default function ContactForm() {
       <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <CheckCircle2 className="size-4 text-orange-500 shrink-0" />
-          <span>Bảo mật thông tin dự án 100%</span>
+          <span>{t("privacyNote")}</span>
         </div>
 
         <button
@@ -221,10 +256,10 @@ export default function ContactForm() {
           className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-3 text-sm font-bold text-primary-foreground shadow-md hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 disabled:opacity-50 cursor-pointer"
         >
           {loading ? (
-            <span>Đang gửi thông tin...</span>
+            <span>{t("submitting")}</span>
           ) : (
             <>
-              <span>Gửi Yêu Cầu Khảo Sát & Báo Giá</span>
+              <span>{t("submitBtn")}</span>
               <Send className="size-4 text-orange-400" />
             </>
           )}

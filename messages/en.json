@@ -6,216 +6,264 @@
       "slides": {
         "slide1": {
           "badge": "HEAVY DUTY STORAGE SOLUTIONS",
-          "title": "Selective & Drive-In Pallet Racking Systems",
-          "highlight": "Optimize 85% Warehouse Space",
-          "desc": "Outstanding load capacity from 1,000kg to 4,000kg per level, JIS G3101 cold-rolled steel with powder coating built to last over 15 years.",
-          "tag1": "100% direct pallet access",
-          "tag2": "Compatible with all forklifts",
-          "tag3": "Free 3D warehouse layout survey",
-          "primaryCta": "Get a Fast Estimate & Quote",
+          "title": "SELECTIVE PALLET RACKING SYSTEM",
+          "highlight": "DIRECT ACCESS TO EVERY PALLET",
+          "desc": "Flexible storage for diverse goods categories, making inbound/outbound operations and inventory control effortless.",
+          "tag1": "100% direct access to every pallet position",
+          "tag2": "Suitable for diverse goods categories",
+          "tag3": "Compatible with various forklift models",
+          "primaryCta": "Get Fast Consultation & Quote",
           "secondaryCta": "Hotline: {hotline}"
         },
         "slide2": {
-          "badge": "SMART AUTOMATED WAREHOUSE",
-          "title": "Automated AS/RS Racking Systems",
-          "highlight": "Maximum Storage Density",
-          "desc": "100% automated high-speed pallet retrieval integrated with WMS/WCS warehouse management software for modern logistics hubs.",
-          "tag1": "24/7 automated operation",
-          "tag2": "Save 70% labor costs",
-          "tag3": "Maximize vertical warehouse volume",
-          "primaryCta": "Consult Automation Experts",
-          "secondaryCta": "Watch Simulation Video"
+          "badge": "GOODS STORAGE SOLUTIONS",
+          "title": "MEDIUM DUTY RACKING SYSTEM",
+          "highlight": "Optimize Space - Flexible Storage",
+          "desc": "Effective medium-load storage solution designed to maximize warehouse space efficiency.",
+          "tag1": "Flexible multi-level shelf design",
+          "tag2": "Ideal for supplies, components & spare parts",
+          "tag3": "Easy assembly and reconfiguration",
+          "primaryCta": "Get Fast Consultation & Quote",
+          "secondaryCta": "Hotline: {hotline}"
         },
         "slide3": {
-          "badge": "PRODUCTION FLOOR OPTIMIZATION",
-          "title": "Mezzanine Floors & Medium Duty Racking",
-          "highlight": "Double Your Storage Area",
-          "desc": "Expand usable floor area by 2x - 3x without new construction permits, easily disassembled and relocated whenever needed.",
-          "tag1": "Floor load 300 - 1,000 kg/m²",
-          "tag2": "5-year structural warranty",
-          "tag3": "Direct factory pricing",
-          "primaryCta": "Book a Floor Survey",
-          "secondaryCta": "Medium Duty Rack Quote"
+          "badge": "MULTI-PURPOSE STORAGE SOLUTIONS",
+          "title": "SLOTTED ANGLE (V-HOLE) RACKING SYSTEM",
+          "highlight": "Flexible Assembly - Space Optimization",
+          "desc": "Smart modular design for warehouses, retail stores, and workshops.",
+          "tag1": "Easily adjustable shelf heights",
+          "tag2": "Convenient assembly and flexible layout",
+          "tag3": "Space-saving storage for small items",
+          "primaryCta": "Get Fast Consultation & Quote",
+          "secondaryCta": "Hotline: {hotline}"
         }
       }
     },
     "advantages": {
       "badge": "Superior Value Commitment",
-      "title": "4 Breakthrough Advantages When Choosing Us",
-      "desc": "Optimize investment costs, guarantee structural safety, and ensure on-time handover for every warehouse project.",
+      "title": "Why Choose Kim Phu?",
+      "desc": "Optimize costs, ensure product clarity, and receive dedicated support for your storage needs.",
       "footerLabel": "Quality guaranteed",
       "items": {
         "item1": {
-          "tag": "Save 20% - 30%",
-          "title": "Direct Factory Pricing",
-          "desc": "Manufactured and supplied directly without commercial intermediaries, minimizing initial capital expenditure for your business."
+          "tag": "Wide Racking Range",
+          "title": "Diverse Racking Lines",
+          "desc": "Selective racking, medium duty racking, slotted angle racking, and more storage options tailored to your needs."
         },
         "item2": {
-          "tag": "2D/3D Layout in 24h",
-          "title": "Free Site Survey & Design",
-          "desc": "Structural engineers visit your warehouse for on-site measurements and deliver free 2D/3D layouts simulating forklift aisles."
+          "tag": "Tailored Solutions",
+          "title": "Needs-Based Consultation",
+          "desc": "Guidance on selecting the right rack type, dimensions, and load capacity."
         },
         "item3": {
-          "tag": "ISO 9001 & JIS G3101",
-          "title": "Certified Steel & Powder Coating",
-          "desc": "100% certified cold-rolled steel with full CO/CQ documentation, finished with anti-rust and corrosion-resistant powder coating."
+          "tag": "Clear Specifications",
+          "title": "Transparent Specifications",
+          "desc": "Specific product details for convenient reference and confident selection."
         },
         "item4": {
-          "tag": "5-Year Warranty",
-          "title": "Rapid Installation & Maintenance",
-          "desc": "Skilled installation teams deliver cleanly and on schedule, backed by a 5-year structural warranty and lifetime maintenance."
+          "tag": "Fast Quotation",
+          "title": "Consultation & Quotation",
+          "desc": "Receive inquiries and prepare quotes tailored to actual requirements."
         }
       }
     },
     "testimonials": {
-      "badge": "Real Client Reviews",
-      "title": "What Do Clients Say About Us?",
-      "desc": "Over 1,500+ logistics enterprises, cold storage facilities, and manufacturing groups nationwide trust our industrial racking solutions.",
+      "badge": "Customer Experience Is Our Priority",
+      "title": "WHAT DO CLIENTS SAY ABOUT US?",
+      "desc": "Kim Phu continuously refines our consultation process, product information clarity, and customer support throughout every purchase.",
       "stats": {
         "stat1": {
           "suffix": "%",
-          "title": "Quality Satisfaction",
-          "desc": "100% certified load capacity"
+          "title": "CLEAR CONSULTATION",
+          "desc": "Smooth product discovery experience"
         },
         "stat2": {
-          "suffix": "+",
-          "title": "Delivered Projects",
-          "desc": "Spanning nationwide"
+          "suffix": "%",
+          "title": "SUITABLE PRODUCTS",
+          "desc": "Matching actual storage requirements"
         },
         "stat3": {
-          "suffix": "+ Years",
-          "title": "Deep Industry Experience",
-          "desc": "Leading structural engineering team"
+          "suffix": "%",
+          "title": "CLEAR INFORMATION",
+          "desc": "Transparent product specs & details"
         },
         "stat4": {
           "suffix": "%",
-          "title": "On-Schedule Handover",
-          "desc": "Comprehensive 5-year warranty"
+          "title": "ATTENTIVE SUPPORT",
+          "desc": "Dedicated customer care experience"
         }
       },
       "categories": {
-        "all": "All Projects",
-        "logistics": "Logistics & Warehousing",
-        "cold": "Deep Cold Storage",
-        "factory": "Manufacturing & Mechanical",
-        "retail": "E-Commerce & Retail"
+        "all": "ALL REVIEWS",
+        "logistics": "SELECTIVE RACKING",
+        "cold": "MEDIUM DUTY RACKING",
+        "factory": "V-HOLE RACKING",
+        "retail": "V-HOLE RACKING"
       },
       "items": {
         "item1": {
           "name": "Mr. Tran Quoc Tuan",
-          "categoryLabel": "3PL Logistics",
-          "scale": "6,500m² Warehouse - 8,200 Pallets",
-          "quote": "The engineering team conducted a thorough site survey and simulated Reach Truck aisles in great detail. Combining Selective and Drive-In racking increased our warehouse capacity by 2.5x while saving over 25% compared to leasing extra space.",
-          "metrics": "+250% warehouse capacity"
+          "categoryLabel": "Selective Racking",
+          "scale": "Selective Racking",
+          "quote": "Our warehouse handles many different SKUs, so we needed racks that allow picking each pallet individually. Selective racking fits our current inventory workflow and makes organizing and handling much easier.",
+          "metrics": "Selective Racking"
         },
         "item2": {
           "name": "Ms. Nguyen Mai Lan",
-          "categoryLabel": "Cold Storage (-25°C)",
-          "scale": "Hot-Dip Galvanized Drive-In Racking",
-          "quote": "Deep cold storage at -25°C demands strict steel grade and galvanizing standards to prevent condensation and rust. After 3+ years of continuous operation, the uprights remain rock-solid, beams stay perfectly level, and picking is 100% safe.",
-          "metrics": "Sub-zero rust resistance"
+          "categoryLabel": "Selective Racking",
+          "scale": "Selective Racking",
+          "quote": "We needed to reorganize our storage zone so goods are clearly separated by position. Selective racking is the right choice because shelf levels can be arranged to match our pallet storage needs.",
+          "metrics": "Selective Racking"
         },
         "item3": {
           "name": "Mr. Le Hoang Nam",
-          "categoryLabel": "E-Commerce & Retail",
-          "scale": "3-Tier Mezzanine Floor + Medium Duty Racks",
-          "quote": "The multi-tier Mezzanine floor combined with medium duty shelving doubled our order sorting area without modifying the warehouse roof. Turnkey installation finished in just 12 days with zero disruption to daily deliveries.",
-          "metrics": "Completed in just 12 days"
+          "categoryLabel": "Medium Duty Racking",
+          "scale": "Medium Duty Racking",
+          "quote": "Previously, supplies in our warehouse were scattered and finding items took too long. After installing medium duty racks, zoning and organizing stock has become much more convenient.",
+          "metrics": "Medium Duty Racking"
         },
         "item4": {
-          "name": "Mr. Trinh Viet Hung",
-          "categoryLabel": "Manufacturing Plant",
-          "scale": "10,000m² Automated Radio Shuttle Racks",
-          "quote": "The automated Radio Shuttle system was a game-changer for our warehouse optimization. Storage density reached maximum levels, forklift-to-rack collisions were eliminated, and inbound/outbound throughput tripled.",
-          "metrics": "3x faster inbound/outbound"
+          "name": "Mr. Trinh Hung",
+          "categoryLabel": "Medium Duty Racking",
+          "scale": "Medium Duty Racking",
+          "quote": "Our warehouse stores cartons and components of various sizes, so we needed a multi-tier shelving system. Medium duty racking handles our daily storage and picking needs very well.",
+          "metrics": "Medium Duty Racking"
         },
         "item5": {
-          "name": "Ms. Do Thu Hang",
-          "categoryLabel": "GSP Pharmaceuticals",
-          "scale": "Carton Flow & Slotted Angle Racking",
-          "quote": "GSP pharmaceutical warehouse standards require spotless racking and strict FIFO expiration control. The carton flow roller tracks run smoothly with absolute accuracy, making order picking effortless for our staff.",
-          "metrics": "100% accurate FIFO control"
+          "name": "Ms. Do Thi Hang",
+          "categoryLabel": "V-Hole Racking",
+          "scale": "V-Hole Racking",
+          "quote": "I needed a shelving system for tools and supplies in our store. Slotted angle racking has a modular design with adjustable shelf spacing, making it very convenient to organize diverse items.",
+          "metrics": "V-Hole Racking"
         },
         "item6": {
-          "name": "Mr. Pham Minh Duc",
-          "categoryLabel": "Heavy Mechanical",
-          "scale": "Cantilever Racks 3 Tons / Level",
-          "quote": "Storing 6m steel pipe bundles and multi-ton stamping dies used to be a huge headache. The cast I-beam Cantilever uprights are extraordinarily sturdy, allowing cranes and forklifts to retrieve stock easily and cutting search time by 70%.",
-          "metrics": "3,000kg load per bay"
+          "name": "Mr. Minh Duc",
+          "categoryLabel": "V-Hole Racking",
+          "scale": "V-Hole Racking",
+          "quote": "Our store carries many small items that are hard to manage without tiered shelves. V-hole racking keeps everything neat, easy to spot, and quick to pick.",
+          "metrics": "V-Hole Racking"
         }
       },
       "cta": {
-        "title": "Need Custom Warehouse Racking Design For Your Business?",
-        "desc": "Contact us today for a free 2D/3D layout drawing and direct factory quotation within 24 hours.",
+        "title": "Need Advice Choosing The Right Warehouse Racking For Your Business?",
+        "desc": "Contact us today for fast consultation and quotation.",
         "hotline": "Hotline: {hotline}",
-        "surveyBtn": "Book a Site Survey"
+        "surveyBtn": "Request a Quote"
       }
     },
     "faq": {
-      "badge": "Answers & Technical Guide",
-      "title": "Frequently Asked Questions (FAQ)",
-      "desc": "Detailed answers to the most common questions about choosing storage systems, load capacity, and warehouse rack installation.",
+      "badge": "Answers & Buying Guide",
+      "title": "FREQUENTLY ASKED QUESTIONS (FAQ)",
+      "desc": "Common questions about products, specifications, load capacity, selection advice, and purchasing policies at Kim Phu.",
       "tabs": {
         "all": "All Questions",
-        "survey": "Survey & Design",
-        "tech": "Technical & Load",
-        "warranty": "Warranty & Service",
-        "custom": "Custom & Floor Specs"
+        "products": "Products & Specs",
+        "load": "Load & Applications",
+        "order": "Orders & Quotation",
+        "delivery": "Delivery & Support"
       },
       "emptyTitle": "No matching questions found",
-      "emptyDesc": "Please choose another category or call our hotline for direct engineering consultation.",
+      "emptyDesc": "Please choose another category or call our hotline for direct consultation.",
       "items": {
         "q1": {
-          "categoryLabel": "Survey & Design",
-          "question": "Do you provide free on-site warehouse surveys and 2D/3D layout drawings?",
-          "answer": "Yes, 100% free of charge. Right after receiving your request, our structural engineers will visit your facility within 24 hours (in Hanoi, Ho Chi Minh City, and surrounding provinces) to inspect floor conditions, clear height, and prepare optimized 2D/3D layouts simulating forklift traffic."
+          "categoryLabel": "Products & Specs",
+          "question": "I am not sure which racking type to choose. Can Kim Phu advise based on our actual storage needs?",
+          "intro": "Yes. Kim Phu helps customers explore and select the right racking system based on storage needs, goods characteristics, and available space. Currently, Kim Phu offers 3 main product lines:",
+          "bullet1Label": "Selective Racking:",
+          "bullet1Text": "Ideal for palletized warehouses requiring direct access to every pallet position.",
+          "bullet2Label": "Medium Duty Racking:",
+          "bullet2Text": "Ideal for storing cartons, supplies, spare parts, and medium-weight goods.",
+          "bullet3Label": "Slotted Angle (V-Hole) Racking:",
+          "bullet3Text": "Ideal for goods, tools, accessories, and supplies in warehouses, retail stores, or workshops.",
+          "outro": "Feel free to share your storage requirements so Kim Phu specialists can recommend the most suitable product line."
         },
         "q2": {
-          "categoryLabel": "Lead Time & Schedule",
-          "question": "How long does it take to manufacture and install a complete racking system?",
-          "answer": "For standard racking lines (medium duty, Selective with ready steel coils), delivery and installation take 3 - 5 business days. For large-scale turnkey warehouse projects (Heavy Duty, Drive-In, Mezzanine from 1,000m² - 10,000m²), production and full installation typically take 10 - 20 days with 100% on-time guarantee."
+          "categoryLabel": "Load & Applications",
+          "question": "Does Kim Phu help select rack dimensions, load capacity, and specifications suited to our goods?",
+          "intro": "Yes. When inquiring, you can share your item dimensions, estimated weight, storage method, and usable floor area. Based on these details, Kim Phu will recommend suitable rack types, dimensions, and specifications:",
+          "bullet1Label": "For Selective Racking:",
+          "bullet1Text": "Pallet dimensions and forklift operation method should also be considered.",
+          "bullet2Label": "For Medium Duty and Slotted Angle Racking:",
+          "bullet2Text": "Determine item weight, shelf deck dimensions, and layout arrangement to choose the right configuration."
         },
         "q3": {
-          "categoryLabel": "Load & Engineering",
-          "question": "How much load capacity can each racking level support?",
-          "intro": "We supply flexible load-bearing solutions from light storage to ultra-heavy industrial loads:",
-          "bullet1Label": "Slotted Angle Racks (V-hole):",
-          "bullet1Text": "50kg - 120kg per steel shelf level.",
-          "bullet2Label": "Medium Duty Racks:",
-          "bullet2Text": "200kg - 600kg per level (with ribbed steel decking or industrial plywood).",
-          "bullet3Label": "Heavy Duty Racks (Selective, Double Deep, Drive-In):",
-          "bullet3Text": "1,000kg - 3,500kg per pallet (3,000kg - 8,000kg per beam bay).",
-          "outro": "All structures are engineered with strict safety factors complying with JIS G3101 and FEM 10.2.02 standards."
+          "categoryLabel": "Orders & Quotation",
+          "question": "Can I request a custom quote for Selective, Medium Duty, and Slotted Angle racks based on my requirements?",
+          "intro": "Yes. Kim Phu provides quotations tailored to each product line, specification, and quantity you need. Pricing may depend on:",
+          "bullet1Text": "Rack type and material specifications",
+          "bullet2Text": "Dimensions and number of levels",
+          "bullet3Text": "Designed load capacity",
+          "bullet4Text": "Order quantity",
+          "outro": "To receive an accurate quote, simply send us the items you need or describe your storage requirements. Kim Phu specialists will review and discuss available specifications in detail."
         },
         "q4": {
-          "categoryLabel": "Warranty & Maintenance",
-          "question": "What is your warranty and periodic maintenance policy after installation?",
-          "answer": "All industrial racking systems carry a 3 to 5-year warranty covering load-bearing steel structures and powder coating. Every 6 months, our engineers inspect anchor bolts, beam deflection, and operational safety free of charge, backed by a 24-hour rapid technical support team."
+          "categoryLabel": "Orders & Quotation",
+          "question": "Our company has a list of multiple rack types and specifications. Does Kim Phu support consolidated quotations?",
+          "intro": "Yes. Kim Phu accepts multi-item lists with various sizes and quantities to streamline requirement consolidation and quotation:",
+          "bullet1Text": "You can send your list via Excel, PDF, images, or written product descriptions.",
+          "bullet2Text": "Providing a detailed list ensures clearer communication and avoids mix-ups in rack types, dimensions, and quantities.",
+          "bullet3Text": "This is ideal for enterprises, factories, and procurement teams sourcing multiple rack lines for the same warehouse or store chain."
         },
         "q5": {
-          "categoryLabel": "Floor Requirements",
-          "question": "Does the warehouse floor need special specifications for heavy-duty pallet racks?",
-          "answer": "An ideal warehouse floor should be reinforced concrete grade M250 or higher, at least 150mm - 200mm thick, and level for safe forklift operation. During our on-site survey, engineers check floor flatness and specify appropriate baseplates and heavy-duty anchor bolts to distribute loads evenly."
+          "categoryLabel": "Products & Specs",
+          "question": "Can Kim Phu supply Selective, Medium Duty, and Slotted Angle racks together in a single order?",
+          "intro": "Yes. Kim Phu supplies all 3 lines—Selective, Medium Duty, and Slotted Angle racks. You can submit requirements for multiple lines in one quotation request so Kim Phu can review specifications and consolidate your order. Combining rack types helps organize storage zones by product group:",
+          "bullet1Label": "Selective Racking:",
+          "bullet1Text": "For palletized goods.",
+          "bullet2Label": "Medium Duty Racking:",
+          "bullet2Text": "For cartons and supplies.",
+          "bullet3Label": "Slotted Angle Racking:",
+          "bullet3Text": "For tool and component storage zones."
         },
         "q6": {
-          "categoryLabel": "Custom Fabrication",
-          "question": "Can I order custom non-standard rack dimensions tailored to my goods?",
-          "answer": "Absolutely. As a direct manufacturer equipped with automated roll-forming and powder coating lines, we specialize in designing and fabricating custom racking matched to your exact pallet sizes, cartons, clear ceiling height, and forklift specifications."
+          "categoryLabel": "Load & Applications",
+          "question": "Does Kim Phu accept steel racking orders for warehouses, workshops, retail stores, and business chains?",
+          "intro": "Yes. Kim Phu serves enterprises, factories, workshops, retail businesses, and organizations needing steel shelving for storage:",
+          "bullet1Text": "Current product lines include Selective, Medium Duty, and Slotted Angle racks for diverse storage purposes.",
+          "bullet2Text": "Contact Kim Phu to discuss the rack types, specifications, and quantities you require.",
+          "bullet3Text": "Our consulting team will review your needs and prepare a tailored quotation."
         },
         "q7": {
-          "categoryLabel": "Relocation & Expansion",
-          "question": "Do you offer dismantling, relocation, or expansion of existing rack systems?",
-          "answer": "Yes. We provide complete dismantling, packaging, transport, and re-installation services when your business relocates warehouses, along with all add-on components (beams, crossbars, pallet supports, upright guards, safety barriers) for height or area expansion."
+          "categoryLabel": "Delivery & Support",
+          "question": "Does Kim Phu support delivery to our warehouse, workshop, or business location?",
+          "intro": "You can discuss delivery requirements with Kim Phu when requesting a quote or confirming your order:",
+          "bullet1Text": "Delivery address, item quantity, packaging specifications, and expected schedule will be discussed to determine the best shipping method.",
+          "bullet2Text": "For large or bulky orders, please share your delivery address in advance to facilitate transport planning.",
+          "bullet3Text": "Shipping costs and lead times will be confirmed specifically for each order."
         },
         "q8": {
-          "categoryLabel": "Contract & Payment",
-          "question": "What is the contract signing process and payment schedule?",
-          "answer": "Once both parties approve the 2D/3D layout and detailed quotation, we sign a formal contract accompanied by CO/CQ quality certificates. A 30% - 50% deposit is paid upon signing, and the balance is settled after on-site load testing and final handover acceptance."
+          "categoryLabel": "Delivery & Support",
+          "question": "Does Kim Phu supply steel racks to customers in Ho Chi Minh City and Southern provinces?",
+          "intro": "Kim Phu focuses on supplying steel racking to customers in Ho Chi Minh City and the Southern region:",
+          "bullet1Text": "Customers in surrounding provinces looking for Selective, Medium Duty, or Slotted Angle racks can contact us directly with product details, quantities, and delivery address.",
+          "bullet2Text": "Kim Phu will review your request and confirm supply availability, delivery arrangements, and shipping costs for each location."
+        },
+        "q9": {
+          "categoryLabel": "Orders & Quotation",
+          "question": "What information and policies are provided when ordering steel racks from Kim Phu?",
+          "intro": "When inquiring and placing an order, you will receive clear details covering:",
+          "bullet1Label": "Product details:",
+          "bullet1Text": "Rack type, dimensions, specifications, load capacity, quantity, and pricing.",
+          "bullet2Label": "Order terms & policies:",
+          "bullet2Text": "Payment, delivery, lead time, warranty, and related conditions tailored to each product and order.",
+          "outro": "Kim Phu encourages customers to confirm all product specifications and purchase agreements prior to ordering to prevent any mismatch."
+        },
+        "q10": {
+          "categoryLabel": "Delivery & Support",
+          "question": "Where can I contact Kim Phu for further advice on products, orders, or after-sales policies?",
+          "intro": "You can contact Kim Phu directly via our hotline for product guidance, purchase inquiries, and quotation requests:",
+          "bullet1Label": "Hotline:",
+          "bullet1Text": "{hotline}",
+          "bullet2Label": "Products:",
+          "bullet2Text": "Selective Racking, Medium Duty Racking, Slotted Angle Racking.",
+          "bullet3Label": "Helpful details to prepare:",
+          "bullet3Text": "Desired rack type, dimensions, quantity, and delivery location to make consultation and quotation faster.",
+          "outro": "Kim Phu looks forward to partnering with you in choosing the right racking solution for your storage and business needs."
         }
       },
       "support": {
         "title": "Still have unanswered questions?",
-        "desc": "Our lead structural engineers are ready to answer any technical inquiries and recommend the optimal storage solution.",
+        "desc": "Kim Phu's consulting team is ready to answer your questions and help you choose the right racking system.",
         "callBtn": "Call {hotline}"
       }
     }
@@ -243,12 +291,12 @@
     "addressLabel": "Address:",
     "hotlineLabel": "Hotline:",
     "connectLabel": "Connect:",
-    "facebookAria": "Ke Kim Phu Facebook Fanpage",
-    "facebookTitle": "Follow us on Facebook",
-    "tiktokAria": "Ke Kim Phu TikTok Channel",
-    "tiktokTitle": "Watch real warehouse videos on TikTok",
-    "youtubeAria": "Ke Kim Phu YouTube Channel",
-    "youtubeTitle": "Watch project showcase videos on YouTube",
+    "facebookAria": "Facebook Kim Phu",
+    "facebookTitle": "Facebook Kim Phu",
+    "tiktokAria": "Tik Tok Kim Phu",
+    "tiktokTitle": "Tik Tok Kim Phu",
+    "youtubeAria": "YouTube Kim Phu",
+    "youtubeTitle": "YouTube Kim Phu",
     "mainNavAria": "Main navigation",
     "nav": {
       "home": "Home",
@@ -262,16 +310,16 @@
     "viewAllProducts": "View all products",
     "categories": {
       "heavy": {
-        "title": "Heavy Duty Racks (1 - 4 Tons)",
-        "desc": "Selective, Drive-In, Cantilever & Radio Shuttle Racks"
+        "title": "Selective Racking",
+        "desc": "Heavy-duty pallet racking with 100% direct pallet access"
       },
       "medium": {
-        "title": "Medium Duty Racks (300 - 800kg)",
-        "desc": "Boltless hand-loaded racks for spare parts & components"
+        "title": "Medium Duty Racking",
+        "desc": "Flexible multi-tier shelving for cartons, supplies & spare parts"
       },
       "floor": {
-        "title": "Mezzanine & Multi-Purpose",
-        "desc": "Mezzanine Floors, Slotted Angle Racks & Steel Pallets"
+        "title": "Slotted Angle (V-Hole) Racking",
+        "desc": "Modular multi-purpose shelving for warehouses, stores & workshops"
       }
     },
     "openMobileMenu": "Open mobile menu",
@@ -315,6 +363,469 @@
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
       "standards": "Technical Standards"
+    }
+  },
+  "AboutPage": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "About Us"
+    },
+    "hero": {
+      "badge": "Diverse Racking Lines - Dedicated Consultation",
+      "titleStart": "INDUSTRIAL",
+      "titleHighlight": "WAREHOUSE STEEL RACKING",
+      "titleEnd": "SUPPLIER",
+      "desc": "Kim Phu specializes in supplying Selective racking, medium duty racking, and slotted angle (V-hole) racking for warehouses, factories, retail stores, and enterprises. Wide specifications, dedicated advice, and tailored quotations.",
+      "primaryCta": "EXPLORE PRODUCTS",
+      "hotline": "Hotline: {hotline}",
+      "imageBadge": "DIVERSE RACKING LINES",
+      "imageCaption": "Selective, Medium Duty, and V-Hole Racking for diverse storage needs",
+      "floatTitle": "DIVERSE RACKING LINES",
+      "floatDesc": "3+ Core product lines"
+    },
+    "stats": {
+      "stat1": {
+        "label": "RACK SPECIFICATIONS",
+        "desc": "Diverse dimensions, load capacities, and product configurations."
+      },
+      "stat2": {
+        "label": "NEEDS FULFILLMENT RATE",
+        "desc": "Committed to matching products with actual storage requirements."
+      },
+      "stat3": {
+        "label": "PROVINCES SERVED",
+        "desc": "Expanding supply coverage across Ho Chi Minh City and Southern provinces."
+      },
+      "stat4": {
+        "label": "QUOTATION RESPONSE",
+        "desc": "Aiming to respond to quotation requests within 24 working hours."
+      }
+    },
+    "story": {
+      "imageTag": "STORAGE SOLUTIONS",
+      "imageTitle": "Diverse steel racks - Suited for many needs",
+      "badge": "STORAGE SOLUTIONS",
+      "title": "Kim Phu - Partnering with businesses to optimize storage space",
+      "p1": "In business and manufacturing operations, organizing and storing goods efficiently is increasingly vital. The right racking system not only maximizes space but also supports scientific inventory management and smoother daily operations.",
+      "p2": "Driven by that practical need, Kim Phu focuses on supplying Selective racking, medium duty racking, and slotted angle racking. With diverse products, transparent information, and needs-based consultation, Kim Phu strives to be a trusted destination for businesses seeking storage solutions.",
+      "visionTitle": "Vision",
+      "visionDesc": "Continuously growing to become a trusted storage solution supply partner for the business community.",
+      "missionTitle": "Mission",
+      "missionDesc": "Partnering with businesses to build scientific storage spaces, optimize floor area, and enhance goods management efficiency."
+    },
+    "timeline": {
+      "badge": "Development Journey",
+      "title": "HISTORY & DEVELOPMENT MILESTONES",
+      "desc": "From our beginnings in 2014 to perfecting supply solutions for Selective, medium duty, and slotted angle racking for enterprise clients.",
+      "items": {
+        "y2014": {
+          "tag": "Foundation",
+          "highlight": "Business foundation",
+          "title": "ESTABLISHMENT & BEGINNINGS",
+          "desc": "Started our business journey in industrial supplies and products serving customers' production and trading needs."
+        },
+        "y2017": {
+          "tag": "Expansion",
+          "highlight": "Broader catalog",
+          "title": "PORTFOLIO EXPANSION",
+          "desc": "Gradually expanded product varieties, growing supply operations for enterprises, retail stores, and workshops."
+        },
+        "y2019": {
+          "tag": "Growth",
+          "highlight": "Wide distribution",
+          "title": "MARKET EXPANSION",
+          "desc": "Strengthened distribution, diversified sourcing, and fulfilled storage equipment needs for commercial and manufacturing clients."
+        },
+        "y2021": {
+          "tag": "Transformation",
+          "highlight": "Steel racking focus",
+          "title": "STEEL RACKING SECTOR GROWTH",
+          "desc": "Expanded operations into steel racking, targeting storage needs across warehouses, workshops, and retail stores."
+        },
+        "y2024": {
+          "tag": "Specialization",
+          "highlight": "3 core rack lines",
+          "title": "EXPANDING SUPPLY CAPACITY",
+          "desc": "Developed Selective, medium duty, and slotted angle racking portfolios with versatile sizes, loads, and configurations."
+        },
+        "y2026": {
+          "tag": "Present",
+          "highlight": "Comprehensive solutions",
+          "title": "COMPLETE STEEL RACKING SOLUTIONS",
+          "desc": "Supplying diverse Selective, medium duty, and V-hole specifications; accepting custom medium duty rack designs while elevating B2B consultation and support."
+        }
+      }
+    },
+    "values": {
+      "badge": "Core Values",
+      "title": "6 CORE VALUES DEFINING THE KIM PHU BRAND",
+      "desc": "Putting customers at the center, Kim Phu pursues professionalism in supply, transparency in information, and dedication in every service.",
+      "footerLabel": "Kim Phu Core Value",
+      "items": {
+        "v1": {
+          "title": "DIVERSE PRODUCTS",
+          "desc": "Supplying Selective, medium duty, and V-hole racks with wide choices of dimensions, load capacities, and specs."
+        },
+        "v2": {
+          "title": "NEEDS-BASED CONSULTATION",
+          "desc": "Understanding goods characteristics and storage space to help customers pick the most suitable racking."
+        },
+        "v3": {
+          "title": "TRANSPARENT INFORMATION",
+          "desc": "Providing clear details on types, specifications, parameters, and pricing for convenient decision-making."
+        },
+        "v4": {
+          "title": "FLEXIBLE SUPPLY",
+          "desc": "Accommodating diverse requirements in types, quantities, and specs to find the best supply arrangement."
+        },
+        "v5": {
+          "title": "BUSINESS RESPONSIBILITY",
+          "desc": "Prioritizing clarity in consultation, aligned order details, and accountability in every customer transaction."
+        },
+        "v6": {
+          "title": "CUSTOMER PARTNERSHIP",
+          "desc": "Always listening, answering questions, and staying connected throughout discovery, purchase, and usage."
+        }
+      }
+    },
+    "capabilities": {
+      "badge": "Supply Capabilities",
+      "title": "SUPPLY & SUPPORT CAPABILITIES",
+      "desc": "Kim Phu focuses on meeting practical needs, flexible delivery options, and supporting customers during installation and usage.",
+      "items": {
+        "c1": {
+          "title": "Custom Design & Production",
+          "desc": "Accepting custom design and production of medium duty racks to specific specs for bulk orders."
+        },
+        "c2": {
+          "title": "Flexible Shipping & Delivery",
+          "desc": "Flexible transport arrangements tailored to order volume and customer delivery locations."
+        },
+        "c3": {
+          "title": "Installation & Guidance",
+          "desc": "On-site installation support in Ho Chi Minh City and remote assembly guidance for provincial customers."
+        }
+      },
+      "card1Title": "MEDIUM DUTY RACKING",
+      "card1Desc": "For cartons, supplies & spare parts",
+      "card2Title": "V-HOLE RACKING",
+      "card2Desc": "Modular shelving, space optimization"
+    },
+    "process": {
+      "badge": "Working Process",
+      "title": "SUPPLY & CUSTOMER SUPPORT PROCESS",
+      "desc": "From receiving inquiries to product delivery, Kim Phu emphasizes clarity, flexibility, and convenience at every stage.",
+      "footerLabel": "Clear & Flexible",
+      "steps": {
+        "s1": {
+          "title": "Receive Requirements",
+          "desc": "Record details on product types, dimensions, load capacity, quantities, and storage needs."
+        },
+        "s2": {
+          "title": "Product Consultation",
+          "desc": "Advise on suitable specifications, rack types, and layouts matching your goods and space."
+        },
+        "s3": {
+          "title": "Quotation & Order Confirmation",
+          "desc": "Provide product details, itemized quotations, and confirm specs, quantities, and order terms."
+        },
+        "s4": {
+          "title": "Supply & Delivery",
+          "desc": "Prepare goods and coordinate shipping plans suited to your order volume and delivery address."
+        },
+        "s5": {
+          "title": "Installation & After-Sales Support",
+          "desc": "Support installation in HCMC, remote assembly guidance for other provinces, and ongoing after-sales care."
+        }
+      }
+    },
+    "cta": {
+      "badge": "PARTNERING WITH BUSINESSES",
+      "title": "Looking for the right storage solution?",
+      "desc": "Explore Selective, medium duty, and slotted angle racking at Kim Phu. Contact us today for consultation, specifications, and a tailored quote.",
+      "primaryBtn": "GET CONSULTATION & QUOTE",
+      "hotline": "Hotline: {hotline}"
+    }
+  },
+  "SolutionsPage": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Solutions"
+    },
+    "hero": {
+      "badge": "Kim Phu Storage Solutions",
+      "titleStart": "Steel racking solutions to",
+      "titleHighlight": "optimize storage space",
+      "titleEnd": "",
+      "desc": "From warehouses and workshops to retail stores, Kim Phu supplies diverse Selective, medium duty, and V-hole racking. We support specification advice, custom medium duty rack design, delivery, and installation tailored to real needs.",
+      "primaryCta": "EXPLORE SOLUTIONS",
+      "hotline": "Hotline: {hotline}",
+      "imageBadge": "3 Core Racking Lines",
+      "imageCaption": "Selective • Medium Duty • V-Hole Racking for every storage space"
+    },
+    "metrics": {
+      "m1": {
+        "label": "Space optimization",
+        "desc": "Potential to expand capacity by utilizing floor area and warehouse height."
+      },
+      "m2": {
+        "label": "Direct accessibility",
+        "desc": "With Selective systems, every pallet position can be accessed independently."
+      },
+      "m3": {
+        "suffix": " Formats",
+        "label": "Flexible storage",
+        "desc": "Supports palletized goods, boxed items, and loose supplies."
+      },
+      "m4": {
+        "text": "On demand",
+        "label": "Tailored design",
+        "desc": "Select configurations and specs matching your actual warehouse."
+      }
+    },
+    "explorer": {
+      "badge": "STORAGE SOLUTIONS BY NEED",
+      "title": "Steel racking solutions for diverse storage spaces",
+      "desc": "Each storage space has unique requirements for goods, load capacity, and layout. Kim Phu offers suitable steel racking options for warehouses, workshops, stores, and practical applications.",
+      "challengesTitle": "COMMON STORAGE CHALLENGES",
+      "benefitsTitle": "IMPLEMENTATION BENEFITS",
+      "recommendedTitle": "RECOMMENDED RACKING SYSTEMS:",
+      "cardCta": "CONTACT FOR CONSULTATION & QUOTE",
+      "tabs": {
+        "all": "All needs",
+        "logistics": "Warehouses & Logistics",
+        "manufacturing": "Workshops & Manufacturing",
+        "retail": "Retail Stores & Business",
+        "materials": "Supplies & Spare Parts",
+        "storage": "General Goods Storage"
+      },
+      "systems": {
+        "ke-selective": "Selective Racking",
+        "ke-trung-tai": "Medium Duty Racking",
+        "ke-v-lo": "V-Hole Racking"
+      },
+      "items": {
+        "logistics": {
+          "sectorLabel": "WAREHOUSES & LOGISTICS",
+          "title": "Selective racking solutions for Warehouses & Logistics",
+          "badge": "100% Pallet Access",
+          "summary": "For distribution and logistics warehouses, rapid access to goods is crucial. Selective racking organizes pallets into individual positions, streamlining inbound/outbound handling and multi-SKU management.",
+          "c1": "Large pallet volumes with diverse SKUs requiring clear position separation.",
+          "c2": "Frequent forklift operations for inbound and outbound handling.",
+          "c3": "Hard to track storage locations when goods are unscientifically arranged.",
+          "b1": "Direct access to every pallet position without moving other pallets.",
+          "b2": "Utilize warehouse height with multi-tier storage levels.",
+          "b3": "Ideal for multi-SKU warehouses with frequent stock rotation."
+        },
+        "manufacturing": {
+          "sectorLabel": "WORKSHOPS & MANUFACTURING",
+          "title": "Steel racking solutions for workshops & production areas",
+          "badge": "Scientific material sorting",
+          "summary": "Workshops often store diverse raw materials, semi-finished goods, spare parts, and tools. The right racking system zones storage clearly for easy management and retrieval.",
+          "c1": "Supplies, spare parts, and goods scattered across multiple areas.",
+          "c2": "Workshop space needs organized layout for smooth movement.",
+          "c3": "Non-uniform item dimensions and load weights.",
+          "b1": "Categorize supplies and spare parts by shelf tier and zone.",
+          "b2": "Maximize vertical storage space.",
+          "b3": "Choose medium duty rack specs tailored to your goods."
+        },
+        "retail": {
+          "sectorLabel": "RETAIL STORES & BUSINESS",
+          "title": "Steel racking solutions for retail stores & businesses",
+          "badge": "Flexible assembly",
+          "summary": "For retail stores and businesses, organized shelving keeps spaces neat, easy to inspect, and convenient for picking. Modular steel racks suit many storage and display models.",
+          "c1": "Diverse merchandise needing separation by product group.",
+          "c2": "Limited store floor area requiring vertical space utilization.",
+          "c3": "Need to adjust layouts based on stock volume and seasons.",
+          "b1": "Organize goods by tier for clear visibility and easy picking.",
+          "b2": "Maximize usable area while keeping business spaces tidy.",
+          "b3": "Easily adjust shelf levels and layouts as needed."
+        },
+        "materials": {
+          "sectorLabel": "SUPPLIES & SPARE PARTS",
+          "title": "Medium duty & V-hole racks for supply warehouses",
+          "badge": "Easy inventory & sorting",
+          "summary": "Supply and component rooms hold many small to medium-sized items of varying shapes. Suitable steel shelving zones goods clearly, simplifying stocktaking and inventory control.",
+          "c1": "Numerous components, spare parts, and supplies requiring separate sorting.",
+          "c2": "Items placed directly on the floor make searching difficult.",
+          "c3": "Need to adjust shelf spacing based on supply dimensions.",
+          "b1": "Separate supplies by tier and designated storage slots.",
+          "b2": "Convenient identification, stocktaking, and retrieval.",
+          "b3": "Flexible choice of rack dimensions and configurations."
+        },
+        "storage": {
+          "sectorLabel": "GENERAL GOODS STORAGE",
+          "title": "Steel racking solutions for general goods storage",
+          "badge": "Versatile structures",
+          "summary": "Depending on item characteristics and space, businesses can choose racks with different structures, sizes, and load capacities. Kim Phu helps select the right lines for neat, scientific storage.",
+          "c1": "Goods vary widely in dimensions, weight, and packaging.",
+          "c2": "Need dedicated storage zones for each product group.",
+          "c3": "Warehouse space is not yet utilized effectively.",
+          "b1": "Organize goods by designated zones and shelf tiers.",
+          "b2": "Select structures matching item load and dimensions.",
+          "b3": "Convenient arrangement, preservation, and inventory control."
+        }
+      }
+    },
+    "cta": {
+      "badge": "PARTNERING WITH BUSINESSES",
+      "title": "Need a suitable storage solution?",
+      "desc": "Kim Phu is ready to advise on steel racking, support custom medium duty rack design, and propose supply plans tailored to your business needs.",
+      "primaryBtn": "GET CONSULTATION & QUOTE",
+      "hotline": "Hotline: {hotline}"
+    }
+  },
+  "ProductsPage": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Products"
+    },
+    "hero": {
+      "badge": "KIM PHU PRODUCTS",
+      "title": "Specialized Industrial Warehouse Racking Systems",
+      "desc": "Warehouse space optimization solutions with load capacities from 300 to 4,000 kg/pallet."
+    },
+    "filter": {
+      "title": "Product Categories",
+      "reset": "Reset",
+      "searchLabel": "Search products",
+      "searchPlaceholder": "Selective, Medium Duty, V-Hole...",
+      "groupLabel": "Product groups",
+      "categories": {
+        "all": "All products",
+        "heavy": "Selective Racking",
+        "medium": "Medium Duty Racking",
+        "floor": "V-Hole Racking"
+      },
+      "hotlineTitle": "Need Racking Consultation & Quote?",
+      "hotlineDesc": "Contact Kim Phu for advice on specifications, load capacities, and selecting the right storage racks.",
+      "hotlineBtn": "Hotline: {hotline}",
+      "showing": "Showing {count} featured product lines at Kim Phu",
+      "removeCategory": "Clear category filter",
+      "emptyTitle": "No matching racking systems found",
+      "emptyDesc": "No products match your current keyword. Please try another term or reset filters.",
+      "viewAll": "View all {count} products"
+    },
+    "whyChoose": {
+      "badge": "Partnership Value",
+      "title": "Why do businesses choose Kim Phu steel racking?",
+      "desc": "Beyond diverse products, Kim Phu focuses on matching real needs and specifications while supporting customers from ordering through usage.",
+      "items": {
+        "w1": {
+          "title": "Diverse Products & Specs",
+          "desc": "Selective, medium duty, and V-hole racks with many choices of dimensions and load capacities."
+        },
+        "w2": {
+          "title": "Needs-Based Consultation",
+          "desc": "Guidance on selecting the right rack type, specifications, and storage layout."
+        },
+        "w3": {
+          "title": "Custom Medium Duty Rack Design",
+          "desc": "Custom design and manufacturing to specific specs for bulk orders."
+        },
+        "w4": {
+          "title": "Delivery & Installation Support",
+          "desc": "Flexible shipping, on-site installation in HCMC, and remote assembly guidance for other provinces."
+        }
+      }
+    },
+    "cta": {
+      "badge": "FAST CONSULTATION & QUOTE",
+      "title": "Looking for the right steel racks for your warehouse?",
+      "desc": "Kim Phu supplies Selective, medium duty, and V-hole racks. Contact us today for specifications, load advice, and a tailored quote.",
+      "hotline": "CONSULTATION HOTLINE: {hotline}",
+      "quoteBtn": "REQUEST A QUOTE"
+    }
+  },
+  "ArticlesPage": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "News"
+    },
+    "hero": {
+      "badge": "PERSPECTIVES & INSIGHTS FROM KIM PHU",
+      "titleStart": "Knowledge, News &",
+      "titleHighlight": "Kim Phu Stories",
+      "desc": "Updating knowledge on steel racking and industrial supplies, market news, industry trends, and real stories from Kim Phu's journey serving customers."
+    },
+    "feed": {
+      "searchPlaceholder": "Search articles, guides, news...",
+      "tabs": {
+        "all": "All articles",
+        "blog": "Blog & Knowledge",
+        "news": "News",
+        "story": "Customer Stories"
+      },
+      "featuredBadge": "Featured",
+      "readArticle": "Read article",
+      "mostRead": "Most Read Articles",
+      "allArticlesTitle": "All articles ({count})",
+      "sortLatest": "Sort by: Latest",
+      "emptyTitle": "No matching articles found",
+      "emptyDesc": "Please try a different keyword or switch to another category.",
+      "readMore": "Read more",
+      "author": "Kim Phu Editorial Team",
+      "sidebar": {
+        "title": "Need Racking Consultation & Quote?",
+        "desc": "Contact Kim Phu for advice on specifications, load capacities, and choosing the right racking for your storage needs.",
+        "callBtn": "Call now: {hotline}"
+      }
+    }
+  },
+  "ContactPage": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Contact"
+    },
+    "hero": {
+      "badge": "Customer Support",
+      "titleStart": "Contact for",
+      "titleHighlight": "Consultation & Quotation",
+      "desc": "Kim Phu is ready to help you explore products, choose suitable specifications, and provide steel racking quotations tailored to your needs."
+    },
+    "info": {
+      "officeTitle": "Kim Phu Office",
+      "contactTitle": "Contact Information",
+      "hotlineLabel": "Hotline:",
+      "emailLabel": "Email:",
+      "hoursTitle": "Working Hours",
+      "hoursDays": "Monday - Saturday",
+      "hoursMorning": "Morning: 8:00 - 12:00",
+      "hoursAfternoon": "Afternoon: 13:00 - 17:00"
+    },
+    "map": {
+      "title": "Representative Office"
+    },
+    "form": {
+      "title": "REQUEST CONSULTATION & QUOTATION",
+      "desc": "Leave your details and requirements; Kim Phu will contact you with suitable products, specs, and pricing.",
+      "f1Label": "01. Full Name",
+      "f1Placeholder": "e.g. Nguyen Van An",
+      "f2Label": "02. Company / Organization",
+      "f2Placeholder": "e.g. ABC Co., Ltd.",
+      "f3Label": "03. Address",
+      "f3Placeholder": "e.g. Thoi An Ward, Ho Chi Minh City",
+      "f4Label": "04. Contact Phone Number",
+      "f4Placeholder": "e.g. 0971 069 294",
+      "f5Label": "05. Email Address",
+      "f5Placeholder": "e.g. contact@company.com",
+      "f6Label": "06. Products of Interest",
+      "products": {
+        "ke-selective": "Selective Racking",
+        "ke-trung-tai": "Medium Duty Racking",
+        "ke-v-lo": "V-Hole Racking",
+        "chua-xac-dinh": "Not sure yet, need advice"
+      },
+      "f7Label": "07. Estimated Quantity / Specifications",
+      "f7Placeholder": "e.g. 10 sets of medium duty racks, 2m H x 2m L, 4 levels...",
+      "f8Label": "08. Other Requirements",
+      "f8Placeholder": "Share more about your goods, estimated load, delivery location...",
+      "privacyNote": "100% customer information confidentiality",
+      "submitting": "Submitting...",
+      "submitBtn": "Submit Consultation & Quote Request",
+      "successTitle": "Request Submitted Successfully!",
+      "successDesc": "Thank you {name} ({company}). Kim Phu specialists will contact you via {phone} to advise on suitable products, specifications, and pricing.",
+      "sendAnother": "Submit Another Request"
     }
   }
 }
