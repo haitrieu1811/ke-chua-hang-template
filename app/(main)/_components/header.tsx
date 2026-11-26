@@ -434,7 +434,7 @@ export default function MainHeader({ changeLocaleAction }: MainHeaderProps) {
                     <div className="text-sm font-semibold text-muted-foreground mb-2.5">
                       {t("officialSocialTitle")}
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-wrap items-center gap-2.5">
                       <a
                         href={SHOP_INFO.FACEBOOK_URL}
                         target="_blank"

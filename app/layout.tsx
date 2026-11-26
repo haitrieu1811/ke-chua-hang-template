@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
-import { Be_Vietnam_Pro as FontSans } from "next/font/google";
+import { Chivo as FontSans } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import { Suspense } from "react";
 

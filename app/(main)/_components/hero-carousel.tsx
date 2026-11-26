@@ -104,10 +104,10 @@ export default function HomeCarousel() {
         }}
         className="w-full"
       >
-        <CarouselContent className="-ml-0">
+        <CarouselContent className="-ml-0 items-stretch">
           {slides.map((slide) => (
             <CarouselItem key={slide.id} className="pl-0">
-              <div className="relative min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] w-full flex items-center justify-center overflow-hidden">
+              <div className="relative h-full min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] w-full flex items-center justify-center overflow-hidden">
                 {/* Ảnh nền slide thực tế độ phân giải cao */}
                 <img
                   src={slide.image}
@@ -115,9 +115,9 @@ export default function HomeCarousel() {
                   className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-1000 scale-102"
                 />
 
-                {/* Lớp phủ Gradient đa tầng để làm nổi bật nội dung chữ */}
-                <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/70 to-black/45" />
-                <div className="absolute inset-0 bg-radial from-transparent via-black/20 to-black/60" />
+                {/* Lớp phủ Gradient nhẹ để giữ ảnh sáng rõ và chữ vẫn nổi bật */}
+                <div className="absolute inset-0 bg-linear-to-r from-black/65 via-black/35 to-black/10" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent" />
 
                 {/* Nội dung chính của Slide (Font size >= 14px) */}
                 <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 w-full text-white">

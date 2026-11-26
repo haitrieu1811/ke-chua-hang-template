@@ -1,15 +1,5 @@
 "use client";
 
-import * as React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { useTranslations } from "next-intl";
-import {
-  AlertCircle,
-  ArrowRight,
-  CheckCircle2,
-  Layers,
-} from "lucide-react";
 import ScrollReveal from "@/components/scroll-reveal";
 import {
   industrySolutions,
@@ -17,6 +7,11 @@ import {
   type SolutionSectorKey,
 } from "@/data/solutions";
 import { cn } from "@/lib/utils";
+import { AlertCircle, ArrowRight, CheckCircle2, Layers } from "lucide-react";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import Link from "next/link";
+import * as React from "react";
 
 export default function SolutionsExplorer() {
   const t = useTranslations("SolutionsPage.explorer");

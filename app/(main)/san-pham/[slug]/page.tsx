@@ -177,11 +177,11 @@ export default async function ProductDetailPage({
                 <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div className="flex items-center gap-3 rounded-xl border border-border/70 bg-card p-3.5 shadow-2xs">
                     <CheckCircle2 className="size-5 text-orange-500 shrink-0" />
-                    <div>
+                    <div className="min-w-0">
                       <span className="text-sm font-medium text-muted-foreground block">
                         Tải trọng thiết kế:
                       </span>
-                      <strong className="text-sm font-bold text-foreground">
+                      <strong className="text-sm font-bold text-foreground break-words">
                         {product.loadCapacity}
                       </strong>
                     </div>
@@ -189,11 +189,11 @@ export default async function ProductDetailPage({
 
                   <div className="flex items-center gap-3 rounded-xl border border-border/70 bg-card p-3.5 shadow-2xs">
                     <ShieldCheck className="size-5 text-primary shrink-0" />
-                    <div>
+                    <div className="min-w-0">
                       <span className="text-sm font-medium text-muted-foreground block">
                         Quy chuẩn thép:
                       </span>
-                      <strong className="text-sm font-bold text-foreground truncate block">
+                      <strong className="text-sm font-bold text-foreground break-words block">
                         {product.steelStandard}
                       </strong>
                     </div>
@@ -201,11 +201,11 @@ export default async function ProductDetailPage({
 
                   <div className="flex items-center gap-3 rounded-xl border border-border/70 bg-card p-3.5 shadow-2xs">
                     <Award className="size-5 text-orange-500 shrink-0" />
-                    <div>
+                    <div className="min-w-0">
                       <span className="text-sm font-medium text-muted-foreground block">
                         Thời hạn bảo hành:
                       </span>
-                      <strong className="text-sm font-bold text-foreground">
+                      <strong className="text-sm font-bold text-foreground break-words">
                         {product.warranty}
                       </strong>
                     </div>
@@ -213,11 +213,11 @@ export default async function ProductDetailPage({
 
                   <div className="flex items-center gap-3 rounded-xl border border-border/70 bg-card p-3.5 shadow-2xs">
                     <Layers className="size-5 text-primary shrink-0" />
-                    <div>
+                    <div className="min-w-0">
                       <span className="text-sm font-medium text-muted-foreground block">
                         Nguồn gốc sản xuất:
                       </span>
-                      <strong className="text-sm font-bold text-foreground truncate block">
+                      <strong className="text-sm font-bold text-foreground break-words block">
                         {product.origin}
                       </strong>
                     </div>
