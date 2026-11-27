@@ -8,8 +8,6 @@ import {
   Clock,
   Sparkles,
   ChevronRight,
-  Building2,
-  Headphones,
 } from "lucide-react";
 import ScrollReveal from "@/components/scroll-reveal";
 import SHOP_INFO from "@/constants/info";
@@ -64,98 +62,88 @@ export default async function ContactPage() {
               </p>
             </div>
           </ScrollReveal>
-
-          {/* 3 Thẻ Thông Tin Liên Hệ */}
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <ScrollReveal direction="up" delay={100} duration={600}>
-              <div className="flex h-full flex-col justify-between rounded-2xl border border-border/80 bg-card p-6 shadow-xs transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
-                <div>
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-4">
-                    <Building2 className="size-6 text-orange-500" />
-                  </div>
-                  <h3 className="text-base sm:text-lg font-bold text-foreground">
-                    {t("info.officeTitle")}
-                  </h3>
-                  <div className="mt-3 space-y-2 text-sm text-muted-foreground">
-                    <p className="flex items-start gap-2">
-                      <MapPin className="size-4 text-primary shrink-0 mt-0.5" />
-                      <span>{SHOP_INFO.ADDRESS}</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="up" delay={200} duration={600}>
-              <div className="flex h-full flex-col justify-between rounded-2xl border border-border/80 bg-card p-6 shadow-xs transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
-                <div>
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400 mb-4">
-                    <Headphones className="size-6 text-orange-500" />
-                  </div>
-                  <h3 className="text-base sm:text-lg font-bold text-foreground">
-                    {t("info.contactTitle")}
-                  </h3>
-                  <div className="mt-3 space-y-2 text-sm text-muted-foreground">
-                    <p className="flex items-center gap-2">
-                      <PhoneCall className="size-4 text-primary shrink-0" />
-                      <a
-                        href={`tel:${SHOP_INFO.HOTLINE.NUMBER}`}
-                        className="font-bold text-orange-600 dark:text-orange-400 hover:underline"
-                      >
-                        {t("info.hotlineLabel")} {SHOP_INFO.HOTLINE.TEXT}
-                      </a>
-                    </p>
-                    <p className="flex items-center gap-2">
-                      <Mail className="size-4 text-primary shrink-0" />
-                      <a
-                        href={`mailto:${SHOP_INFO.EMAIL}`}
-                        className="hover:text-foreground transition-colors"
-                      >
-                        {t("info.emailLabel")} {SHOP_INFO.EMAIL}
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="up" delay={300} duration={600}>
-              <div className="flex h-full flex-col justify-between rounded-2xl border border-border/80 bg-card p-6 shadow-xs transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
-                <div>
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-4">
-                    <Clock className="size-6 text-orange-500" />
-                  </div>
-                  <h3 className="text-base sm:text-lg font-bold text-foreground">
-                    {t("info.hoursTitle")}
-                  </h3>
-                  <div className="mt-3 space-y-1.5 text-sm text-muted-foreground">
-                    <p className="font-semibold text-foreground">
-                      {t("info.hoursDays")}
-                    </p>
-                    <p>{t("info.hoursMorning")}</p>
-                    <p>{t("info.hoursAfternoon")}</p>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
         </div>
       </section>
 
-      {/* 2. FORM ĐĂNG KÝ & BẢN ĐỒ */}
-      <section className="py-16 sm:py-24">
+      {/* 2. THÔNG TIN LIÊN HỆ (TRÁI) & FORM ĐĂNG KÝ TƯ VẤN (PHẢI) */}
+      <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-start">
-            <div className="lg:col-span-7">
-              <ScrollReveal direction="up" duration={700}>
-                <ContactForm />
-              </ScrollReveal>
-            </div>
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-start">
+            {/* Cột trái: Thông tin liên hệ + Bản đồ */}
+            <div className="lg:col-span-5 space-y-8">
+              <ScrollReveal direction="up" duration={600}>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="h-px flex-1 bg-border" />
+                  <h2 className="text-lg sm:text-xl font-black text-primary text-center uppercase">
+                    KỆ KIM PHÚ
+                  </h2>
+                  <div className="h-px flex-1 bg-border" />
+                </div>
 
-            <div className="lg:col-span-5">
-              <ScrollReveal direction="left" duration={700}>
-                <div className="overflow-hidden rounded-3xl border border-border/80 bg-card p-2 shadow-xl">
-                  <div className="relative h-96 w-full rounded-2xl overflow-hidden bg-muted">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {/* Địa chỉ */}
+                  <div className="space-y-2">
+                    <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                      <MapPin className="size-5 text-orange-500" />
+                    </div>
+                    <h3 className="text-sm font-black text-primary uppercase">
+                      {t("info.officeTitle")}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {SHOP_INFO.ADDRESS}
+                    </p>
+                  </div>
+
+                  {/* Thời gian làm việc */}
+                  <div className="space-y-2">
+                    <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                      <Clock className="size-5 text-orange-500" />
+                    </div>
+                    <h3 className="text-sm font-black text-primary uppercase">
+                      {t("info.hoursTitle")}
+                    </h3>
+                    <div className="text-sm text-muted-foreground space-y-1">
+                      <p className="font-semibold text-foreground">
+                        {t("info.hoursDays")}
+                      </p>
+                      <p>{t("info.hoursMorning")}</p>
+                      <p>{t("info.hoursAfternoon")}</p>
+                    </div>
+                  </div>
+
+                  {/* Hotline & Email */}
+                  <div className="sm:col-span-2 space-y-2 pt-4 border-t border-border/60">
+                    <h3 className="text-sm font-black text-primary uppercase">
+                      {t("info.contactTitle")}
+                    </h3>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-sm text-muted-foreground">
+                      <a
+                        href={`tel:${SHOP_INFO.HOTLINE.NUMBER}`}
+                        className="inline-flex items-center gap-2 font-bold text-orange-600 dark:text-orange-400 hover:underline"
+                      >
+                        <PhoneCall className="size-4 text-primary shrink-0" />
+                        <span>
+                          {t("info.hotlineLabel")} {SHOP_INFO.HOTLINE.TEXT}
+                        </span>
+                      </a>
+                      <a
+                        href={`mailto:${SHOP_INFO.EMAIL}`}
+                        className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
+                      >
+                        <Mail className="size-4 text-primary shrink-0" />
+                        <span>
+                          {t("info.emailLabel")} {SHOP_INFO.EMAIL}
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              {/* Bản đồ Google Maps */}
+              <ScrollReveal direction="up" delay={120} duration={650}>
+                <div className="overflow-hidden rounded-2xl border border-border/80 bg-card p-2 shadow-sm">
+                  <div className="relative h-72 w-full rounded-xl overflow-hidden bg-muted">
                     <iframe
                       title={SHOP_INFO.ADDRESS}
                       src={`https://maps.google.com/maps?q=${encodeURIComponent(SHOP_INFO.ADDRESS)}&t=&z=16&ie=UTF8&iwloc=&output=embed`}
@@ -168,7 +156,7 @@ export default async function ContactPage() {
                       className="size-full"
                     />
                   </div>
-                  <div className="p-4 text-center">
+                  <div className="p-3 text-center">
                     <span className="text-sm font-bold text-foreground block">
                       {t("map.title")}
                     </span>
@@ -177,6 +165,13 @@ export default async function ContactPage() {
                     </span>
                   </div>
                 </div>
+              </ScrollReveal>
+            </div>
+
+            {/* Cột phải: Form đăng ký tư vấn & báo giá */}
+            <div className="lg:col-span-7">
+              <ScrollReveal direction="up" delay={80} duration={650}>
+                <ContactForm />
               </ScrollReveal>
             </div>
           </div>

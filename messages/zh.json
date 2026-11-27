@@ -683,6 +683,9 @@
     "hero": {
       "badge": "金富产品中心",
       "title": "专业工业仓储货架系统",
+      "titleStart": "专业",
+      "titleHighlight": "工业仓储货架",
+      "titleEnd": "系统",
       "desc": "承重 300 - 4000 kg/托盘的仓库空间优化解决方案。"
     },
     "filter": {
@@ -826,6 +829,172 @@
       "successTitle": "提交成功！",
       "successDesc": "感谢 {name}（{company}）。金富专业顾问将尽快致电 {phone}，为您推荐合适的产品、规格与报价。",
       "sendAnother": "提交其他需求"
+    }
+  },
+  "ProductCard": {
+    "referencePrice": "参考单价：",
+    "contactPrice": "联系报价",
+    "viewDetail": "查看详情",
+    "items": {
+      "ke-selective": {
+        "name": "横梁式货架 (Selective)",
+        "categoryLabel": "横梁式货架",
+        "tag": "热销第一",
+        "loadCapacity": "1,000kg - 3,500kg / 托盘",
+        "steelStandard": "日本 JIS G3101 冷轧钢",
+        "shortDescription": "目前最普及、灵活的托盘货架系统，叉车可 100% 直接存取每个托盘货位，无需移动周边托盘。"
+      },
+      "ke-trung-tai": {
+        "name": "中型货架",
+        "categoryLabel": "中型货架",
+        "tag": "物料仓热选",
+        "loadCapacity": "300kg - 800kg / 层",
+        "steelStandard": "冷轧钢静电喷涂",
+        "shortDescription": "无螺栓插接式人工存取货架，多层层板灵活组合，非常适合存放纸箱、物料、零配件与备件。"
+      },
+      "ke-v-lo": {
+        "name": "万能角钢货架 (V 孔)",
+        "categoryLabel": "万能角钢货架",
+        "tag": "多功能灵活",
+        "loadCapacity": "80kg - 150kg / 层",
+        "steelStandard": "静电喷涂万能角钢",
+        "shortDescription": "灵活拼装角钢货架，层距可按需自由调节，适用于仓库、零售门店及车间存放货物、工具与物料。"
+      }
+    }
+  },
+  "HomeProducts": {
+    "badge": "核心主营产品",
+    "title": "金富仓储货架产品",
+    "desc": "供应多样化横梁式货架、中型货架与万能角钢货架。依据您的存储需求、货物规格及使用空间提供专业选型建议。",
+    "tabs": {
+      "all": "全部产品",
+      "heavy": "横梁式货架",
+      "medium": "中型货架",
+      "floor": "万能角钢货架"
+    },
+    "viewMore": "查看更多产品"
+  },
+  "HomeArticles": {
+    "title": "博客与资讯",
+    "viewAll": "查看全部文章",
+    "readMore": "继续阅读",
+    "author": "金富编辑部"
+  },
+  "ArticlesList": {
+    "monthPrefix": "月",
+    "items": {
+      "1": {
+        "category": "博客与知识",
+        "readTime": "约 6 分钟",
+        "title": "仓库布局设计秘诀：保障叉车安全作业并提升 70% 库容",
+        "excerpt": "解析前移式与平衡重叉车最佳通道宽度，科学规划出入库动线，避免拥堵并最大化利用场地面积。"
+      },
+      "2": {
+        "category": "博客与知识",
+        "readTime": "约 8 分钟",
+        "title": "横梁式货架与驶入式货架深度对比：企业该如何选型投资？",
+        "excerpt": "对比主流工业货架系统的单托盘投入成本、存储密度及货位拣选效率，助您做出明智决策。"
+      },
+      "3": {
+        "category": "博客与知识",
+        "readTime": "约 5 分钟",
+        "title": "托盘货架横梁挠度检测与欧洲 FEM 10.2.02 安全标准指南",
+        "excerpt": "详解允许挠度范围（L/200）、立柱螺栓定期检查及均匀承重规范，保障工业仓库长期安全运行。"
+      },
+      "4": {
+        "category": "新闻动态",
+        "readTime": "约 7 分钟",
+        "title": "深冷库（-25°C）货架方案：静电喷涂还是热镀锌工艺？",
+        "excerpt": "剖析低温高湿环境下的腐蚀与结露特性，对比不同钢材表面处理工艺在食品冷库中的实际表现。"
+      },
+      "5": {
+        "category": "客户故事",
+        "readTime": "约 6 分钟",
+        "title": "中型货架与角钢货架组合布局，高效优化物料与零配件仓库",
+        "excerpt": "分享重新规划物料仓的真实案例，按层级分区管理货物，大幅缩短找货与库存盘点时间。"
+      },
+      "6": {
+        "category": "客户故事",
+        "readTime": "约 5 分钟",
+        "title": "中小型门店与车间选购万能角钢货架的实用经验",
+        "excerpt": "梳理层板尺寸、钢材厚度及层距调节要点，帮助门店与车间保持陈列整齐、拿取便捷。"
+      },
+      "7": {
+        "category": "新闻动态",
+        "readTime": "约 6 分钟",
+        "title": "工业仓储货架系统定期维护与安全巡检流程",
+        "excerpt": "汇总横梁安全销、立柱护脚、结构垂直度及各层承重分布的定期巡检清单。"
+      }
+    }
+  },
+  "ProductDetailPage": {
+    "breadcrumb": {
+      "home": "首页",
+      "products": "产品中心"
+    },
+    "reviewsLabel": "（{count} 条客户评价）",
+    "priceLabel": "工厂参考加工单价：",
+    "priceNote": "（可按横梁跨度、高度及仓库规格定制）",
+    "contactPrice": "联系报价",
+    "specs": {
+      "loadCapacity": "设计承重：",
+      "steelStandard": "钢材标准：",
+      "warranty": "质保期限：",
+      "origin": "生产产地：",
+      "originValue": "越南西宁工业区仓储货架工厂",
+      "warrantyValue": "5 年结构质保"
+    },
+    "cta": {
+      "quoteBtn": "申请快速报价",
+      "hotline": "热线：{hotline}"
+    },
+    "commitments": {
+      "c1": "24 小时内快速报价",
+      "c2": "支持按需定制设计与生产",
+      "c3": "全国配送与安装交付"
+    },
+    "gallery": {
+      "zoomHint": "点击查看大图",
+      "photoCounter": "实景图 {current} / {total}",
+      "dialogDesc": "放大查看横梁结构、欧米茄立柱及仓库现场实景安装效果。",
+      "prevAria": "上一张",
+      "nextAria": "下一张"
+    },
+    "sections": {
+      "techBadge": "全面技术参数",
+      "detailTitle": "产品详情：{name}",
+      "overviewTitle": "产品概述与结构设计",
+      "featuresTitle": "核心特点与优势",
+      "specsTableTitle": "FEM 10.2.02 标准技术规格表",
+      "applicationsTitle": "适用行业与实际应用场景",
+      "relatedBadge": "同系列解决方案",
+      "relatedTitle": "同分类相关产品",
+      "viewAllProducts": "查看全部产品"
+    }
+  },
+  "ArticleDetailPage": {
+    "breadcrumb": {
+      "home": "首页",
+      "articles": "新闻资讯"
+    },
+    "author": "金富编辑部",
+    "consultHotline": "咨询热线：{hotline}",
+    "tocTitle": "文章目录",
+    "authorBio": "金富团队持续分享横梁式货架、中型货架与角钢货架的实用选型知识，助力企业高效优化仓储空间。",
+    "bookConsult": "预约一对一咨询",
+    "sendRequest": "申请报价",
+    "sidebar": {
+      "badge": "快速响应支持",
+      "title": "联系获取咨询与报价",
+      "hotline": "热线：{hotline}",
+      "quoteBtn": "申请报价",
+      "mostRead": "热门阅读文章"
+    },
+    "related": {
+      "badge": "同主题知识",
+      "title": "相关文章与指南",
+      "viewAll": "查看全部文章",
+      "readMore": "继续阅读"
     }
   }
 }

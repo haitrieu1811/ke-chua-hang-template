@@ -3,6 +3,7 @@
 import { Product } from "@/data/products";
 import { cn } from "cn";
 import { ArrowRight, CheckCircle2, ShieldCheck, Star } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 interface ProductItemProps {
@@ -13,17 +14,44 @@ interface ProductItemProps {
   buttonText?: string;
 }
 
+type CoreSlug = "ke-selective" | "ke-trung-tai" | "ke-v-lo";
+
+function isCoreSlug(slug: string): slug is CoreSlug {
+  return (
+    slug === "ke-selective" || slug === "ke-trung-tai" || slug === "ke-v-lo"
+  );
+}
+
 export default function ProductItem({
   product,
   showDescription = true,
   showPrice,
   className,
-  buttonText = "Xem Chi Tiết",
+  buttonText,
 }: ProductItemProps) {
+  const t = useTranslations("ProductCard");
+
+  const coreSlug = isCoreSlug(product.slug) ? product.slug : null;
+  const displayName = coreSlug ? t(`items.${coreSlug}.name`) : product.name;
+  const displayCategory = coreSlug
+    ? t(`items.${coreSlug}.categoryLabel`)
+    : product.categoryLabel;
+  const displayTag = coreSlug ? t(`items.${coreSlug}.tag`) : product.tag;
+  const displayLoad = coreSlug
+    ? t(`items.${coreSlug}.loadCapacity`)
+    : product.loadCapacity;
+  const displaySteel = coreSlug
+    ? t(`items.${coreSlug}.steelStandard`)
+    : product.steelStandard;
+  const displayDesc = coreSlug
+    ? t(`items.${coreSlug}.shortDescription`)
+    : product.shortDescription;
+
   const shouldShowPrice = showPrice ?? product.showPrice ?? true;
   const trimmedPrice = product.price?.trim();
   const hasPrice = Boolean(trimmedPrice);
-  const displayPrice = trimmedPrice || "Liên hệ";
+  const displayPrice = trimmedPrice || t("contactPrice");
+  const resolvedButtonText = buttonText ?? t("viewDetail");
 
   return (
     <div
@@ -33,10 +61,13 @@ export default function ProductItem({
       )}
     >
       {/* Ảnh sản phẩm với hiệu ứng zoom nhẹ */}
-      <div className="relative aspect-4/3 w-full overflow-hidden bg-muted">
+      <Link
+        href={`/san-pham/${product.slug}`}
+        className="relative block aspect-4/3 w-full overflow-hidden bg-muted"
+      >
         <img
           src={product.image}
-          alt={product.name}
+          alt={displayName}
           className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
         />
 
@@ -47,23 +78,23 @@ export default function ProductItem({
               product.isHot ? "bg-orange-500" : "bg-primary/95"
             }`}
           >
-            {product.tag}
+            {displayTag}
           </span>
         </div>
 
-        {/* Đánh giá sao ⭐ */}
+        {/* Đánh giá sao */}
         <div className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 flex items-center gap-1 rounded-md bg-black/70 px-1.5 py-0.5 sm:px-2 text-xs sm:text-sm text-white backdrop-blur-md">
           <Star className="size-3 sm:size-3.5 fill-orange-400 text-orange-400" />
           <span className="font-bold">5.0</span>
           <span className="text-zinc-300">({product.reviewCount})</span>
         </div>
-      </div>
+      </Link>
 
       {/* Nội dung thông số kỹ thuật sản phẩm */}
       <div className="flex flex-1 flex-col justify-between p-3 sm:p-5">
         <div className="min-w-0">
           <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-primary block truncate">
-            {product.categoryLabel}
+            {displayCategory}
           </span>
 
           <h3 className="mt-1 sm:mt-1.5 text-sm sm:text-lg font-bold text-foreground transition-colors group-hover:text-primary line-clamp-2">
@@ -71,13 +102,13 @@ export default function ProductItem({
               href={`/san-pham/${product.slug}`}
               className="hover:underline focus:outline-none"
             >
-              {product.name}
+              {displayName}
             </Link>
           </h3>
 
           {showDescription && (
             <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-muted-foreground line-clamp-2 leading-relaxed">
-              {product.shortDescription}
+              {displayDesc}
             </p>
           )}
 
@@ -85,13 +116,11 @@ export default function ProductItem({
           <div className="mt-2.5 sm:mt-3.5 space-y-1 sm:space-y-1.5 border-t border-border/60 pt-2.5 sm:pt-3 text-xs sm:text-sm text-muted-foreground">
             <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
               <CheckCircle2 className="size-3.5 sm:size-4 text-orange-500 shrink-0" />
-              <span className="truncate font-medium">
-                {product.loadCapacity}
-              </span>
+              <span className="truncate font-medium">{displayLoad}</span>
             </div>
             <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
               <ShieldCheck className="size-3.5 sm:size-4 text-primary shrink-0" />
-              <span className="truncate">{product.steelStandard}</span>
+              <span className="truncate">{displaySteel}</span>
             </div>
           </div>
         </div>
@@ -102,7 +131,7 @@ export default function ProductItem({
             <div className="mb-3 sm:mb-4 flex items-baseline justify-between gap-2">
               <div className="min-w-0">
                 <span className="text-xs sm:text-sm text-muted-foreground block">
-                  Đơn giá tham khảo:
+                  {t("referencePrice")}
                 </span>
                 <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
                   <span className="text-base sm:text-xl font-black text-orange-600 dark:text-orange-400">
@@ -123,7 +152,7 @@ export default function ProductItem({
               href={`/san-pham/${product.slug}`}
               className="inline-flex w-full items-center justify-center gap-1 sm:gap-1.5 rounded-xl border border-primary/30 bg-primary/10 hover:bg-primary hover:text-primary-foreground px-2.5 py-2 sm:px-3.5 sm:py-2.5 text-xs sm:text-sm font-bold text-primary shadow-xs transition-all duration-200 cursor-pointer group/btn text-center"
             >
-              <span className="truncate">{buttonText}</span>
+              <span className="truncate">{resolvedButtonText}</span>
               <ArrowRight className="size-3.5 sm:size-4 shrink-0 transition-transform duration-200 group-hover/btn:translate-x-1" />
             </Link>
           </div>

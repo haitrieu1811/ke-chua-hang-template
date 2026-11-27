@@ -64,7 +64,7 @@ export const industrySolutions: IndustrySolution[] = [
     sectorLabel: "NHÀ XƯỞNG & SẢN XUẤT",
     title: "Giải pháp kệ sắt cho nhà xưởng & khu vực sản xuất",
     badge: "Phân loại vật tư khoa học",
-    image: "/images/factory-production.jpg",
+    image: "/images/racking-medium.jpg",
     summary:
       "Nhà xưởng thường cần lưu trữ nhiều loại nguyên vật liệu, bán thành phẩm, phụ tùng và dụng cụ phục vụ hoạt động sản xuất. Lựa chọn hệ thống kệ phù hợp giúp phân chia khu vực lưu trữ, thuận tiện quản lý và lấy hàng khi cần.",
     challenges: [
@@ -136,7 +136,7 @@ export const industrySolutions: IndustrySolution[] = [
     sectorLabel: "LƯU TRỮ HÀNG HÓA",
     title: "Giải pháp kệ sắt cho nhu cầu lưu trữ hàng hóa",
     badge: "Đa dạng kết cấu",
-    image: "/images/hero-warehouse.jpg",
+    image: "/images/racking-selective.jpg",
     summary:
       "Tùy theo đặc điểm hàng hóa và không gian sử dụng, doanh nghiệp có thể lựa chọn hệ thống kệ với kết cấu, kích thước và tải trọng khác nhau. Kim Phú hỗ trợ tư vấn các dòng kệ phù hợp để sắp xếp hàng hóa thuận tiện và khoa học.",
     challenges: [

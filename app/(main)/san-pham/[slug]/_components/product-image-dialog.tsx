@@ -8,7 +8,8 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { ChevronLeft, ChevronRight, Layers, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface ProductImageDialogProps {
   images: string[];
@@ -29,6 +30,7 @@ export default function ProductImageDialog({
   currentIndex,
   onIndexChange,
 }: ProductImageDialogProps) {
+  const t = useTranslations("ProductDetailPage.gallery");
   const displayImages = images.length > 0 ? images : ["/images/racking-selective.jpg"];
   const safeIndex = Math.min(Math.max(currentIndex, 0), displayImages.length - 1);
   const currentImage = displayImages[safeIndex] || displayImages[0];
@@ -65,14 +67,17 @@ export default function ProductImageDialog({
               {tag}
             </span>
             <span className="text-sm font-medium text-muted-foreground">
-              Ảnh thực tế {safeIndex + 1} / {displayImages.length}
+              {t("photoCounter", {
+                current: safeIndex + 1,
+                total: displayImages.length,
+              })}
             </span>
           </div>
           <DialogTitle className="mt-1 text-xl sm:text-2xl font-black text-foreground">
             {productName}
           </DialogTitle>
           <DialogDescription className="text-sm text-muted-foreground">
-            Xem ảnh chụp phóng to kết cấu dầm beam, chân trụ Omega và thực tế lắp đặt tại nhà xưởng.
+            {t("dialogDesc")}
           </DialogDescription>
         </DialogHeader>
 
@@ -89,7 +94,7 @@ export default function ProductImageDialog({
             <button
               type="button"
               onClick={handlePrev}
-              aria-label="Ảnh trước đó"
+              aria-label={t("prevAria")}
               className="absolute left-3 top-1/2 -translate-y-1/2 flex size-11 items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-md hover:bg-primary transition-all cursor-pointer shadow-md"
             >
               <ChevronLeft className="size-6" />
@@ -101,7 +106,7 @@ export default function ProductImageDialog({
             <button
               type="button"
               onClick={handleNext}
-              aria-label="Ảnh kế tiếp"
+              aria-label={t("nextAria")}
               className="absolute right-3 top-1/2 -translate-y-1/2 flex size-11 items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-md hover:bg-primary transition-all cursor-pointer shadow-md"
             >
               <ChevronRight className="size-6" />
@@ -116,7 +121,7 @@ export default function ProductImageDialog({
 
         {/* Dải thumbnail thu nhỏ bên dưới */}
         {displayImages.length > 1 && (
-          <div className="mt-3 flex items-center justify-center gap-3 overflow-x-auto pb-1">
+          <div className="mt-3 flex items-center justify-center gap-3 overflow-x-auto overflow-y-hidden px-1 py-1.5">
             {displayImages.map((img, idx) => {
               const isSelected = safeIndex === idx;
               return (

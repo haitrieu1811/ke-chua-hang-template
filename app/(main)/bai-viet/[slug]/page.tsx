@@ -1,5 +1,6 @@
 import * as React from "react";
 import type { Metadata } from "next";
+import { getLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import SHOP_INFO from "@/constants/info";
@@ -16,7 +17,6 @@ import {
   Lightbulb,
   Info,
   PhoneCall,
-  Download,
   Share2,
   Bookmark,
   Award,
@@ -28,6 +28,7 @@ import {
   getArticleBySlug,
   getRelatedArticles,
 } from "@/data/articles";
+import { getLocalizedArticle } from "@/data/articles-i18n";
 import ArticleShare from "./_components/article-share";
 
 interface ArticleDetailPageProps {
@@ -65,11 +66,48 @@ export default async function ArticleDetailPage({
   params,
 }: ArticleDetailPageProps) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const rawArticle = getArticleBySlug(slug);
 
-  if (!article) {
+  if (!rawArticle) {
     notFound();
   }
+
+  const [locale, t, tList] = await Promise.all([
+    getLocale(),
+    getTranslations("ArticleDetailPage"),
+    getTranslations("ArticlesList"),
+  ]);
+
+  const article = getLocalizedArticle(rawArticle, locale);
+
+  const getArticleMeta = (id: number, fallbackTitle: string, fallbackCat: string) => {
+    if (id >= 1 && id <= 7) {
+      const key = String(id) as "1" | "2" | "3" | "4" | "5" | "6" | "7";
+      return {
+        title: tList(`items.${key}.title`),
+        category: tList(`items.${key}.category`),
+      };
+    }
+    return { title: fallbackTitle, category: fallbackCat };
+  };
+
+  const articleIdKey =
+    article.id >= 1 && article.id <= 7
+      ? (String(article.id) as "1" | "2" | "3" | "4" | "5" | "6" | "7")
+      : null;
+
+  const displayTitle = articleIdKey
+    ? tList(`items.${articleIdKey}.title`)
+    : article.title;
+  const displayExcerpt = articleIdKey
+    ? tList(`items.${articleIdKey}.excerpt`)
+    : article.excerpt;
+  const displayCategory = articleIdKey
+    ? tList(`items.${articleIdKey}.category`)
+    : article.categoryName;
+  const displayReadTime = articleIdKey
+    ? tList(`items.${articleIdKey}.readTime`)
+    : article.readTime;
 
   const relatedArticles = getRelatedArticles(article.slug, 3);
   const allArticles = getAllArticles();
@@ -85,15 +123,15 @@ export default async function ArticleDetailPage({
             className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground"
           >
             <Link href="/" className="hover:text-primary transition-colors">
-              Trang Chủ
+              {t("breadcrumb.home")}
             </Link>
             <ChevronRight className="size-4 shrink-0" />
             <Link href="/bai-viet" className="hover:text-primary transition-colors">
-              Cẩm Nang & Bài Viết
+              {t("breadcrumb.articles")}
             </Link>
             <ChevronRight className="size-4 shrink-0" />
             <span className="font-semibold text-foreground truncate max-w-xs sm:max-w-md">
-              {article.title}
+              {displayTitle}
             </span>
           </nav>
         </div>
@@ -104,7 +142,7 @@ export default async function ArticleDetailPage({
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-3">
             <span className="rounded-md bg-primary px-3 py-1 text-sm font-bold text-white shadow-xs">
-              {article.categoryName}
+              {displayCategory}
             </span>
             <div className="flex items-center gap-3 text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-1.5">
@@ -114,7 +152,7 @@ export default async function ArticleDetailPage({
               <span>•</span>
               <span className="inline-flex items-center gap-1.5">
                 <Clock className="size-4 text-primary" />
-                {article.readTime}
+                {displayReadTime}
               </span>
               <span>•</span>
               <span className="inline-flex items-center gap-1.5">
@@ -125,11 +163,11 @@ export default async function ArticleDetailPage({
           </div>
 
           <h1 className="mt-4 text-2xl font-black tracking-tight text-foreground sm:text-4xl lg:text-5xl leading-tight">
-            {article.title}
+            {displayTitle}
           </h1>
 
           <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            {article.excerpt}
+            {displayExcerpt}
           </p>
 
           {/* Khối tác giả */}
@@ -140,10 +178,7 @@ export default async function ArticleDetailPage({
               </div>
               <div>
                 <p className="text-base font-bold text-foreground">
-                  {article.author}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {article.authorRole} • Kệ Chứa Hàng Pro
+                  {t("author")}
                 </p>
               </div>
             </div>
@@ -153,7 +188,9 @@ export default async function ArticleDetailPage({
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-primary/30 bg-primary/10 hover:bg-primary hover:text-primary-foreground px-4 py-2 text-sm font-bold text-primary transition-all cursor-pointer"
             >
               <PhoneCall className="size-4" />
-              <span>Tư vấn kỹ thuật: {SHOP_INFO.HOTLINE.TEXT}</span>
+              <span>
+                {t("consultHotline", { hotline: SHOP_INFO.HOTLINE.TEXT })}
+              </span>
             </a>
           </div>
         </div>
@@ -199,7 +236,7 @@ export default async function ArticleDetailPage({
               <div className="rounded-2xl border border-border/80 bg-card p-6 shadow-xs">
                 <div className="flex items-center gap-2 text-primary font-bold text-base">
                   <BookOpen className="size-5 text-orange-500" />
-                  <span>Mục Lục Bài Viết</span>
+                  <span>{t("tocTitle")}</span>
                 </div>
                 <nav className="mt-4 space-y-2">
                   {article.tableOfContents.map((toc) => (
@@ -351,13 +388,10 @@ export default async function ArticleDetailPage({
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-foreground">
-                      Bài viết được thẩm định bởi {article.author}
+                      {t("author")}
                     </h4>
-                    <p className="text-sm font-semibold text-primary">
-                      {article.authorRole}
-                    </p>
                     <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                      Với hơn 12 năm kinh nghiệm trực tiếp thiết kế và giám sát thi công các hệ thống giá kệ tải nặng, sàn lửng công nghiệp cho hơn 300 nhà kho tại các KCN VSIP, Tân Bình, Long Hậu, Amata.
+                      {t("authorBio")}
                     </p>
 
                     <div className="mt-4 flex flex-wrap items-center gap-3">
@@ -366,13 +400,13 @@ export default async function ArticleDetailPage({
                         className="inline-flex items-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-600 px-4 py-2 text-sm font-bold text-white transition-all cursor-pointer"
                       >
                         <PhoneCall className="size-4" />
-                        <span>Đặt lịch tư vấn trực tiếp</span>
+                        <span>{t("bookConsult")}</span>
                       </a>
                       <Link
                         href="/lien-he"
                         className="inline-flex items-center gap-2 rounded-xl border border-border/80 bg-card px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted transition-all"
                       >
-                        <span>Gửi mặt bằng khảo sát</span>
+                        <span>{t("sendRequest")}</span>
                       </Link>
                     </div>
                   </div>
@@ -386,14 +420,11 @@ export default async function ArticleDetailPage({
               <div className="sticky top-24 space-y-6">
                 <div className="rounded-2xl border border-primary/30 bg-primary/10 p-6 shadow-sm">
                   <span className="inline-block rounded-md bg-orange-500 px-2.5 py-1 text-sm font-bold text-white">
-                    Hỗ Trợ Trực Tuyến
+                    {t("sidebar.badge")}
                   </span>
                   <h3 className="mt-3 text-lg font-bold text-foreground">
-                    Cần Bản Vẽ AutoCAD Cho Nhà Kho Của Bạn?
+                    {t("sidebar.title")}
                   </h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                    Kỹ sư kết cấu của chúng tôi cung cấp dịch vụ đo đạc thực địa và lên bản vẽ 2D/3D tối ưu lối đi xe nâng hoàn toàn miễn phí.
-                  </p>
 
                   <div className="mt-5 space-y-2.5">
                     <a
@@ -401,67 +432,60 @@ export default async function ArticleDetailPage({
                       className="flex w-full items-center justify-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-600 px-4 py-3 text-sm font-bold text-white shadow-xs transition-all cursor-pointer"
                     >
                       <PhoneCall className="size-4" />
-                      <span>Hotline Kỹ Sư: {SHOP_INFO.HOTLINE.TEXT}</span>
+                      <span>
+                        {t("sidebar.hotline", {
+                          hotline: SHOP_INFO.HOTLINE.TEXT,
+                        })}
+                      </span>
                     </a>
 
                     <Link
                       href="/lien-he"
                       className="flex w-full items-center justify-center gap-2 rounded-xl border border-border/80 bg-card hover:bg-muted px-4 py-3 text-sm font-bold text-foreground transition-all"
                     >
-                      <span>Yêu cầu khảo sát thực địa</span>
+                      <span>{t("sidebar.quoteBtn")}</span>
                     </Link>
                   </div>
-                </div>
-
-                {/* Hộp Tải Tài Liệu Kỹ Thuật Ebook */}
-                <div className="rounded-2xl border border-border/80 bg-card p-6 shadow-sm">
-                  <div className="flex items-center gap-2.5 text-foreground font-bold">
-                    <Download className="size-5 text-orange-500" />
-                    <span>Tài Liệu Tiêu Chuẩn Kệ FEM</span>
-                  </div>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                    Download trọn bộ Catalogue kỹ thuật và Cẩm nang an toàn giá kệ công nghiệp (PDF 45 trang).
-                  </p>
-                  <a
-                    href="/lien-he"
-                    className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-primary/30 bg-primary/10 hover:bg-primary hover:text-primary-foreground py-2.5 text-sm font-bold text-primary transition-all cursor-pointer"
-                  >
-                    <span>Tải Miễn Phí (PDF)</span>
-                    <ArrowRight className="size-4" />
-                  </a>
                 </div>
 
                 {/* Danh Sách Bài Viết Đọc Nhiều Nhất */}
                 <div className="rounded-2xl border border-border/80 bg-card p-6 shadow-sm">
                   <h3 className="text-base font-bold text-foreground border-b border-border/60 pb-3">
-                    Bài Viết Đọc Nhiều Nhất
+                    {t("sidebar.mostRead")}
                   </h3>
                   <div className="mt-4 space-y-4">
-                    {trendingArticles.map((tArticle) => (
-                      <article key={tArticle.id} className="group">
-                        <Link
-                          href={`/bai-viet/${tArticle.slug}`}
-                          className="flex items-start gap-3"
-                        >
-                          <img
-                            src={tArticle.image}
-                            alt={tArticle.title}
-                            className="size-16 rounded-xl object-cover shrink-0 border border-border/60"
-                          />
-                          <div>
-                            <span className="text-sm font-bold text-primary block">
-                              {tArticle.categoryName}
-                            </span>
-                            <h4 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mt-0.5">
-                              {tArticle.title}
-                            </h4>
-                            <span className="text-sm text-muted-foreground block mt-1">
-                              {tArticle.date}
-                            </span>
-                          </div>
-                        </Link>
-                      </article>
-                    ))}
+                    {trendingArticles.map((tArticle) => {
+                      const meta = getArticleMeta(
+                        tArticle.id,
+                        tArticle.title,
+                        tArticle.categoryName,
+                      );
+                      return (
+                        <article key={tArticle.id} className="group">
+                          <Link
+                            href={`/bai-viet/${tArticle.slug}`}
+                            className="flex items-start gap-3"
+                          >
+                            <img
+                              src={tArticle.image}
+                              alt={meta.title}
+                              className="size-16 rounded-xl object-cover shrink-0 border border-border/60"
+                            />
+                            <div>
+                              <span className="text-sm font-bold text-primary block">
+                                {meta.category}
+                              </span>
+                              <h4 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mt-0.5">
+                                {meta.title}
+                              </h4>
+                              <span className="text-sm text-muted-foreground block mt-1">
+                                {tArticle.date}
+                              </span>
+                            </div>
+                          </Link>
+                        </article>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -476,10 +500,10 @@ export default async function ArticleDetailPage({
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
               <span className="text-sm font-bold uppercase tracking-wider text-primary">
-                Kiến Thức Cùng Chuyên Đề
+                {t("related.badge")}
               </span>
               <h2 className="mt-1 text-2xl sm:text-3xl font-black text-foreground">
-                Bài Viết & Cẩm Nang Liên Quan
+                {t("related.title")}
               </h2>
             </div>
 
@@ -487,72 +511,92 @@ export default async function ArticleDetailPage({
               href="/bai-viet"
               className="inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:text-orange-500 transition-colors"
             >
-              <span>Xem tất cả bài viết</span>
+              <span>{t("related.viewAll")}</span>
               <ArrowRight className="size-4" />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {relatedArticles.map((rArticle, index) => (
-              <ScrollReveal
-                key={rArticle.id}
-                direction="up"
-                delay={index * 90}
-                duration={600}
-                className="h-full"
-              >
-                <div className="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-border/80 bg-card shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/50 hover:shadow-xl">
-                  <div className="relative aspect-16/10 w-full overflow-hidden bg-muted">
-                    <img
-                      src={rArticle.image}
-                      alt={rArticle.title}
-                      className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute top-3 left-3">
-                      <span className="rounded-md bg-primary/90 px-2.5 py-1 text-sm font-bold text-white shadow-xs">
-                        {rArticle.categoryName}
-                      </span>
-                    </div>
-                  </div>
+            {relatedArticles.map((rArticle, index) => {
+              const rKey =
+                rArticle.id >= 1 && rArticle.id <= 7
+                  ? (String(rArticle.id) as "1" | "2" | "3" | "4" | "5" | "6" | "7")
+                  : null;
+              const rTitle = rKey ? tList(`items.${rKey}.title`) : rArticle.title;
+              const rCat = rKey
+                ? tList(`items.${rKey}.category`)
+                : rArticle.categoryName;
+              const rReadTime = rKey
+                ? tList(`items.${rKey}.readTime`)
+                : rArticle.readTime;
+              const rExcerpt = rKey
+                ? tList(`items.${rKey}.excerpt`)
+                : rArticle.excerpt;
 
-                  <div className="flex flex-1 flex-col justify-between p-5">
-                    <div>
-                      <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                        <span className="inline-flex items-center gap-1">
-                          <Calendar className="size-3.5 text-orange-500" />
-                          {rArticle.date}
-                        </span>
-                        <span>•</span>
-                        <span className="inline-flex items-center gap-1">
-                          <Clock className="size-3.5 text-primary" />
-                          {rArticle.readTime}
+              return (
+                <ScrollReveal
+                  key={rArticle.id}
+                  direction="up"
+                  delay={index * 90}
+                  duration={600}
+                  className="h-full"
+                >
+                  <div className="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-border/80 bg-card shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/50 hover:shadow-xl">
+                    <Link
+                      href={`/bai-viet/${rArticle.slug}`}
+                      className="relative block aspect-16/10 w-full overflow-hidden bg-muted"
+                    >
+                      <img
+                        src={rArticle.image}
+                        alt={rTitle}
+                        className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute top-3 left-3">
+                        <span className="rounded-md bg-primary/90 px-2.5 py-1 text-sm font-bold text-white shadow-xs">
+                          {rCat}
                         </span>
                       </div>
+                    </Link>
 
-                      <h3 className="mt-2 text-base font-bold text-foreground transition-colors group-hover:text-primary line-clamp-2">
-                        <Link href={`/bai-viet/${rArticle.slug}`}>
-                          {rArticle.title}
+                    <div className="flex flex-1 flex-col justify-between p-5">
+                      <div>
+                        <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                          <span className="inline-flex items-center gap-1">
+                            <Calendar className="size-3.5 text-orange-500" />
+                            {rArticle.date}
+                          </span>
+                          <span>•</span>
+                          <span className="inline-flex items-center gap-1">
+                            <Clock className="size-3.5 text-primary" />
+                            {rReadTime}
+                          </span>
+                        </div>
+
+                        <h3 className="mt-2 text-base font-bold text-foreground transition-colors group-hover:text-primary line-clamp-2">
+                          <Link href={`/bai-viet/${rArticle.slug}`}>
+                            {rTitle}
+                          </Link>
+                        </h3>
+
+                        <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
+                          {rExcerpt}
+                        </p>
+                      </div>
+
+                      <div className="mt-5 border-t border-border/60 pt-4">
+                        <Link
+                          href={`/bai-viet/${rArticle.slug}`}
+                          className="inline-flex items-center gap-1.5 text-sm font-bold text-primary group-hover:text-orange-500 transition-colors"
+                        >
+                          <span>{t("related.readMore")}</span>
+                          <ArrowRight className="size-4" />
                         </Link>
-                      </h3>
-
-                      <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
-                        {rArticle.excerpt}
-                      </p>
-                    </div>
-
-                    <div className="mt-5 border-t border-border/60 pt-4">
-                      <Link
-                        href={`/bai-viet/${rArticle.slug}`}
-                        className="inline-flex items-center gap-1.5 text-sm font-bold text-primary group-hover:text-orange-500 transition-colors"
-                      >
-                        <span>Đọc toàn bộ bài viết</span>
-                        <ArrowRight className="size-4" />
-                      </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>

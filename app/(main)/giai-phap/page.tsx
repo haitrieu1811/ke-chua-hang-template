@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import {
@@ -15,6 +14,7 @@ import {
 } from "lucide-react";
 import ScrollReveal from "@/components/scroll-reveal";
 import CountUp from "@/components/count-up";
+import HomeCarousel from "@/app/(main)/_components/hero-carousel";
 import SHOP_INFO from "@/constants/info";
 import SolutionsExplorer from "./_components/solutions-explorer";
 
@@ -63,6 +63,9 @@ export default async function SolutionsPage() {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-background">
+      {/* 0. BANNER SLIDE CHUNG */}
+      <HomeCarousel />
+
       {/* 1. BREADCRUMB & HERO BANNER */}
       <section className="relative border-b border-border/80 bg-muted/30 py-12 sm:py-20 overflow-hidden">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(59,130,246,0.08),transparent_70%)]" />
@@ -86,73 +89,43 @@ export default async function SolutionsPage() {
             </nav>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-7">
-              <ScrollReveal direction="up" duration={700}>
-                <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-bold text-primary tracking-wider uppercase">
-                  <Sparkles className="size-4 text-orange-500" />
-                  {t("hero.badge")}
-                </div>
+          <div className="mx-auto max-w-3xl text-center">
+            <ScrollReveal direction="up" duration={700}>
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-bold text-primary tracking-wider uppercase">
+                <Sparkles className="size-4 text-orange-500" />
+                {t("hero.badge")}
+              </div>
 
-                <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground leading-[1.15]">
-                  {t("hero.titleStart")}{" "}
-                  <span className="text-primary">{t("hero.titleHighlight")}</span>
-                  {t("hero.titleEnd") ? ` ${t("hero.titleEnd")}` : ""}
-                </h1>
+              <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground leading-[1.15]">
+                {t("hero.titleStart")}{" "}
+                <span className="text-primary">{t("hero.titleHighlight")}</span>
+                {t("hero.titleEnd") ? ` ${t("hero.titleEnd")}` : ""}
+              </h1>
 
-                <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  {t("hero.desc")}
-                </p>
+              <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                {t("hero.desc")}
+              </p>
 
-                <div className="mt-6 flex flex-wrap items-center gap-4">
-                  <a
-                    href="#giai-phap-theo-nhu-cau"
-                    className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow-md hover:bg-primary/90 transition-all hover:scale-105 uppercase"
-                  >
-                    <span>{t("hero.primaryCta")}</span>
-                    <ArrowRight className="size-4" />
-                  </a>
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+                <a
+                  href="#giai-phap-theo-nhu-cau"
+                  className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow-md hover:bg-primary/90 transition-all hover:scale-105 uppercase"
+                >
+                  <span>{t("hero.primaryCta")}</span>
+                  <ArrowRight className="size-4" />
+                </a>
 
-                  <a
-                    href={`tel:${SHOP_INFO.HOTLINE.NUMBER}`}
-                    className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-bold text-foreground hover:bg-muted transition-colors"
-                  >
-                    <PhoneCall className="size-4 text-orange-500" />
-                    <span>
-                      {t("hero.hotline", { hotline: SHOP_INFO.HOTLINE.TEXT })}
-                    </span>
-                  </a>
-                </div>
-              </ScrollReveal>
-            </div>
-
-            <div className="lg:col-span-5">
-              <ScrollReveal direction="left" duration={750} delay={150}>
-                <div className="relative mx-auto max-w-lg lg:max-w-none">
-                  <div className="relative h-[340px] sm:h-[400px] overflow-hidden rounded-3xl border border-border/80 bg-card shadow-2xl">
-                    <Image
-                      src="/images/blog-layout.jpg"
-                      alt={t("hero.imageBadge")}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 42vw"
-                      loading="eager"
-                      className="object-cover object-center transition-transform duration-500 hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/15 to-transparent" />
-
-                    <div className="absolute bottom-6 left-6 right-6 text-white">
-                      <div className="inline-flex items-center gap-1.5 rounded-full bg-orange-500 px-3 py-1 text-sm font-bold text-white shadow-xs mb-2">
-                        <Layers className="size-4" />
-                        {t("hero.imageBadge")}
-                      </div>
-                      <p className="text-sm font-medium text-white/95">
-                        {t("hero.imageCaption")}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </div>
+                <a
+                  href={`tel:${SHOP_INFO.HOTLINE.NUMBER}`}
+                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-bold text-foreground hover:bg-muted transition-colors"
+                >
+                  <PhoneCall className="size-4 text-orange-500" />
+                  <span>
+                    {t("hero.hotline", { hotline: SHOP_INFO.HOTLINE.TEXT })}
+                  </span>
+                </a>
+              </div>
+            </ScrollReveal>
           </div>
 
           <div className="mt-16 sm:mt-20 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">

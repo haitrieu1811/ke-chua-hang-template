@@ -48,7 +48,7 @@ export const articlesData: Article[] = [
     image: "/images/blog-layout.jpg",
     date: "18/11/2026",
     readTime: "6 phút đọc",
-    author: "Kỹ sư Trần Hải Long",
+    author: "Ban biên tập Kim Phú",
     authorRole: "Trưởng phòng Kết cấu Kho vận",
     views: "3.240 lượt xem",
     isSpotlight: true,
@@ -149,7 +149,7 @@ export const articlesData: Article[] = [
     image: "/images/blog-compare.jpg",
     date: "14/11/2026",
     readTime: "8 phút đọc",
-    author: "Kỹ sư Nguyễn Quốc Tuấn",
+    author: "Ban biên tập Kim Phú",
     authorRole: "Kỹ sư Tư vấn Dự án",
     views: "2.850 lượt xem",
     excerpt:
@@ -249,7 +249,7 @@ export const articlesData: Article[] = [
     image: "/images/blog-standard.jpg",
     date: "09/11/2026",
     readTime: "5 phút đọc",
-    author: "ThS. Đỗ Quang Huy",
+    author: "Ban biên tập Kim Phú",
     authorRole: "Chuyên gia Thẩm định An toàn",
     views: "2.410 lượt xem",
     excerpt:
@@ -336,7 +336,7 @@ export const articlesData: Article[] = [
     image: "/images/blog-cold-storage.jpg",
     date: "03/11/2026",
     readTime: "7 phút đọc",
-    author: "Kỹ sư Lê Hoàng Nam",
+    author: "Ban biên tập Kim Phú",
     authorRole: "Kỹ sư Vật liệu Kim loại",
     views: "1.980 lượt xem",
     excerpt:
@@ -419,7 +419,7 @@ export const articlesData: Article[] = [
     image: "/images/racking-shuttle.jpg",
     date: "28/10/2026",
     readTime: "6 phút đọc",
-    author: "Kỹ sư Trần Hải Long",
+    author: "Ban biên tập Kim Phú",
     authorRole: "Trưởng phòng Kết cấu Kho vận",
     views: "1.750 lượt xem",
     excerpt:
@@ -497,7 +497,7 @@ export const articlesData: Article[] = [
     image: "/images/racking-mezzanine.jpg",
     date: "22/10/2026",
     readTime: "5 phút đọc",
-    author: "ThS. Đỗ Quang Huy",
+    author: "Ban biên tập Kim Phú",
     authorRole: "Chuyên gia Thẩm định An toàn",
     views: "1.520 lượt xem",
     excerpt:
@@ -574,7 +574,7 @@ export const articlesData: Article[] = [
     image: "/images/racking-selective.jpg",
     date: "15/10/2026",
     readTime: "6 phút đọc",
-    author: "Kỹ sư Nguyễn Quốc Tuấn",
+    author: "Ban biên tập Kim Phú",
     authorRole: "Kỹ sư Tư vấn Dự án",
     views: "1.340 lượt xem",
     excerpt:

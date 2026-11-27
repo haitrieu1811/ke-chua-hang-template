@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useLocale } from "next-intl";
 import { Share2, Copy, Check, Bookmark, MessageCircle } from "lucide-react";
 
 function FacebookIcon({ className }: { className?: string }) {
@@ -16,7 +17,37 @@ interface ArticleShareProps {
   slug: string;
 }
 
+const LABELS = {
+  vi: {
+    shareTitle: "Chia sẻ bài viết này:",
+    copied: "Đã sao chép link!",
+    copy: "Copy link",
+    saved: "Đã lưu",
+    save: "Lưu đọc sau",
+  },
+  en: {
+    shareTitle: "Share this article:",
+    copied: "Link copied!",
+    copy: "Copy link",
+    saved: "Saved",
+    save: "Save for later",
+  },
+  zh: {
+    shareTitle: "分享此文章：",
+    copied: "已复制链接！",
+    copy: "复制链接",
+    saved: "已收藏",
+    save: "稍后阅读",
+  },
+} as const;
+
 export default function ArticleShare({ title, slug }: ArticleShareProps) {
+  void title;
+  void slug;
+  const locale = useLocale();
+  const labels =
+    locale === "en" ? LABELS.en : locale === "zh" ? LABELS.zh : LABELS.vi;
+
   const [copied, setCopied] = React.useState(false);
   const [saved, setSaved] = React.useState(false);
 
@@ -34,7 +65,7 @@ export default function ArticleShare({ title, slug }: ArticleShareProps) {
       window.open(
         `https://www.facebook.com/sharer/sharer.php?u=${url}`,
         "_blank",
-        "noopener,noreferrer"
+        "noopener,noreferrer",
       );
     }
   };
@@ -45,7 +76,7 @@ export default function ArticleShare({ title, slug }: ArticleShareProps) {
       window.open(
         `https://sp.zalo.me/share?url=${url}`,
         "_blank",
-        "noopener,noreferrer"
+        "noopener,noreferrer",
       );
     }
   };
@@ -54,11 +85,12 @@ export default function ArticleShare({ title, slug }: ArticleShareProps) {
     <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-border/80 bg-muted/30 p-4 sm:p-5">
       <div className="flex items-center gap-2">
         <Share2 className="size-5 text-orange-500" />
-        <span className="text-sm font-bold text-foreground">Chia sẻ cẩm nang này:</span>
+        <span className="text-sm font-bold text-foreground">
+          {labels.shareTitle}
+        </span>
       </div>
 
-      <div className="flex items-center gap-2">
-        {/* Nút Sao chép liên kết */}
+      <div className="flex flex-wrap items-center gap-2">
         <button
           type="button"
           onClick={handleCopy}
@@ -67,17 +99,16 @@ export default function ArticleShare({ title, slug }: ArticleShareProps) {
           {copied ? (
             <>
               <Check className="size-4 text-orange-500" />
-              <span className="text-orange-500 font-bold">Đã sao chép link!</span>
+              <span className="text-orange-500 font-bold">{labels.copied}</span>
             </>
           ) : (
             <>
               <Copy className="size-4 text-muted-foreground" />
-              <span>Copy link</span>
+              <span>{labels.copy}</span>
             </>
           )}
         </button>
 
-        {/* Nút Chia sẻ Facebook */}
         <button
           type="button"
           onClick={handleFacebookShare}
@@ -87,7 +118,6 @@ export default function ArticleShare({ title, slug }: ArticleShareProps) {
           <span>Facebook</span>
         </button>
 
-        {/* Nút Chia sẻ Zalo */}
         <button
           type="button"
           onClick={handleZaloShare}
@@ -97,7 +127,6 @@ export default function ArticleShare({ title, slug }: ArticleShareProps) {
           <span>Zalo</span>
         </button>
 
-        {/* Nút Lưu bài viết */}
         <button
           type="button"
           onClick={() => setSaved(!saved)}
@@ -108,7 +137,7 @@ export default function ArticleShare({ title, slug }: ArticleShareProps) {
           }`}
         >
           <Bookmark className={`size-4 ${saved ? "fill-current" : ""}`} />
-          <span>{saved ? "Đã lưu" : "Lưu đọc sau"}</span>
+          <span>{saved ? labels.saved : labels.save}</span>
         </button>
       </div>
     </div>

@@ -5,6 +5,7 @@ import {
   getProductBySlug,
   getRelatedProducts,
 } from "@/data/products";
+import { getLocalizedProduct } from "@/data/products-i18n";
 import {
   ArrowRight,
   Award,
@@ -21,6 +22,7 @@ import {
   Truck,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { getLocale, getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProductGallery from "./_components/product-gallery";
@@ -61,17 +63,46 @@ export default async function ProductDetailPage({
   params,
 }: ProductDetailPageProps) {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const rawProduct = getProductBySlug(slug);
 
-  if (!product) {
+  if (!rawProduct) {
     notFound();
   }
 
+  const [locale, t, tCard] = await Promise.all([
+    getLocale(),
+    getTranslations("ProductDetailPage"),
+    getTranslations("ProductCard"),
+  ]);
+
+  const product = getLocalizedProduct(rawProduct, locale);
   const relatedProducts = getRelatedProducts(product.slug, 4);
   const shouldShowPrice = product.showPrice ?? true;
   const trimmedPrice = product.price?.trim();
   const hasPrice = Boolean(trimmedPrice);
-  const displayPrice = trimmedPrice || "Liên hệ";
+  const displayPrice = trimmedPrice || t("contactPrice");
+
+  const coreSlug =
+    product.slug === "ke-selective" ||
+    product.slug === "ke-trung-tai" ||
+    product.slug === "ke-v-lo"
+      ? product.slug
+      : null;
+
+  const displayName = coreSlug ? tCard(`items.${coreSlug}.name`) : product.name;
+  const displayCategory = coreSlug
+    ? tCard(`items.${coreSlug}.categoryLabel`)
+    : product.categoryLabel;
+  const displayTag = coreSlug ? tCard(`items.${coreSlug}.tag`) : product.tag;
+  const displayLoad = coreSlug
+    ? tCard(`items.${coreSlug}.loadCapacity`)
+    : product.loadCapacity;
+  const displaySteel = coreSlug
+    ? tCard(`items.${coreSlug}.steelStandard`)
+    : product.steelStandard;
+  const displayShortDesc = coreSlug
+    ? tCard(`items.${coreSlug}.shortDescription`)
+    : product.shortDescription;
 
   return (
     <div className="bg-background min-h-screen">
@@ -83,54 +114,51 @@ export default async function ProductDetailPage({
             className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground"
           >
             <Link href="/" className="hover:text-primary transition-colors">
-              Trang Chủ
+              {t("breadcrumb.home")}
             </Link>
             <ChevronRight className="size-4 shrink-0" />
             <Link
               href="/san-pham"
               className="hover:text-primary transition-colors"
             >
-              Hệ Thống Sản Phẩm
+              {t("breadcrumb.products")}
             </Link>
             <ChevronRight className="size-4 shrink-0" />
             <span className="font-semibold text-foreground truncate max-w-xs sm:max-w-md">
-              {product.name}
+              {displayName}
             </span>
           </nav>
         </div>
       </div>
 
-      {/* 2. Tổng Quan Sản Phẩm: Gallery (Có Dialog Phóng To) + Tóm Tắt Thông Số & Mua Hàng */}
+      {/* 2. Tổng Quan Sản Phẩm */}
       <section className="py-10 sm:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
-            {/* Cột Trái (5/12): Gallery hình ảnh với Dialog click mở to */}
             <div className="lg:col-span-5">
               <ProductGallery
                 images={product.gallery}
-                productName={product.name}
-                tag={product.tag}
+                productName={displayName}
+                tag={displayTag}
                 isHot={product.isHot}
               />
             </div>
 
-            {/* Cột Phải (7/12): Tiêu đề, thông số cốt lõi, giá và CTA */}
             <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
               <div>
                 <div className="flex items-center gap-2">
                   <span className="rounded-md bg-primary/10 px-3 py-1 text-sm font-bold uppercase tracking-wider text-primary">
-                    {product.categoryLabel}
+                    {displayCategory}
                   </span>
                   <span className="rounded-md bg-orange-500/10 px-3 py-1 text-sm font-bold text-orange-600 dark:text-orange-400">
-                    Mã sản phẩm: #{product.slug.toUpperCase()}
+                    #{product.slug.toUpperCase()}
                   </span>
                 </div>
 
                 <h1 className="mt-3 text-2xl font-black tracking-tight text-foreground sm:text-3xl lg:text-4xl leading-tight">
-                  {product.name}
+                  {displayName}
                 </h1>
 
-                {/* Đánh giá sao & lượt nhận xét */}
                 <div className="mt-3 flex items-center gap-3">
                   <div className="flex items-center gap-1 text-orange-500">
                     {[...Array(5)].map((_, i) => (
@@ -142,24 +170,22 @@ export default async function ProductDetailPage({
                   </div>
                   <span className="text-sm font-bold text-foreground">5.0</span>
                   <span className="text-sm text-muted-foreground">
-                    ({product.reviewCount} đánh giá từ kỹ sư & dự án kho)
+                    {t("reviewsLabel", { count: product.reviewCount })}
                   </span>
                 </div>
 
-                {/* Đoạn mô tả ngắn */}
                 <p className="mt-4 text-base text-muted-foreground leading-relaxed">
-                  {product.shortDescription}
+                  {displayShortDesc}
                 </p>
 
-                {/* Khối giá bán tham khảo */}
                 {shouldShowPrice && (
                   <div className="mt-6 rounded-2xl border border-border/80 bg-muted/40 p-5">
                     <span className="text-sm font-medium text-muted-foreground block">
-                      Đơn giá gia công tham khảo tại xưởng:
+                      {t("priceLabel")}
                     </span>
                     <div className="mt-1 flex flex-wrap items-baseline gap-3">
                       <span className="text-2xl sm:text-3xl font-black text-orange-600 dark:text-orange-400">
-                        {displayPrice}
+                        {hasPrice ? displayPrice : t("contactPrice")}
                       </span>
                       {hasPrice && product.oldPrice && (
                         <span className="text-base text-muted-foreground line-through">
@@ -167,22 +193,21 @@ export default async function ProductDetailPage({
                         </span>
                       )}
                       <span className="text-sm text-muted-foreground font-normal">
-                        (Tùy chỉnh theo khẩu độ dầm, chiều cao và quy cách kho)
+                        {t("priceNote")}
                       </span>
                     </div>
                   </div>
                 )}
 
-                {/* Lưới 4 thông số kỹ thuật cốt lõi */}
                 <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div className="flex items-center gap-3 rounded-xl border border-border/70 bg-card p-3.5 shadow-2xs">
                     <CheckCircle2 className="size-5 text-orange-500 shrink-0" />
                     <div className="min-w-0">
                       <span className="text-sm font-medium text-muted-foreground block">
-                        Tải trọng thiết kế:
+                        {t("specs.loadCapacity")}
                       </span>
                       <strong className="text-sm font-bold text-foreground break-words">
-                        {product.loadCapacity}
+                        {displayLoad}
                       </strong>
                     </div>
                   </div>
@@ -191,10 +216,10 @@ export default async function ProductDetailPage({
                     <ShieldCheck className="size-5 text-primary shrink-0" />
                     <div className="min-w-0">
                       <span className="text-sm font-medium text-muted-foreground block">
-                        Quy chuẩn thép:
+                        {t("specs.steelStandard")}
                       </span>
                       <strong className="text-sm font-bold text-foreground break-words block">
-                        {product.steelStandard}
+                        {displaySteel}
                       </strong>
                     </div>
                   </div>
@@ -203,10 +228,10 @@ export default async function ProductDetailPage({
                     <Award className="size-5 text-orange-500 shrink-0" />
                     <div className="min-w-0">
                       <span className="text-sm font-medium text-muted-foreground block">
-                        Thời hạn bảo hành:
+                        {t("specs.warranty")}
                       </span>
                       <strong className="text-sm font-bold text-foreground break-words">
-                        {product.warranty}
+                        {t("specs.warrantyValue")}
                       </strong>
                     </div>
                   </div>
@@ -215,24 +240,23 @@ export default async function ProductDetailPage({
                     <Layers className="size-5 text-primary shrink-0" />
                     <div className="min-w-0">
                       <span className="text-sm font-medium text-muted-foreground block">
-                        Nguồn gốc sản xuất:
+                        {t("specs.origin")}
                       </span>
                       <strong className="text-sm font-bold text-foreground break-words block">
-                        {product.origin}
+                        {t("specs.originValue")}
                       </strong>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Các nút hành động chính */}
               <div className="border-t border-border/70 pt-6 space-y-4">
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                   <Link
                     href="/lien-he"
                     className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-600 px-6 py-3.5 text-base font-bold text-white shadow-md transition-all hover:scale-102 cursor-pointer"
                   >
-                    <span>Yêu Cầu Báo Giá Dự Toán</span>
+                    <span>{t("cta.quoteBtn")}</span>
                     <ArrowRight className="size-4.5" />
                   </Link>
 
@@ -241,23 +265,24 @@ export default async function ProductDetailPage({
                     className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary bg-primary/10 hover:bg-primary hover:text-primary-foreground px-6 py-3.5 text-base font-bold text-primary transition-all cursor-pointer"
                   >
                     <PhoneCall className="size-4.5" />
-                    <span>Hotline: {SHOP_INFO.HOTLINE.TEXT}</span>
+                    <span>
+                      {t("cta.hotline", { hotline: SHOP_INFO.HOTLINE.TEXT })}
+                    </span>
                   </a>
                 </div>
 
-                {/* Cam kết dịch vụ bổ sung */}
                 <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-sm text-muted-foreground">
                   <span className="inline-flex items-center gap-1.5">
                     <Clock className="size-4 text-orange-500" />
-                    Bản vẽ 2D/3D trong 24h
+                    {t("commitments.c1")}
                   </span>
                   <span className="inline-flex items-center gap-1.5">
                     <FileCheck2 className="size-4 text-primary" />
-                    Chứng chỉ CO/CQ & kiểm định
+                    {t("commitments.c2")}
                   </span>
                   <span className="inline-flex items-center gap-1.5">
                     <Truck className="size-4 text-orange-500" />
-                    Lắp đặt bàn giao toàn quốc
+                    {t("commitments.c3")}
                   </span>
                 </div>
               </div>
@@ -269,32 +294,29 @@ export default async function ProductDetailPage({
       {/* 3. Khối Mô Tả Sản Phẩm Chi Tiết */}
       <section className="py-12 border-t border-border/80 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
-          {/* Tiêu đề phần mô tả */}
           <div className="border-b border-border/80 pb-5">
             <span className="text-sm font-bold uppercase tracking-wider text-primary">
-              Thông Tin Kỹ Thuật Toàn Diện
+              {t("sections.techBadge")}
             </span>
             <h2 className="mt-1 text-2xl sm:text-3xl font-black text-foreground">
-              Mô Tả Chi Tiết Sản Phẩm: {product.name}
+              {t("sections.detailTitle", { name: displayName })}
             </h2>
           </div>
 
-          {/* Đoạn văn bản mô tả chuyên sâu */}
           <div className="rounded-2xl border border-border/80 bg-card p-6 sm:p-8 shadow-xs space-y-4">
             <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
               <FileText className="size-5 text-orange-500" />
-              <span>Tổng Quan & Cấu Tạo Kết Cấu</span>
+              <span>{t("sections.overviewTitle")}</span>
             </h3>
             <p className="text-base text-muted-foreground leading-relaxed">
               {product.description}
             </p>
           </div>
 
-          {/* Lưới Đặc điểm nổi bật */}
           <div className="space-y-5">
             <h3 className="text-lg sm:text-xl font-bold text-foreground flex items-center gap-2">
               <CheckCircle2 className="size-5 text-orange-500" />
-              <span>Đặc Điểm & Ưu Thế Vượt Trội</span>
+              <span>{t("sections.featuresTitle")}</span>
             </h3>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               {product.features.map((feat) => (
@@ -320,11 +342,10 @@ export default async function ProductDetailPage({
             </div>
           </div>
 
-          {/* Bảng Thông số kỹ thuật chi tiết */}
           <div className="space-y-5">
             <h3 className="text-lg sm:text-xl font-bold text-foreground flex items-center gap-2">
               <ShieldCheck className="size-5 text-primary" />
-              <span>Bảng Thông Số Kỹ Thuật Đạt Chuẩn FEM 10.2.02</span>
+              <span>{t("sections.specsTableTitle")}</span>
             </h3>
             <div className="overflow-hidden rounded-2xl border border-border/80 shadow-xs">
               <table className="w-full text-left text-sm">
@@ -350,11 +371,10 @@ export default async function ProductDetailPage({
             </div>
           </div>
 
-          {/* Ứng dụng thực tế */}
           <div className="space-y-5">
             <h3 className="text-lg sm:text-xl font-bold text-foreground flex items-center gap-2">
               <Building2 className="size-5 text-orange-500" />
-              <span>Ngành Nghề & Lĩnh Vực Ứng Dụng Thực Tế</span>
+              <span>{t("sections.applicationsTitle")}</span>
             </h3>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {product.applications.map((app, index) => (
@@ -381,10 +401,10 @@ export default async function ProductDetailPage({
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
               <span className="text-sm font-bold uppercase tracking-wider text-primary">
-                Cùng Phân Khúc Giải Pháp
+                {t("sections.relatedBadge")}
               </span>
               <h2 className="mt-1 text-2xl sm:text-3xl font-black text-foreground">
-                Sản Phẩm Cùng Danh Mục
+                {t("sections.relatedTitle")}
               </h2>
             </div>
 
@@ -392,7 +412,7 @@ export default async function ProductDetailPage({
               href="/san-pham"
               className="inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:text-orange-500 transition-colors"
             >
-              <span>Xem tất cả sản phẩm</span>
+              <span>{t("sections.viewAllProducts")}</span>
               <ArrowRight className="size-4" />
             </Link>
           </div>

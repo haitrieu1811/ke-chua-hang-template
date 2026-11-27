@@ -683,6 +683,9 @@
     "hero": {
       "badge": "KIM PHU PRODUCTS",
       "title": "Specialized Industrial Warehouse Racking Systems",
+      "titleStart": "Specialized Industrial",
+      "titleHighlight": "Warehouse Racking",
+      "titleEnd": "Systems",
       "desc": "Warehouse space optimization solutions with load capacities from 300 to 4,000 kg/pallet."
     },
     "filter": {
@@ -826,6 +829,172 @@
       "successTitle": "Request Submitted Successfully!",
       "successDesc": "Thank you {name} ({company}). Kim Phu specialists will contact you via {phone} to advise on suitable products, specifications, and pricing.",
       "sendAnother": "Submit Another Request"
+    }
+  },
+  "ProductCard": {
+    "referencePrice": "Reference price:",
+    "contactPrice": "Contact us",
+    "viewDetail": "View Details",
+    "items": {
+      "ke-selective": {
+        "name": "Selective Racking",
+        "categoryLabel": "Selective Racking",
+        "tag": "#1 Best Seller",
+        "loadCapacity": "1,000kg - 3,500kg / pallet",
+        "steelStandard": "JIS G3101 Cold-Rolled Steel",
+        "shortDescription": "The most popular and versatile pallet racking system, allowing forklifts 100% direct access to every pallet position without moving adjacent pallets."
+      },
+      "ke-trung-tai": {
+        "name": "Medium Duty Racking",
+        "categoryLabel": "Medium Duty Racking",
+        "tag": "Popular for Supplies",
+        "loadCapacity": "300kg - 800kg / level",
+        "steelStandard": "Powder-Coated Cold-Rolled Steel",
+        "shortDescription": "Smart boltless hand-loaded shelving system with multi-tier decks, ideal for warehouses storing cartons, supplies, spare parts, and components."
+      },
+      "ke-v-lo": {
+        "name": "Slotted Angle (V-Hole) Racking",
+        "categoryLabel": "V-Hole Racking",
+        "tag": "Versatile & Modular",
+        "loadCapacity": "80kg - 150kg / level",
+        "steelStandard": "Powder-Coated Slotted Steel",
+        "shortDescription": "Flexible modular slotted angle shelving with easily adjustable shelf heights. Ideal for storing goods, tools, and supplies in warehouses, stores, or workshops."
+      }
+    }
+  },
+  "HomeProducts": {
+    "badge": "Core Products",
+    "title": "RACKING PRODUCTS AT KIM PHU",
+    "desc": "Supplying diverse Selective, medium duty, and V-hole racking systems. Tailored consultation based on your storage needs, goods specifications, and available space.",
+    "tabs": {
+      "all": "All products",
+      "heavy": "Selective Racking",
+      "medium": "Medium Duty Racking",
+      "floor": "V-Hole Racking"
+    },
+    "viewMore": "VIEW MORE PRODUCTS"
+  },
+  "HomeArticles": {
+    "title": "BLOG - NEWS",
+    "viewAll": "View all articles",
+    "readMore": "Read more",
+    "author": "Kim Phu Editorial Team"
+  },
+  "ArticlesList": {
+    "monthPrefix": "M",
+    "items": {
+      "1": {
+        "category": "Blog & Knowledge",
+        "readTime": "6 min read",
+        "title": "Warehouse layout tips for safe forklift movement and +70% storage capacity",
+        "excerpt": "Analyzing optimal aisle widths for Reach Trucks and counterbalanced forklifts, plus dock layout strategies to eliminate bottlenecks and maximize floor space."
+      },
+      "2": {
+        "category": "Blog & Knowledge",
+        "readTime": "8 min read",
+        "title": "Selective vs. Drive-In Racking: Which system should your business invest in?",
+        "excerpt": "A detailed comparison of cost per pallet position, storage density, and accessibility between the most popular industrial racking systems."
+      },
+      "3": {
+        "category": "Blog & Knowledge",
+        "readTime": "5 min read",
+        "title": "Beam deflection inspection and FEM 10.2.02 safety standards for pallet racks",
+        "excerpt": "A practical guide to allowable deflection (L/200), periodic upright bolt checks, and uniform load distribution to keep industrial warehouses safe."
+      },
+      "4": {
+        "category": "News",
+        "readTime": "7 min read",
+        "title": "Deep cold storage racking (-25°C): Powder coating or hot-dip galvanizing?",
+        "excerpt": "Corrosion and condensation challenges in sub-zero environments, comparing steel surface treatments for cold food storage warehouses."
+      },
+      "5": {
+        "category": "Customer Stories",
+        "readTime": "6 min read",
+        "title": "Organizing medium duty & V-hole racks to optimize spare parts warehouses",
+        "excerpt": "Real-world experience reorganizing supply rooms by shelf tier to shorten item lookup times and streamline inventory stocktaking."
+      },
+      "6": {
+        "category": "Customer Stories",
+        "readTime": "5 min read",
+        "title": "Tips for choosing versatile V-hole shelving for retail stores and workshops",
+        "excerpt": "Key considerations for shelf deck dimensions, steel thickness, and adjustable level spacing to keep goods neat and easy to access."
+      },
+      "7": {
+        "category": "News",
+        "readTime": "6 min read",
+        "title": "Periodic maintenance and safety inspection checklist for industrial racking",
+        "excerpt": "Essential inspection points including beam safety pins, upright protectors, rack alignment, and load distribution across every tier."
+      }
+    }
+  },
+  "ProductDetailPage": {
+    "breadcrumb": {
+      "home": "Home",
+      "products": "Products"
+    },
+    "reviewsLabel": "({count} customer reviews)",
+    "priceLabel": "Reference ex-factory price:",
+    "priceNote": "(Customizable by beam span, height, and warehouse specifications)",
+    "contactPrice": "Contact us",
+    "specs": {
+      "loadCapacity": "Design load capacity:",
+      "steelStandard": "Steel standard:",
+      "warranty": "Warranty period:",
+      "origin": "Manufacturing origin:",
+      "originValue": "Warehouse Racking Factory at Tay Ninh Industrial Park, Vietnam",
+      "warrantyValue": "5-year structural warranty"
+    },
+    "cta": {
+      "quoteBtn": "Request a Fast Quotation",
+      "hotline": "Hotline: {hotline}"
+    },
+    "commitments": {
+      "c1": "Fast quotation within 24h",
+      "c2": "Custom design & manufacturing available",
+      "c3": "Nationwide delivery & installation"
+    },
+    "gallery": {
+      "zoomHint": "Click to zoom image",
+      "photoCounter": "Real photo {current} / {total}",
+      "dialogDesc": "Zoom in to inspect beam structure, Omega uprights, and real warehouse installations.",
+      "prevAria": "Previous image",
+      "nextAria": "Next image"
+    },
+    "sections": {
+      "techBadge": "Comprehensive Technical Information",
+      "detailTitle": "Product Details: {name}",
+      "overviewTitle": "Overview & Structural Design",
+      "featuresTitle": "Key Features & Advantages",
+      "specsTableTitle": "FEM 10.2.02 Technical Specifications",
+      "applicationsTitle": "Industries & Practical Applications",
+      "relatedBadge": "Same Solution Category",
+      "relatedTitle": "Related Products",
+      "viewAllProducts": "View all products"
+    }
+  },
+  "ArticleDetailPage": {
+    "breadcrumb": {
+      "home": "Home",
+      "articles": "News"
+    },
+    "author": "Kim Phu Editorial Team",
+    "consultHotline": "Consult: {hotline}",
+    "tocTitle": "Table of Contents",
+    "authorBio": "The Kim Phu team shares practical insights on choosing Selective, medium duty, and V-hole racking specifications to optimize business storage space.",
+    "bookConsult": "Book direct consultation",
+    "sendRequest": "Request a quote",
+    "sidebar": {
+      "badge": "Fast Support",
+      "title": "Contact for consultation & quote",
+      "hotline": "Hotline: {hotline}",
+      "quoteBtn": "Request a quote",
+      "mostRead": "Most Read Articles"
+    },
+    "related": {
+      "badge": "Related Topics",
+      "title": "Related Articles & Guides",
+      "viewAll": "View all articles",
+      "readMore": "Read more"
     }
   }
 }

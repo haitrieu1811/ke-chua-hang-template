@@ -1,4 +1,5 @@
 import ScrollReveal from "@/components/scroll-reveal";
+import HomeCarousel from "@/app/(main)/_components/hero-carousel";
 import SHOP_INFO from "@/constants/info";
 import { getAllProducts } from "@/data/products";
 import {
@@ -57,6 +58,9 @@ export default async function ProductsPage() {
 
   return (
     <div className="bg-background min-h-screen">
+      {/* 0. Banner Slide Chung */}
+      <HomeCarousel />
+
       {/* 1. Header Banner & Breadcrumb */}
       <section className="relative overflow-hidden border-b border-border/80 bg-linear-to-b from-primary/10 via-background to-background py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -79,7 +83,9 @@ export default async function ProductsPage() {
               {t("hero.badge")}
             </div>
             <h1 className="mt-4 text-3xl font-black tracking-tight text-foreground sm:text-5xl">
-              {t("hero.title")}
+              {t("hero.titleStart")}{" "}
+              <span className="text-primary">{t("hero.titleHighlight")}</span>{" "}
+              {t("hero.titleEnd")}
             </h1>
             <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
               {t("hero.desc")}

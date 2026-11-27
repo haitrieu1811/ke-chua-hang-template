@@ -57,8 +57,8 @@ export default async function ArticlesPage() {
         </div>
       </section>
 
-      {/* 2. KHU VỰC FEED BÀI VIẾT */}
-      <section className="py-12 sm:py-16">
+      {/* 2. DANH SÁCH BÀI VIẾT HÀNG NGANG 3 CỘT */}
+      <section className="py-10 sm:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ArticlesFeed />
         </div>

@@ -1,7 +1,7 @@
 const SHOP_INFO = {
   FACEBOOK_URL: "https://www.facebook.com/kimphu.kesatnoithatcongnghiep",
-  TIKTOK_URL: "https://tiktok.com",
-  YOUTUBE_URL: "https://youtube.com",
+  TIKTOK_URL: "https://www.tiktok.com/@kimphu.kesatnoithatcn",
+  YOUTUBE_URL: "https://www.youtube.com/@giakekimphu",
   HOTLINE: {
     NUMBER: "0971069294",
     TEXT: "097 106 92 94",

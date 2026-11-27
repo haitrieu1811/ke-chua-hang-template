@@ -680,6 +680,9 @@
     "hero": {
       "badge": "SẢN PHẨM KIM PHÚ",
       "title": "Hệ thống giá kệ chứa hàng nhà kho chuyên dụng",
+      "titleStart": "Hệ thống",
+      "titleHighlight": "giá kệ chứa hàng",
+      "titleEnd": "nhà kho chuyên dụng",
       "desc": "Giải pháp tối ưu hóa không gian kho bãi từ kệ tải trọng 300 - 4000 kg/pallet."
     },
     "filter": {
@@ -823,6 +826,172 @@
       "successTitle": "Gửi Yêu Cầu Thành Công!",
       "successDesc": "Cảm ơn quý khách {name} ({company}). Chuyên viên Kim Phú sẽ liên hệ lại qua số điện thoại {phone} để tư vấn sản phẩm, quy cách và báo giá phù hợp.",
       "sendAnother": "Gửi Thêm Yêu Cầu Khác"
+    }
+  },
+  "ProductCard": {
+    "referencePrice": "Đơn giá tham khảo:",
+    "contactPrice": "Liên hệ",
+    "viewDetail": "Xem Chi Tiết",
+    "items": {
+      "ke-selective": {
+        "name": "Kệ Selective",
+        "categoryLabel": "Kệ Selective",
+        "tag": "Bán Chạy Số 1",
+        "loadCapacity": "1.000kg - 3.500kg / pallet",
+        "steelStandard": "Thép cán nguội JIS G3101",
+        "shortDescription": "Hệ thống kệ chứa pallet phổ biến và linh hoạt nhất hiện nay, cho phép xe nâng tiếp cận 100% vị trí pallet mà không cần di chuyển các pallet xung quanh."
+      },
+      "ke-trung-tai": {
+        "name": "Kệ Trung Tải",
+        "categoryLabel": "Kệ Trung Tải",
+        "tag": "Phổ Biến Kho Vật Tư",
+        "loadCapacity": "300kg - 800kg / tầng",
+        "steelStandard": "Thép cán nguội sơn tĩnh điện",
+        "shortDescription": "Hệ thống kệ kho bốc xếp bằng tay lắp ghép ngàm thông minh, không dùng ốc vít. Thiết kế nhiều tầng mâm linh hoạt cho kho vật tư, linh kiện, phụ tùng."
+      },
+      "ke-v-lo": {
+        "name": "Kệ V Lỗ",
+        "categoryLabel": "Kệ V Lỗ",
+        "tag": "Đa Năng Linh Hoạt",
+        "loadCapacity": "80kg - 150kg / tầng",
+        "steelStandard": "Thép V lỗ sơn tĩnh điện",
+        "shortDescription": "Kệ sắt V lỗ lắp ghép linh hoạt, dễ dàng điều chỉnh khoảng cách giữa các tầng. Phù hợp lưu trữ hàng hóa, dụng cụ và vật tư trong kho, cửa hàng hoặc nhà xưởng."
+      }
+    }
+  },
+  "HomeProducts": {
+    "badge": "Sản Phẩm Chủ Lực",
+    "title": "SẢN PHẨM GIÁ KỆ TẠI KIM PHÚ",
+    "desc": "Cung cấp đa dạng các dòng kệ Selective, kệ trung tải và kệ V lỗ. Tư vấn lựa chọn sản phẩm theo nhu cầu lưu trữ, quy cách hàng hóa và không gian sử dụng.",
+    "tabs": {
+      "all": "Tất cả sản phẩm",
+      "heavy": "Kệ Selective",
+      "medium": "Kệ Trung tải",
+      "floor": "Kệ V lỗ"
+    },
+    "viewMore": "XEM THÊM SẢN PHẨM"
+  },
+  "HomeArticles": {
+    "title": "BLOG - TIN TỨC",
+    "viewAll": "Xem tất cả bài viết",
+    "readMore": "Đọc tiếp",
+    "author": "Ban biên tập Kim Phú"
+  },
+  "ArticlesList": {
+    "monthPrefix": "Th",
+    "items": {
+      "1": {
+        "category": "Blog & Kiến thức",
+        "readTime": "6 phút đọc",
+        "title": "Bí quyết thiết kế layout kho bãi giúp xe nâng di chuyển an toàn và tăng 70% sức chứa",
+        "excerpt": "Phân tích khoảng cách lối đi tối ưu cho xe nâng Reach Truck và Forklift counterbalanced, bố trí cửa xuất nhập hàng để tránh tắc nghẽn luồng vận chuyển và tối ưu hóa diện tích mặt bằng."
+      },
+      "2": {
+        "category": "Blog & Kiến thức",
+        "readTime": "8 phút đọc",
+        "title": "So sánh chi tiết Kệ Selective và Kệ Drive-In: Doanh nghiệp nên đầu tư loại nào?",
+        "excerpt": "Bảng phân tích chi phí đầu tư trên từng pallet, mật độ lưu kho và khả năng tiếp cận hàng hóa giữa các hệ thống giá kệ công nghiệp phổ biến nhất hiện nay."
+      },
+      "3": {
+        "category": "Blog & Kiến thức",
+        "readTime": "5 phút đọc",
+        "title": "Tiêu chuẩn kiểm định độ võng dầm beam và hệ số an toàn FEM 10.2.02 cho kệ pallet",
+        "excerpt": "Hướng dẫn nhận biết độ võng cho phép (L/200), cách kiểm tra định kỳ bu-lông chân trụ và tải trọng phân bố đều để đảm bảo an toàn trong kho hàng công nghiệp."
+      },
+      "4": {
+        "category": "Tin tức",
+        "readTime": "7 phút đọc",
+        "title": "Giải pháp kệ kho đông lạnh âm sâu (-25°C): Lựa chọn sơn tĩnh điện hay mạ kẽm nhúng nóng?",
+        "excerpt": "Đặc tính ăn mòn và đọng sương trong môi trường âm sâu. Phân tích ưu điểm của từng phương pháp xử lý bề mặt thép trong kho bảo quản thực phẩm."
+      },
+      "5": {
+        "category": "Câu chuyện khách hàng",
+        "readTime": "6 phút đọc",
+        "title": "Cách bố trí kệ trung tải và kệ V lỗ giúp tối ưu không gian kho vật tư, linh kiện",
+        "excerpt": "Chia sẻ thực tế quá trình sắp xếp lại kho vật tư, phân khu hàng hóa theo từng tầng kệ giúp doanh nghiệp rút ngắn thời gian tìm kiếm và kiểm kê tồn kho."
+      },
+      "6": {
+        "category": "Câu chuyện khách hàng",
+        "readTime": "5 phút đọc",
+        "title": "Kinh nghiệm lựa chọn kệ V lỗ đa năng cho cửa hàng và nhà xưởng quy mô vừa & nhỏ",
+        "excerpt": "Những lưu ý về kích thước mâm tầng, độ dày thép và cách điều chỉnh khoảng cách tầng kệ để sắp xếp hàng hóa gọn gàng, thuận tiện quan sát."
+      },
+      "7": {
+        "category": "Tin tức",
+        "readTime": "6 phút đọc",
+        "title": "Quy trình kiểm tra bảo dưỡng định kỳ cho hệ thống giá kệ kho hàng công nghiệp",
+        "excerpt": "Danh mục kiểm tra định kỳ các chốt an toàn dầm beam, ốp bảo vệ chân trụ, độ thăng bằng và tải trọng phân bố trên từng tầng kệ."
+      }
+    }
+  },
+  "ProductDetailPage": {
+    "breadcrumb": {
+      "home": "Trang Chủ",
+      "products": "Sản Phẩm"
+    },
+    "reviewsLabel": "({count} đánh giá từ khách hàng)",
+    "priceLabel": "Đơn giá gia công tham khảo tại xưởng:",
+    "priceNote": "(Tùy chỉnh theo khẩu độ dầm, chiều cao và quy cách kho)",
+    "contactPrice": "Liên hệ",
+    "specs": {
+      "loadCapacity": "Tải trọng thiết kế:",
+      "steelStandard": "Quy chuẩn thép:",
+      "warranty": "Thời hạn bảo hành:",
+      "origin": "Nguồn gốc sản xuất:",
+      "originValue": "Nhà máy Kệ Chứa Hàng tại KCN Tây Ninh, Việt Nam",
+      "warrantyValue": "Bảo hành 5 năm kết cấu"
+    },
+    "cta": {
+      "quoteBtn": "Yêu Cầu Báo Giá Dự Toán",
+      "hotline": "Hotline: {hotline}"
+    },
+    "commitments": {
+      "c1": "Báo giá nhanh trong 24h",
+      "c2": "Nhận thiết kế & sản xuất theo yêu cầu",
+      "c3": "Lắp đặt bàn giao toàn quốc"
+    },
+    "gallery": {
+      "zoomHint": "Nhấn xem ảnh phóng to",
+      "photoCounter": "Ảnh thực tế {current} / {total}",
+      "dialogDesc": "Xem ảnh chụp phóng to kết cấu dầm beam, chân trụ Omega và thực tế lắp đặt tại nhà xưởng.",
+      "prevAria": "Ảnh trước đó",
+      "nextAria": "Ảnh kế tiếp"
+    },
+    "sections": {
+      "techBadge": "Thông Tin Kỹ Thuật Toàn Diện",
+      "detailTitle": "Mô Tả Chi Tiết Sản Phẩm: {name}",
+      "overviewTitle": "Tổng Quan & Cấu Tạo Kết Cấu",
+      "featuresTitle": "Đặc Điểm & Ưu Thế Vượt Trội",
+      "specsTableTitle": "Bảng Thông Số Kỹ Thuật Đạt Chuẩn FEM 10.2.02",
+      "applicationsTitle": "Ngành Nghề & Lĩnh Vực Ứng Dụng Thực Tế",
+      "relatedBadge": "Cùng Phân Khúc Giải Pháp",
+      "relatedTitle": "Sản Phẩm Cùng Danh Mục",
+      "viewAllProducts": "Xem tất cả sản phẩm"
+    }
+  },
+  "ArticleDetailPage": {
+    "breadcrumb": {
+      "home": "Trang Chủ",
+      "articles": "Tin Tức"
+    },
+    "author": "Ban biên tập Kim Phú",
+    "consultHotline": "Tư vấn: {hotline}",
+    "tocTitle": "Mục Lục Bài Viết",
+    "authorBio": "Đội ngũ Kim Phú chia sẻ kiến thức thực tế về lựa chọn quy cách kệ Selective, kệ trung tải và kệ V lỗ giúp doanh nghiệp tối ưu không gian lưu trữ.",
+    "bookConsult": "Đặt lịch tư vấn trực tiếp",
+    "sendRequest": "Gửi yêu cầu báo giá",
+    "sidebar": {
+      "badge": "Hỗ trợ nhanh chóng",
+      "title": "Liên hệ nhận tư vấn & báo giá",
+      "hotline": "Hotline: {hotline}",
+      "quoteBtn": "Yêu cầu báo giá",
+      "mostRead": "Bài Viết Đọc Nhiều Nhất"
+    },
+    "related": {
+      "badge": "Kiến Thức Cùng Chuyên Đề",
+      "title": "Bài Viết & Cẩm Nang Liên Quan",
+      "viewAll": "Xem tất cả bài viết",
+      "readMore": "Đọc tiếp"
     }
   }
 }

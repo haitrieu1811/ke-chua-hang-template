@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { ZoomIn } from "lucide-react";
+import { useTranslations } from "next-intl";
 import ProductImageDialog from "./product-image-dialog";
 
 interface ProductGalleryProps {
@@ -17,6 +18,7 @@ export default function ProductGallery({
   tag,
   isHot,
 }: ProductGalleryProps) {
+  const t = useTranslations("ProductDetailPage.gallery");
   const [activeImageIndex, setActiveImageIndex] = React.useState(0);
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
 
@@ -60,7 +62,7 @@ export default function ProductGallery({
         {/* Nút chỉ báo xem phóng to */}
         <div className="absolute bottom-4 right-4 flex items-center gap-1.5 rounded-xl bg-black/60 px-3.5 py-2 text-sm font-medium text-white backdrop-blur-md opacity-90 group-hover:opacity-100 group-hover:bg-primary transition-all duration-300 shadow-md">
           <ZoomIn className="size-4" />
-          <span>Nhấn xem ảnh phóng to</span>
+          <span>{t("zoomHint")}</span>
         </div>
       </div>
 

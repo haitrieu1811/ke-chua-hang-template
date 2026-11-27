@@ -61,7 +61,10 @@ export default async function HomePage() {
       {/* 2. SẢN PHẨM BÁN CHẠY (BEST SELLING PRODUCTS VỚI TABS TỰ CODE & BỘ LỌC) */}
       <BestSellingProducts />
 
-      {/* 3. HIỂN THỊ NỔI BẬT 4 ƯU ĐIỂM (HIỆU ỨNG ANIMATION XUẤT HIỆN KHI KÉO TỚI) */}
+      {/* 3. BLOG - TIN TỨC (ARTICLES SECTION) */}
+      <ArticlesSection />
+
+      {/* 4. HIỂN THỊ NỔI BẬT 4 ƯU ĐIỂM (HIỆU ỨNG ANIMATION XUẤT HIỆN KHI KÉO TỚI) */}
       <section className="relative border-b border-border/80 bg-muted/30 py-16 sm:py-20 overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Header của phần Ưu điểm với ScrollReveal */}
@@ -145,9 +148,6 @@ export default async function HomePage() {
 
       {/* 5. CÂU HỎI THƯỜNG GẶP (FAQ SECTION) */}
       <FaqSection />
-
-      {/* 6. BÀI VIẾT & TIN TỨC CHUYÊN NGÀNH (ARTICLES SECTION) */}
-      <ArticlesSection />
     </div>
   );
 }
